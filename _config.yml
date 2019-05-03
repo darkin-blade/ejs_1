@@ -6,3 +6,7 @@ menu:
   Knife: /knife
   Tags: /tags
   Categories: /categories
+
+max_num:
+  Archives: !!str 30
+  Index: 20
