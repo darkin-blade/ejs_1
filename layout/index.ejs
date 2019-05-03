@@ -1,3 +1,5 @@
+<%- partial('partial/paginator.ejs') %>
+
 <div>
   <% site.posts.forEach(function (post) { %>
     <div>
@@ -5,6 +7,9 @@
     </div>
     <div>
       <%- post.content.length %>
+    </div>
+    <div>
+      <%- post.excerpt.length %>
     </div>
   <% }); %>
 </div>
