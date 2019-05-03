@@ -1,0 +1,5 @@
+<div class="tags">
+  <% site.tags.forEach(function (tag) { %>
+  <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
+  <% }) %>
+</div>

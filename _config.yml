@@ -8,5 +8,8 @@ menu:
   Categories: /categories
 
 max_num:
-  Archives: !!str 30
+  Archives: 30
   Index: 20
+
+local_search:
+  enable: true
