@@ -1,1 +1,11 @@
-<h1><%= config.title %></h1>
+<div>
+  <a href="<%- url_for(theme.menu.Home) %>">
+    <h1><%= config.title %></h1>
+  </a>
+</div>
+
+<div>
+  <% for (var name in theme.menu) { %>
+    <a href="<%- url_for(theme.menu[name]) %>"><h2><%= name %></h2></a>
+  <% } %>
+</div>

@@ -1,0 +1,10 @@
+<div>
+  <% site.posts.forEach(function (post) { %>
+    <div>
+      <a href="<%- url_for(post.path) %>"><h3><%- post.title %></h3></a>
+    </div>
+    <div>
+      <%- post.content.length %>
+    </div>
+  <% }); %>
+</div>
