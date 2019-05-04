@@ -8,6 +8,8 @@
   border-style: solid;
   border-radius: 10px;
   border-width: 0px;
+
+  text-align: center;
 }
 
 .all_tool:hover {
@@ -16,6 +18,7 @@
 }
 
 .left_pg {
+  opacity: 0.4;
   position: fixed;
 
   top: 40%;
@@ -26,6 +29,7 @@
 }
 
 .right_pg {
+  opacity: 0.4;
   position: fixed;
 
   top: 40%;
@@ -33,4 +37,14 @@
 
   width: 50px;
   height: 50px;
+}
+
+.left_pg:hover {
+  transition-duration: 0.5s;
+  opacity: 1;
+}
+
+.right_pg:hover {
+  transition-duration: 0.5s;
+  opacity: 1;
 }

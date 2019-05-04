@@ -24,14 +24,14 @@ function change_width() // 自动调整元素宽度
         var b_offset = b_padding + b_margin;
 
         var rate = cal_rate(w_width);
-        console.log(rate);
+        // console.log(rate);
 
-        if (w_width < 1200) { // 半页
+        if (w_width < 1200) { // 半页,1列
           var b_width = w_width * rate;
           var b_left = (w_width - b_width) / 2;
           $(".mid_block").css("width", b_width + "px");
           $(".mid_block").css("left", b_left - b_offset + "px"); // 减去多余的padding
-        } else { // 全页
+        } else { // 全页,2列
           var b_width = w_width * rate;
           var b_left = (w_width - 2 * b_width) / 2;
           b_offset *= 2;
@@ -53,7 +53,7 @@ function cal_rate (width)
   }
   else
   {
-    return 0.56 - 0.0001 * width;
+    return 0.56 - 0.0001 * width; // 不要太小,否则会出现3列
   }
 }
 

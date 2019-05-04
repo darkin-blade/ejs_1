@@ -4,25 +4,27 @@
   
   <% if (page.total > 1) { %>
     <!-- 上一页 -->
-    <div class="left_pg all_tool">
       <% if (page.prev != 0) { %>
-        <div>
-          <a href="<%= url_for(page.prev_link) %>">
-            Prev
-          </a>
-        </div>
-      </div>
-    <% } %>
-    <!-- 下一页 -->
-    <% if (page.next != 0) { %>
-      <div class="right_pg all_tool">
-        <div>
-          <a href="<%= url_for(page.next_link) %>">
-              Next
-          </a>
+        <div class="left_pg all_tool">
+            <script>
+              var left_pg = document.getElementsByClassName("left_pg")[0];
+              var prev_pg = '<%= url_for(page.prev_link) %>';
+              left_pg.setAttribute("onclick", "location='" + prev_pg +  "'")
+            </script>
+            <p>Prev</p>
         </div>
       <% } %>
-    </div>
+      <!-- 下一页 -->
+      <% if (page.next != 0) { %>
+        <div class="right_pg all_tool">
+            <script>
+                var right_pg = document.getElementsByClassName("right_pg")[0];
+                var next_pg = '<%= url_for(page.next_link) %>';
+                right_pg.setAttribute("onclick", "location='" + next_pg +  "'")
+              </script>
+              <p>Next</p>
+        </div>
+      <% } %>
   <% } %>
 
   <script> // 待修改
