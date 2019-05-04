@@ -1,7 +1,9 @@
 <!-- 分页器 -->
 
 <% if (page && page.posts) { %>
+  
   <% if (page.total > 1) { %>
+    <!-- 上一页 -->
     <div class="left_pg all_tool">
       <% if (page.prev != 0) { %>
         <div>
@@ -9,14 +11,14 @@
             Prev
           </a>
         </div>
-      <% } %>
-    </div>
-
+      </div>
+    <% } %>
+    <!-- 下一页 -->
     <% if (page.next != 0) { %>
       <div class="right_pg all_tool">
         <div>
           <a href="<%= url_for(page.next_link) %>">
-            Next
+              Next
           </a>
         </div>
       <% } %>

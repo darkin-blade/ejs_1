@@ -28,8 +28,9 @@
 .mid_block {
   /* 居中的块,主要用于存放文章摘要 */
   float: left;
+  position: relative;
   height: 300px;
-  
+
   margin-left: 10px;
   margin-right: 10px;
 }
