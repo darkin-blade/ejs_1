@@ -33,6 +33,14 @@
   height: 300px;
 }
 
+.block_200 {
+  height: 200px;
+}
+
+.block_100 {
+  height: 100px;
+}
+
 .block_inf {
   /* 文章内容 */
   height: auto;

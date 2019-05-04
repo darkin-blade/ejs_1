@@ -27,14 +27,22 @@
     <!-- 每一个页面(index/archive/tag/tag下每个小标签的页面...) -->
     <% if (page.posts && page.posts.length > 0) { %>
       <% page.posts.each(function(post){ %>
-        <% if (!post.top) { %>
-          <!-- post排版 -->
-          <div class='mid_block shadow_block block_300'>
-            <%- partial('post.ejs', {
-              post: post,
-              page: page
-            }) %>
-          </div>
+        <% if (is_home() || is_tag() || is_category()) { %>
+            <!-- post带摘要 -->
+            <div class='mid_block shadow_block block_300'>
+              <%- partial('post.ejs', {
+                post: post,
+                page: page
+              }) %>
+            </div>
+        <% } else if (is_archive()) { %>
+            <!-- post只有标题 -->
+            <div class='mid_block shadow_block block_100'>
+                <%- partial('post.ejs', {
+                  post: post,
+                  page: page
+                }) %>
+            </div>
         <% } %>
       <% }) %>
     <% } %>

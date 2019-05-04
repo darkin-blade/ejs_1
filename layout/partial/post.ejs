@@ -10,7 +10,7 @@
 <% } %>
 
 <!-- 如果是首页/某个tag页面 -->
-<% if (is_home() || is_tag()) { %>
+<% if (is_home() || is_tag() || is_archive() || is_category()) { %>
 
   <% if (theme.debug.enable) { %>
   <p>tags: <%= post.tags.length %></p>
@@ -19,5 +19,8 @@
   <% } %>
 
   <!-- 主题内置自动摘要 -->
-  <p><%- post.content.substring(0, theme.auto_excerpt.length) %></p>
+  <% if (is_home() || is_tag() || is_category()) { %>
+    <p><%- post.content.substring(0, theme.auto_excerpt.length) %></p>
+  <% } %>
+
 <% } %>
