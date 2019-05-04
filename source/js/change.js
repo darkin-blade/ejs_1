@@ -31,8 +31,12 @@ function change_width() // 自动调整元素宽度
           var b_left = (w_width - b_width) / 2;
           $(".mid_block").css("width", b_width + "px");
           $(".mid_block").css("left", b_left - b_offset + "px"); // 减去多余的padding
-        } else {
-          ;
+        } else { // 全页
+          var b_width = w_width * rate;
+          var b_left = (w_width - 2 * b_width) / 2;
+          b_offset *= 2;
+          $(".mid_block").css("width", b_width + "px");
+          $(".mid_block").css("left", b_left - b_offset + "px"); // 减去多余的padding
         }
     }
 }
@@ -49,7 +53,7 @@ function cal_rate (width)
   }
   else
   {
-    return 0.56 - 0.00014 * width;
+    return 0.56 - 0.0001 * width;
   }
 }
 
