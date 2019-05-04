@@ -92,6 +92,7 @@
 .top_block {
   text-align: center;
   background-color: var(--box_grey);
+  margin-bottom: 100px;
 }
 
 .bottom_block {
@@ -99,6 +100,10 @@
   text-align: center;
   padding-top: 30px; 
   padding-bottom: 30px; /* 凑高度 */
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+  margin-right: 0px; /* 居中 */
   width: 100%;
 
   border-width: 0px;
