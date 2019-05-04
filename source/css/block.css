@@ -1,9 +1,6 @@
-:root {
-  --link-grey: rgba(153, 153, 153, 1);
-}
-
 .all_block {
-  box-shadow: 0px 0px 10px var(--link-grey);
+  /* 所有块的统一样式 */
+  box-shadow: 0px 0px 10px var(--my_grey);
   border-style: solid;
   border-radius: 10px;
   border-width: 0px;
@@ -15,6 +12,8 @@
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
+
+  overflow-y: scroll;
 }
 
 .all_block:hover {
@@ -22,35 +21,15 @@
   box-shadow: 0px 0px 10px black;
 }
 
-.absolute_block {
+.all_block::-webkit-scrollbar {
+  width: 0px;
+}
+
+.mid_block {
+  /* 居中的块,主要用于存放文章摘要 */
+  float: left;
+  height: 300px;
+  
+  margin-left: 10px;
   margin-right: 10px;
-  width: 100%;
-  min-width: 100px;
-  min-height: 100px;
-}
-
-.float_block {
-  margin-left: 10px;
-  width: 100%;
-  min-width: 100px;
-  min-height: 100px;
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-.float_block::-webkit-scrollbar {
-  width: 0px;
-}
-
-.float_block2 {
-  margin-left: 10px;
-  width: 100%;
-  min-width: 100px;
-  min-height: 100px;
-  max-height: 400px;
-  overflow-y: auto;
-}
-
-.float_block2::-webkit-scrollbar {
-  width: 0px;
 }

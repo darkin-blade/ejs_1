@@ -12,17 +12,16 @@ function my_load()
   change_width();
 }
 
-function change_width()
+function change_width() // 自动调整元素宽度
 {
   var temp = (window.innerWidth - 600) / 1920 * 10;
   if (temp <= 0) temp = 0;
-  $(".absolute_page").css("width", 59 - temp + "%");
-  $(".absolute_page").css("margin-left", 2 + temp + "%");
-  $(".float_page").css("width", 37 - temp + "%");
-  $(".float_page").css("margin-right", 2 + temp + "%");
+  $(".mid_container").css("margin-right", 2 + temp + "%");
+  $(".mid_container").css("margin-left", 2 + temp + "%");
+  console.log(temp);
 }
 
-function getScrollTop()
+function getScrollTop() // 计算滚动条
 { 
   var scrollTop = 0; 
   if (document.documentElement && document.documentElement.scrollTop)

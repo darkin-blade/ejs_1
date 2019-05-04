@@ -2,7 +2,7 @@
 
 <% if (site.posts && site.posts.length > 0) { %>
 
-  <div>
+  <div class="mid_container">
     <!-- 文章置顶功能,md文件要有top属性,不想实现 -->
     <% if (!page.prev) { %>
       <!-- 如果是主页 -->
@@ -29,7 +29,7 @@
       <% page.posts.each(function(post){ %>
         <% if (!post.top) { %>
           <!-- post排版 -->
-          <div class='ntop'>
+          <div class='mid_block all_block'>
             <%- partial('post.ejs', {
               post: post,
               page: page

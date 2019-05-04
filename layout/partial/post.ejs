@@ -11,8 +11,12 @@
 
 <!-- 如果是首页/某个tag页面 -->
 <% if (is_home() || is_tag()) { %>
+
+  <% if (theme.debug.enable) { %>
   <p>tags: <%= post.tags.length %></p>
   <p>content: <%- post.content.length %></p>
+  <% } %>
+
   <!-- 主题内置自动摘要 -->
   <p>excerpt: <%- post.content.substring(0, theme.auto_excerpt.length) %></p>
 <% } %>
