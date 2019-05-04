@@ -1,3 +1,10 @@
 <!-- / -->
 
+<% if (theme.debug.enable) { %>
+  <div>
+    <p>has page type: <%- page.type != null %></p>
+    <p>page type: "<%- page.type %>"</p>
+  </div>
+<% } %>
+
 <%- partial('partial/archive.ejs') %>

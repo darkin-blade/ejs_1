@@ -1,10 +1,21 @@
 <!-- /tags/ -->
 
+<% if (theme.debug.enable) { %>
+  <div>
+    <p>has page type: <%- page.type != null %></p>
+    <p>page type: "<%- page.type %>"</p>
+    <p>is tag: <%= is_tag() %></p>
+  </div>
+<% } %>
+
+<!-- 标签总览 -->
+<% if (!is_tag()) { %>
 <div>
   <% site.tags.forEach(function (tag) { %>
   <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
   <% }) %>
 </div>
+<% } %>
 
 <!-- 针对每个小页面进行post排布 -->
 <%- partial('partial/archive.ejs') %>
