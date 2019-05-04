@@ -2,8 +2,8 @@
 
 <a href="<%- url_for(post.path) %>">
   <h2><%- post.title %></h2>
+  <p><%= date(post.date, "YYYY-MM-DD") %></p>
 </a>
-<p><%= date(post.date, "YYYY-MM-DD") %></p>
 
 <% if (theme.debug.enable) { %>
   <p>has post type: <%- post.type != null %></p>
@@ -15,8 +15,9 @@
   <% if (theme.debug.enable) { %>
   <p>tags: <%= post.tags.length %></p>
   <p>content: <%- post.content.length %></p>
+  <p>excerpt: </p>
   <% } %>
 
   <!-- 主题内置自动摘要 -->
-  <p>excerpt: <%- post.content.substring(0, theme.auto_excerpt.length) %></p>
+  <p><%- post.content.substring(0, theme.auto_excerpt.length) %></p>
 <% } %>

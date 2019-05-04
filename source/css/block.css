@@ -4,6 +4,7 @@
   border-style: solid;
   border-radius: 10px;
   border-width: 0px;
+  height: 300px;
 
   margin-top: 5px;
   margin-bottom: 5px;
@@ -29,8 +30,12 @@
   /* 居中的块,主要用于存放文章摘要 */
   float: left;
   position: relative;
-  height: 300px;
 
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.bottom_block {
+  /* 放在底部用于凑长度的块 */
+  text-align: center;
 }

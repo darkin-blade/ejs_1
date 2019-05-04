@@ -2,7 +2,7 @@
 
 <% if (site.posts && site.posts.length > 0) { %>
 
-  <div class="">
+  <div class="mid_container">
     <!-- 文章置顶功能,md文件要有top属性,不想实现 -->
     <% if (!page.prev) { %>
       <!-- 如果是主页 -->
@@ -42,5 +42,5 @@
 
   <!-- 翻页 -->
   <%- partial('paginator') %>
-
+  
 <% } %>

@@ -21,14 +21,17 @@
                 var right_pg = document.getElementsByClassName("right_pg")[0];
                 var next_pg = '<%= url_for(page.next_link) %>';
                 right_pg.setAttribute("onclick", "location='" + next_pg +  "'")
-              </script>
-              <p>Next</p>
+            </script>
+            <p>Next</p>
         </div>
       <% } %>
+
   <% } %>
 
-  <script> // 待修改
-    var cur_page = '<%= page.current%> / <%= page.total%>';
-  </script>
-  <%- js('js/paginator') %>
+  <div class="mid_block bottom_block">
+    <p>
+      <%= page.current%> / <%= page.total%>
+    </p>
+  </div>
+
 <% } %>
