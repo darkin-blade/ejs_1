@@ -1,43 +1,31 @@
 <% if (site.posts && site.posts.length > 0) { %>
   <div>
-    <p><%- page.type == null %>, <%- page.type %></p>
+    <p>no page type: <%- page.type == null %>, <%- page.type %></p>
   </div>
 
   <div>
+    <!-- 文章置顶功能,md文件要有top属性,不想实现 -->
     <% if (!page.prev) { %>
-      <!-- 如果是首页?? -->
+      <!-- 如果是主页 -->
       <% if (is_home()) { %>
         <% site.posts.each(function(post){ %>
           <% if (post.top) { %>
             <% if (page.type == undefined || post.type == page.type) { %>
-              <div class='ntop'>
-                <a href="<%- url_for(post.path) %>">
-                  <h2><%- post.title %></h2>
-                </a>
-                <p><%= date(post.date, "YYYY-MM-DD") %></p>
-                <p>tags: <%= post.tags.length %></p>
-                <p>content: <%- post.content.length %></p>
-                <p>excerpt: <%- post.excerpt.length %></p>
-              </div>
+              <h3>TODO</h3>
             <% } %>
           <% } %>
         <% }) %>
-      <!-- 不知道,好像用不上 -->
+      <!-- 如果不是主页 -->
       <% } else if (page.posts && page.posts.length > 0) { %>
         <% page.posts.each(function(post){ %>
           <% if (post.top) { %>
-            <div class='top''>
-                <%- partial('post.ejs', {
-                  post: post,
-                  page: page
-                }) %>
-            </div>
+            <h3>TODO</h3>
           <% } %>
         <% }) %>
       <% } %>
     <% } %>
 
-    <!-- 每一个标签的页面 -->
+    <!-- 每一个页面(index/archive/tag/tag下每个小标签的页面...) -->
     <% if (page.posts && page.posts.length > 0) { %>
       <% page.posts.each(function(post){ %>
         <% if (!post.top) { %>

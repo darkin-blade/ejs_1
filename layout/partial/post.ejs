@@ -4,6 +4,7 @@
 <p>no post type: <%- post.type == null %></p>
 <p><%= date(post.date, "YYYY-MM-DD") %></p>
 
+<!-- 如果是首页 -->
 <% if (is_home()) { %>
   <p>tags: <%= post.tags.length %></p>
   <p>content: <%- post.content.length %></p>
