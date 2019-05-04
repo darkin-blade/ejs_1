@@ -17,31 +17,60 @@ function change_width() // 自动调整元素宽度
     var w_width = document.body.clientWidth;
     var b_padding = $(".mid_block").css("padding-left"); // padding转数字
     var b_margin = $(".mid_block").css("margin-left"); // margin转数字
-    if (b_padding) // 主页/tag页
+    if (b_padding) // 摘要块
     {
         b_padding = (Number(b_padding.replace("px", "")));
         b_margin = (Number(b_margin.replace("px", "")));
         var b_offset = b_padding + b_margin;
 
-        var rate = cal_rate(w_width);
+        var rate = mid_block_rate(w_width);
         // console.log(rate);
 
         if (w_width < 1200) { // 半页,1列
           var b_width = w_width * rate;
-          var b_left = (w_width - b_width) / 2;
+          var b_left = (w_width - b_width) / 2 - b_offset; // 减去多余的padding
           $(".mid_block").css("width", b_width + "px");
-          $(".mid_block").css("left", b_left - b_offset + "px"); // 减去多余的padding
+          $(".mid_block").css("left", b_left + "px");
         } else { // 全页,2列
-          var b_width = w_width * rate;
-          var b_left = (w_width - 2 * b_width) / 2;
           b_offset *= 2;
+          var b_width = w_width * rate;
+          var b_left = (w_width - 2 * b_width) / 2 - b_offset; // 因为并排,所以要减去两个padding
           $(".mid_block").css("width", b_width + "px");
-          $(".mid_block").css("left", b_left - b_offset + "px"); // 减去多余的padding
+          $(".mid_block").css("left", b_left + "px");
         }
+    }
+
+    b_padding = $(".main_block").css("padding-left"); // padding转数字
+    b_margin = $(".main_block").css("margin-left"); // margin转数字
+    if (b_padding) // 文章块,不分列
+    {
+        b_padding = (Number(b_padding.replace("px", "")));
+        b_margin = (Number(b_margin.replace("px", "")));
+        var b_offset = b_padding + b_margin;
+        console.log(b_offset);
+
+        rate = main_block_rate(w_width);
+
+        var b_width = w_width * rate;
+        var b_left = (w_width - b_width) / 2 - b_offset;
+        $(".main_block").css("width", b_width + "px");
+        $(".main_block").css("left", b_left + "px"); // 减去多余的padding
     }
 }
 
-function cal_rate (width)
+function main_block_rate (width)
+{
+  if (width < 1000)
+  {
+    return 1 - 0.0001 * width;
+  }
+  else
+  {
+    return 1.33 - 0.00043 * width;
+  }
+}
+
+function mid_block_rate (width)
 {
   if (width < 800)
   {

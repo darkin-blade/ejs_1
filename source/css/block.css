@@ -49,7 +49,16 @@
 }
 
 .mid_block {
-  /* 居中的块,主要用于存放文章摘要 */
+  /* 居中的块,主要用于存放文章摘要,需要考虑并排 */
+  float: left;
+  position: relative;
+
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.main_block {
+  /* 文章内容,不需要考虑并排 */
   float: left;
   position: relative;
 
