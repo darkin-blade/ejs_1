@@ -33,9 +33,14 @@
   height: 300px;
 }
 
-.block_inf {
+.block_100_mid {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.block_inf_mid {
   /* 文章内容 */
-  height: auto;
+  height: 100%;
 }
 
 .block_full {
@@ -52,8 +57,6 @@
 }
 
 .top_block {
-  padding: 10px;
-
   text-align: center;
   background-color: var(--box_grey);
 }
