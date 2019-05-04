@@ -1,13 +1,23 @@
 <% if (site.posts && site.posts.length > 0) { %>
   <div>
+    <p><%- page.type == null %>, <%- page.type %></p>
+  </div>
+
+  <div>
     <% if (!page.prev) { %>
       <!-- 如果是首页?? -->
       <% if (is_home()) { %>
         <% site.posts.each(function(post){ %>
           <% if (post.top) { %>
             <% if (page.type == undefined || post.type == page.type) { %>
-              <div class='ishome'>
-                <%- partial('post', {post: post}) %>
+              <div class='ntop'>
+                <a href="<%- url_for(post.path) %>">
+                  <h2><%- post.title %></h2>
+                </a>
+                <p><%= date(post.date, "YYYY-MM-DD") %></p>
+                <p>tags: <%= post.tags.length %></p>
+                <p>content: <%- post.content.length %></p>
+                <p>excerpt: <%- post.excerpt.length %></p>
               </div>
             <% } %>
           <% } %>
@@ -17,7 +27,10 @@
         <% page.posts.each(function(post){ %>
           <% if (post.top) { %>
             <div class='top''>
-              <%- partial('post', {post: post}) %>
+                <%- partial('post.ejs', {
+                  post: post,
+                  page: page
+                }) %>
             </div>
           <% } %>
         <% }) %>
@@ -29,10 +42,10 @@
       <% page.posts.each(function(post){ %>
         <% if (!post.top) { %>
           <div class='ntop'>
-            <a href="<%- url_for(post.path) %>">
-              <h2><%- post.title %></h2>
-            </a>
-            <p><%= date(post.date, "YYYY-MM-DD") %></p>
+            <%- partial('post.ejs', {
+              post: post,
+              page: page
+            }) %>
           </div>
         <% } %>
       <% }) %>

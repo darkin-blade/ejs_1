@@ -1,0 +1,11 @@
+<a href="<%- url_for(post.path) %>">
+  <h2><%- post.title %></h2>
+</a>
+<p>no post type: <%- post.type == null %></p>
+<p><%= date(post.date, "YYYY-MM-DD") %></p>
+
+<% if (is_home()) { %>
+  <p>tags: <%= post.tags.length %></p>
+  <p>content: <%- post.content.length %></p>
+  <p>excerpt: <%- post.excerpt.length %></p>
+<% } %>
