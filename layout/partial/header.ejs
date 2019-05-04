@@ -13,7 +13,7 @@
 
 
 <!-- 每一项逐个生成 -->
-<div class="block_hide shadow_block right_block">
+<div class="block_hide_right shadow_block right_block">
     <% for (var name in theme.menu) { %>
       <a href="<%- url_for(theme.menu[name]) %>"><h2><%= name %></h2></a>
     <% } %>
@@ -23,7 +23,7 @@
   <script>
     $(document).ready(function () {
       $(".right_link").click(function () {
-        $(".block_hide").toggleClass("block_show");
+        $(".block_hide_right").toggleClass("block_show_right");
         var right_link = document.getElementById("right_link_inner");
         if (right_link.innerHTML == "Show") right_link.innerHTML = "Hide";
         else right_link.innerHTML = "Show";

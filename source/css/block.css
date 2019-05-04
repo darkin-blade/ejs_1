@@ -60,13 +60,22 @@
   padding-bottom: 500px;
 }
 
-.block_hide {
+.block_hide_right {
   right: -70%;
 }
 
-.block_show {
+.block_show_right {
   right: 70px;
 }
+
+.block_hide_left {
+  left: -70%;
+}
+
+.block_show_left {
+  left: 70px;
+}
+
 
 .mid_block {
   /* 居中的块,主要用于存放文章摘要,需要考虑并排 */
@@ -121,6 +130,21 @@
   
   height: 60%;
   width: 60%;
+  max-width: 800px;
+
+  background-color: white;
+
+  overflow-y: scroll;
+}
+
+.left_block {
+  position: fixed;
+  z-index: 3;
+  top: 20%;
+  
+  height: 60%;
+  width: 60%;
+  max-width: 800px;
 
   background-color: white;
 

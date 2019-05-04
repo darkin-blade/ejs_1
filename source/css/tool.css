@@ -53,8 +53,21 @@
 
 .left_pg:hover,
 .right_pg:hover,
+.left_link:hover,
 .right_link:hover {
   opacity: 1;
+}
+
+.left_link {
+  opacity: 0.4;
+  position: fixed;
+
+  top: 50%;
+  left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  width: 50px;
 }
 
 .right_link {

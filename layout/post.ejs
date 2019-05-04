@@ -16,4 +16,22 @@
 </div>
 </div>
 
+<div class="block_hide_left shadow_block left_block">
+</div>
+
+<div class="left_link shadow_tool">
+  <script>
+    $(document).ready(function () {
+      $(".left_link").click(function () {
+        $(".block_hide_left").toggleClass("block_show_left");
+        var left_link = document.getElementById("left_link_inner");
+        if (left_link.innerHTML == "Show") left_link.innerHTML = "Hide";
+        else left_link.innerHTML = "Show";
+      });
+    });
+  </script>
+  <p id="left_link_inner">Show</p>
+</div>
+
+<!-- 分页器貌似没用 -->
 <%- partial('partial/paginator') %>
