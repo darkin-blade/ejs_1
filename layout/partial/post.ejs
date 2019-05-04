@@ -10,5 +10,6 @@
 <% if (is_home()) { %>
   <p>tags: <%= post.tags.length %></p>
   <p>content: <%- post.content.length %></p>
-  <p>excerpt: <%- post.excerpt.length %></p>
+  <!-- 主题内置自动摘要 -->
+  <p>excerpt: <%- post.content.substring(0, theme.auto_excerpt.length) %></p>
 <% } %>

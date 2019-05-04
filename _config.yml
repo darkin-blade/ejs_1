@@ -17,4 +17,8 @@ search:
 	content: true
 
 local_search:
-	enable: true  #搜索开关
+	enable: true # 搜索开关
+
+auto_excerpt:
+  enable: true # 自动摘要
+  length: 500
