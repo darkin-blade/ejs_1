@@ -7,9 +7,9 @@
       <% if (page.prev != 0) { %>
         <div class="left_pg all_tool">
             <script>
-              var left_pg = document.getElementsByClassName("left_pg")[0];
-              var prev_pg = '<%= url_for(page.prev_link) %>';
-              left_pg.setAttribute("onclick", "location='" + prev_pg +  "'")
+                $(".left_pg").click(function () {
+                  location = '<%= url_for(page.prev_link) %>';
+                });
             </script>
             <p>Prev</p>
         </div>
@@ -18,9 +18,9 @@
       <% if (page.next != 0) { %>
         <div class="right_pg all_tool">
             <script>
-                var right_pg = document.getElementsByClassName("right_pg")[0];
-                var next_pg = '<%= url_for(page.next_link) %>';
-                right_pg.setAttribute("onclick", "location='" + next_pg +  "'")
+                $(".right_pg").click(function () {
+                  location = '<%= url_for(page.next_link) %>';
+                });
             </script>
             <p>Next</p>
         </div>
@@ -30,7 +30,7 @@
 
 <% } %>
 
-<div class="main_block bottom_block">
+<div class="shadow_block bottom_block">
   <% if (page && page.posts) { %>
   <p>
     <%= page.current %> / <%= page.total %>

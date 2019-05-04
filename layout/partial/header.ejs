@@ -1,5 +1,6 @@
 <!-- 标题,链接 -->
 
+<!-- 页面头,标题 -->
 <% if (is_home() && (page.current == 1)) { %>
   <div class="top_block block_full_mid">
 <% } else { %>
@@ -11,8 +12,19 @@
 </div>
 
 <!-- 每一项逐个生成 -->
-<div>
+<div class="shadow_block right_block_hide">
   <% for (var name in theme.menu) { %>
     <a href="<%- url_for(theme.menu[name]) %>"><h2><%= name %></h2></a>
   <% } %>
+</div>
+
+<div class="right_link all_tool">
+  <script>
+    $(document).ready(function () {
+      $(".right_link").click(function () {
+        $(".right_block_hide").toggleClass("right_block_show");
+      });
+    });
+  </script>
+  <p>Link</p>
 </div>
