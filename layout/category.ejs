@@ -1,0 +1,21 @@
+<!-- /categories/ -->
+
+<% if (theme.debug.enable) { %>
+  <div>
+    <p>has page type: <%- page.type != null %></p>
+    <p>page type: "<%- page.type %>"</p>
+    <p>is category: <%= is_category() %></p>
+  </div>
+<% } %>
+
+<!-- 标签总览 -->
+<% if (!is_category()) { %>
+<div>
+  <% site.categories.forEach(function (category) { %>
+  <a href="<%- url_for(category.path) %>"><%- category.name %></a>
+  <% }) %>
+</div>
+<% } %>
+
+<!-- 针对每个category进行post排布 -->
+<%- partial('partial/archive.ejs') %>

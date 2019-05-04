@@ -9,8 +9,8 @@
   <p>has post type: <%- post.type != null %></p>
 <% } %>
 
-<!-- 如果是首页 -->
-<% if (is_home()) { %>
+<!-- 如果是首页/某个tag页面 -->
+<% if (is_home() || is_tag()) { %>
   <p>tags: <%= post.tags.length %></p>
   <p>content: <%- post.content.length %></p>
   <!-- 主题内置自动摘要 -->
