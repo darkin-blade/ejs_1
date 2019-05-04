@@ -1,10 +1,28 @@
 <!-- 分页器 -->
 
-<% if (page.total > 1){ %>
-  <div>
-    <%- paginator({
-      prev_text: "&laquo; Prev",
-      next_text: "Next &raquo;"
-    }) %>
-  </div>
+<% if (page && page.posts) { %>
+  <% if (page.total > 1) { %>
+    <br>
+    <div class="prev-next">
+      <div class="prev-next">
+        <% if (page.prev != 0) { %>
+          <a class="prev" rel="prev" href="<%= url_for(page.prev_link) %>">
+            <section class="post prev" >
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;<%- __('post.prev_page') %>&nbsp;
+            </section>
+          </a>
+        <% } %>
+        <p class="current">
+          <%= page.current%> / <%= page.total%>
+        </p>
+        <% if (page.next != 0) { %>
+          <a class="next" rel="next" href="<%= url_for(page.next_link) %>">
+            <section class="post next">
+              &nbsp;<%- __('post.next_page') %>&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </section>
+          </a>
+        <% } %>
+      </div>
+    </div>
+  <% } %>
 <% } %>

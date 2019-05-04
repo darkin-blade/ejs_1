@@ -1,11 +1,1 @@
-<div>
-  <% var i = 0; site.posts.forEach(function (post) { %>
-    <% i += 1 %>
-    <% if (i < theme.max_num.Archives) { %>
-      <p><%= date(post.date, "YYYY-MM-DD") %></p>
-      <a href="<%- url_for(post.path) %>"><%= post.title %></a>
-    <% } %>
-  <% }) %>
-<div>
-
-<%- partial('partial/paginator.ejs') %>
+<%- partial('partial/archive') %>
