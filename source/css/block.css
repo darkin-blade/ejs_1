@@ -55,9 +55,9 @@
   padding-bottom: 50px;
 }
 
-.block_1080_mid {
+.block_full_mid {
   padding-top: 400px;
-  padding-bottom: 680px;
+  padding-bottom: 500px;
 }
 
 .mid_block {
@@ -71,6 +71,9 @@
 
 .main_block {
   /* 文章内容,不需要考虑并排 */
+  word-break: break-all; 
+  /* 强制换行 */
+
   float: left;
   position: relative;
 
