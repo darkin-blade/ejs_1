@@ -11,20 +11,24 @@
   </a>
 </div>
 
+
 <!-- 每一项逐个生成 -->
-<div class="shadow_block right_block_hide">
-  <% for (var name in theme.menu) { %>
-    <a href="<%- url_for(theme.menu[name]) %>"><h2><%= name %></h2></a>
-  <% } %>
+<div class="block_hide shadow_block right_block">
+    <% for (var name in theme.menu) { %>
+      <a href="<%- url_for(theme.menu[name]) %>"><h2><%= name %></h2></a>
+    <% } %>
 </div>
 
-<div class="right_link all_tool">
+<div class="right_link shadow_tool">
   <script>
     $(document).ready(function () {
       $(".right_link").click(function () {
-        $(".right_block_hide").toggleClass("right_block_show");
+        $(".block_hide").toggleClass("block_show");
+        var right_link = document.getElementById("right_link_inner");
+        if (right_link.innerHTML == "Show") right_link.innerHTML = "Hide";
+        else right_link.innerHTML = "Show";
       });
     });
   </script>
-  <p>Link</p>
+  <p id="right_link_inner">Show</p>
 </div>
