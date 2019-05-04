@@ -33,18 +33,19 @@
   height: 300px;
 }
 
+.block_inf {
+  /* 文章内容 */
+  height: auto;
+}
+
 .block_100_mid {
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-.block_inf_mid {
-  /* 文章内容 */
-  height: 100%;
-}
-
-.block_full {
-  height: 100%;
+.block_1080_mid {
+  padding-top: 400px;
+  padding-bottom: 680px;
 }
 
 .mid_block {
