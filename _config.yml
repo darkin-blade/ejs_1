@@ -11,5 +11,12 @@ max_num:
   Archives: 30
   Index: 20
 
+search:
+	path: search.xml
+	field: post
+	content: true
+
 local_search:
-  enable: true
+	enable: true  #搜索开关
+	location: "right: 50px; top: 30px;" #搜索框位置top/left/bottom/right
+	facade: ""  #搜索框样式

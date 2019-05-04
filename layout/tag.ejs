@@ -1,5 +1,7 @@
-<div class="tags">
+<div>
   <% site.tags.forEach(function (tag) { %>
   <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
   <% }) %>
 </div>
+
+<%- partial('partial/archive.ejs') %>

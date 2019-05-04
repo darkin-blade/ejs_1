@@ -3,12 +3,27 @@
 
 <head>
   <meta charset="utf-8">
-  <%- partial('partial/head.ejs') -%>
+  
+  <%- partial('partial/head.ejs') %>
+  
+  <%- css('css/style') %>
 </head>
 
 <body>
-  <%- partial('partial/header.ejs') -%>
+  <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  
+
+  <span class="local-search local-search-google local-search-plugin" style="right: 50px;top: 60px;;position:absolute;z-index:2;">
+    <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls">
+    <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+  
+  <%- partial('partial/header.ejs') %>
   <%- body -%>
+
+  <%- js('js/load.js') %>
+  <%- js('js/search.js') %>
 </body>
 
 </html>
