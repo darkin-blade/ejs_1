@@ -1,3 +1,5 @@
+<!-- 通用模板 -->
+
 <!DOCTYPE html>
 <html>
 
@@ -14,17 +16,13 @@
   <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="https://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
   
-
-  <span class="local-search local-search-google local-search-plugin" style="right: 50px;top: 60px;;position:absolute;z-index:2;">
-    <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls">
-    <div id="local-search-result" class="local-search-result-cls"></div>
-  </span>
-  
-  <%- partial('partial/header.ejs') %>
+  <!-- 搜索功能 -->
+  <%- partial('partial/search') %>
+  <%- partial('partial/header') %>
   <%- body -%>
 
-  <%- js('js/load.js') %>
-  <%- js('js/search.js') %>
+  <%- js('js/load') %>
+  <%- js('js/search') %>
 </body>
 
 </html>

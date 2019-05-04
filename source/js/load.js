@@ -1,3 +1,7 @@
+/**
+ * 本地搜索器-load
+ */
+
 var isMobile = {
   Android: function () {
     return navigator.userAgent.match(/Android/i);

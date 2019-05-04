@@ -1,7 +1,10 @@
+<!-- /tags/ -->
+
 <div>
   <% site.tags.forEach(function (tag) { %>
   <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
   <% }) %>
 </div>
 
+<!-- 针对每个小页面进行post排布 -->
 <%- partial('partial/archive.ejs') %>

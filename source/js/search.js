@@ -1,3 +1,7 @@
+/**
+ * 本地搜索器-search
+ */
+
 var searchFunc = function(path, search_id, content_id)
 {
     var BTN = "<i id='local-search-close'>x</i>";
