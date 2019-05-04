@@ -2,8 +2,8 @@
 
 <a href="<%- url_for(post.path) %>">
   <h2><%- post.title %></h2>
-  <p><%= date(post.date, "YYYY-MM-DD") %></p>
 </a>
+<p><%= date(post.date, "YYYY-MM-DD") %></p>
 
 <% if (theme.debug.enable) { %>
   <p>has post type: <%- post.type != null %></p>

@@ -1,10 +1,13 @@
-.all_block {
-  /* 所有块的统一样式 */
-  box-shadow: 0px 0px 10px var(--my_grey);
+/**
+ * 主体块
+ */
+
+.shadow_block {
+  /* 阴影样式 */
+  box-shadow: 0px 0px 10px var(--shadow_grey);
   border-style: solid;
   border-radius: 10px;
   border-width: 0px;
-  height: 300px;
 
   margin-top: 5px;
   margin-bottom: 5px;
@@ -17,13 +20,26 @@
   overflow-y: scroll;
 }
 
-.all_block:hover {
+.shadow_block:hover {
   transition-duration: 0.5s;
   box-shadow: 0px 0px 10px black;
 }
 
-.all_block::-webkit-scrollbar {
+.shadow_block::-webkit-scrollbar {
   width: 0px;
+}
+
+.block_300 {
+  height: 300px;
+}
+
+.block_inf {
+  /* 文章内容 */
+  height: auto;
+}
+
+.block_full {
+  height: 100%;
 }
 
 .mid_block {
@@ -35,7 +51,16 @@
   margin-right: 10px;
 }
 
+.top_block {
+  padding: 10px;
+
+  text-align: center;
+  background-color: var(--box_grey);
+}
+
 .bottom_block {
   /* 放在底部用于凑长度的块 */
   text-align: center;
+  padding-top: 30px; /* 凑高度 */
+  padding-bottom: 30px;
 }

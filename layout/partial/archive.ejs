@@ -29,7 +29,7 @@
       <% page.posts.each(function(post){ %>
         <% if (!post.top) { %>
           <!-- post排版 -->
-          <div class='mid_block all_block'>
+          <div class='mid_block shadow_block block_300'>
             <%- partial('post.ejs', {
               post: post,
               page: page

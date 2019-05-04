@@ -1,11 +1,19 @@
 <!-- post内容 -->
 
-<div>
-  <h2><%= page.title %></h2>
-</div>
+<div class="mid_container">
+<div class="shadow_block mid_block block_inf">
+
   <div>
-  <p><%- date(page.date, "YYYY-MM-DD") %></p>
+    <h2><%= page.title %></h2>
+  </div>
+  <div>
+    <p><%- date(page.date, "YYYY-MM-DD") %></p>
+  </div>
+  <div>
+    <%- page.content %>
+  </div>
+  
 </div>
-<div>
-  <%- page.content %>
 </div>
+
+<%- partial('partial/paginator') %>
