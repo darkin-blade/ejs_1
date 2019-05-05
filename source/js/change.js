@@ -41,7 +41,7 @@ function change_guide()
       }
     }
     
-    var this_guide = document.getElementById("guide");
+    var this_guide = document.getElementById("guide_" + i);
     if ((this_guide.className != "guide_1")
     &&(this_guide.className != "guide_2")
     &&(this_guide.className != "guide_3"))
