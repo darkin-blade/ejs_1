@@ -72,12 +72,41 @@
 <% } %>
 
 <div class="shadow_block bottom_block">
+  <p id="bottom_block_inner">
   <% if (page && page.posts) { %>
-  <p>
     <%= page.current %> / <%= page.total %>
-  </p>
   <% } else { %>
-  <p>
-  </p>
+      
   <% } %>
+  </p>
 </div>
+
+<!-- 顶部,底部 -->
+
+<div class="right_top shadow_tool">
+  <p id="right_top_inner">Up</p>
+</div>
+<script>
+  $(".right_top").click(function () {
+    $("html, body").animate({
+      scrollTop: 0
+    }, 300);
+  });
+</script>
+
+<div class="right_bottom shadow_tool">
+  <p id="right_bottom_inner">Down</p>
+</div>
+
+<script>
+    $(document).ready(function () {
+      console.log(document.querySelectorAll(".right_bottom")[0]);
+      console.log(document.querySelectorAll(".bottom_block")[0]);
+      document.querySelectorAll(".right_bottom")[0].onclick = function () {
+        document.querySelectorAll(".bottom_block")[0].scrollIntoView({
+          block: "end",
+          behavior: "smooth"
+        });
+      };
+    });
+</script>
