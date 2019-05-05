@@ -71,10 +71,10 @@ function change_guide(direct)
       guide_3 = document.getElementById("guide_" + i);
       guide_4 = null;
       guide_5 = null;
-    } else if (this_section.className == "section_3") {
+    } else if (this_section.className == "section_4") {
       guide_4 = document.getElementById("guide_" + i);
       guide_5 = null;
-    } else if (this_section.className == "section_3") {
+    } else if (this_section.className == "section_5") {
       guide_5 = document.getElementById("guide_" + i);
     }
   }
