@@ -76,7 +76,7 @@
   <% if (page && page.posts) { %>
     <%= page.current %> / <%= page.total %>
   <% } else { %>
-    - / -
+    1 / 1
   <% } %>
   </p>
 </div>
@@ -97,10 +97,34 @@
 <div class="right_tool_1 shadow_tool">
   <p id="right_bottom">Down</p>
 </div>
-
 <script>
     $(document).ready(function () {
       document.querySelectorAll(".right_tool_1")[0].onclick = function () {
+        document.querySelectorAll(".bottom_block")[0].scrollIntoView({
+          block: "end",
+          behavior: "smooth"
+        });
+      };
+    });
+</script>
+
+<div class="left_tool_4 shadow_tool">
+    <p id="left_top">Up</p>
+</div>
+<script>
+  $(".left_tool_4").click(function () {
+    $("html, body").animate({
+      scrollTop: 0
+    }, 300);
+  });
+</script>
+
+<div class="left_tool_1 shadow_tool">
+  <p id="left_bottom">Down</p>
+</div>
+<script>
+    $(document).ready(function () {
+      document.querySelectorAll(".left_tool_1")[0].onclick = function () {
         document.querySelectorAll(".bottom_block")[0].scrollIntoView({
           block: "end",
           behavior: "smooth"
