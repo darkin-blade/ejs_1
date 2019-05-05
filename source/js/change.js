@@ -17,30 +17,25 @@ function my_load()
 
 function my_scroll()
 {
-  change_guide();
+  var e = window.event;
+  var direct = 0;
+  if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件             
+      direct = e.wheelDelta;
+  } else if (e.detail) {  //Firefox滑轮事件
+      direct = e.detail;
+  }
+  change_guide(direct);
 }
 
-function change_guide()
+function change_guide(direct)
 {
   var w_top = $(window).scrollTop();
-  var this_1 = null;
-  var this_2 = null;
-  var this_3 = null;
-  for (var i = 0; i < h_index; i ++)
+  var guide_1 = null; // 待修改的索引
+  var guide_2 = null;
+  var guide_3 = null;
+
+  for (var i = 0; i < h_index; i ++)// h_index是section/guide的总数
   {
-    var this_section = document.getElementById("section_" + i);
-    var temp_offset = $("#section_" + i).offset().top - w_top;
-    var flag = 0;
-    if (temp_offset <= 0) {
-      if (this_section.className == "section_1") {
-        this_1 = this_section;
-      } else if (this_section.className == "section_2") {
-        this_2 = this_section;
-      } else if (this_section.className == "section_3") {
-        this_3 = this_section;
-      }
-    }
-    
     var this_guide = document.getElementById("guide_" + i);
     if ((this_guide.className != "guide_1")
     &&(this_guide.className != "guide_2")
@@ -48,16 +43,29 @@ function change_guide()
     {
       $(this_guide).toggleClass("guide_active");// 关闭active属性
     }
-    
+  }
+
+  for (var i = h_index - 1; i >= 0; i --)// 从下往上遍历
+  {
+    var this_section = document.getElementById("section_" + i);
+    var temp_offset = $("#section_" + i).offset().top - w_top;
+    if (temp_offset >= 0) break;// 未到达的section
+    if (this_section.className == "section_1") {
+      this_1 = document.getElementById("guide_" + i);// 注意id寻找和1,2,3无关
+    } else if (this_section.className == "section_1") {
+      this_2 = document.getElementById("guide_" + i);// 注意id寻找和1,2,3无关
+    } else if (this_section.className == "section_1") {
+      this_3 = document.getElementById("guide_" + i);// 注意id寻找和1,2,3无关
+    }
   }
   if (this_1) {
-    console.log(1);
+    $(this_1).toggleClass("guide_active");
   }
   if (this_2) {
-    console.log(2);
+    $(this_2).toggleClass("guide_active");
   }
   if (this_3) {
-    console.log(3);
+    $(this_3).toggleClass("guide_active");
   }
 }
 
