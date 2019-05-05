@@ -170,7 +170,6 @@
 
 .left_block {
   transition-duration: 0.5s;
-  opacity: 0.3;
 
   position: fixed;
   z-index: 3;
@@ -186,10 +185,6 @@
   background-color: white;
 
   overflow-y: scroll;
-}
-
-.left_block:hover {
-  opacity: 1;
 }
 
 .top_block {
