@@ -7,12 +7,17 @@
   transition-duration: 0.5s;
   box-shadow: 0px 0px 10px var(--shadow_grey);
   border-style: solid;
-  border-radius: 10px;
+  border-radius: 20px;
   border-width: 0px;
 
   text-align: center;
   user-select: none;
   cursor: pointer;
+
+  width: 50px;
+  height: 50px;
+  max-width: 50px;
+  max-height: 50px;
 
   background-color: white;
   z-index: 2;
@@ -33,10 +38,6 @@
 
   top: 40%;
   left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-
-  width: 50px;
 }
 
 .right_pg {
@@ -45,10 +46,6 @@
 
   top: 40%;
   right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-
-  width: 50px;
 }
 
 .left_pg:hover,
@@ -64,10 +61,6 @@
 
   top: 50%;
   left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-
-  width: 50px;
 }
 
 .right_link {
@@ -76,8 +69,4 @@
 
   top: 50%;
   right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-
-  width: 50px;
 }
