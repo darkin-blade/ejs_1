@@ -14,6 +14,7 @@ function my_load()
   change_height();
   document.body.setAttribute("onscroll", "my_scroll()");// 防止报错
   my_scroll();
+  hljs.initHighlightingOnLoad();
 }
 
 function my_scroll()
@@ -54,7 +55,7 @@ function change_guide(direct)
   {
     var this_section = document.getElementById("section_" + i);
     var temp_offset = $("#section_" + i).offset().top - w_top;
-    console.log(i, temp_offset);
+    // console.log(i, temp_offset);
     if (temp_offset > 5) break;// 未到达的section
     if (this_section.className == "section_1") {
       guide_1 = document.getElementById("guide_" + i);// 注意id寻找
