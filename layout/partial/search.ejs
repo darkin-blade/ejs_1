@@ -9,11 +9,13 @@
     $(document).ready(function () {
       $(".right_tool_5").click(function () {
         $(".block_hide_top").toggleClass("block_show_top");
-        $("#local-search-input").focus();
+        $("#local-search-input").focus(); // 获得焦点
         
         var right_tool_5 = document.getElementById("right_search");
         if (right_tool_5.innerHTML == "Find") right_tool_5.innerHTML = "Close";
         else right_tool_5.innerHTML = "Find";
+        // 用于美观,调整宽度
+        my_resize();
       });
     });
   </script>
