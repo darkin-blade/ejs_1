@@ -46,11 +46,21 @@
 }
 
 .left_link {
-  top: 50%;
+  top: 47%;
   left: 10px;
 }
 
 .right_link {
-  top: 50%;
+  top: 47%;
+  right: 10px;
+}
+
+.right_top {
+  top: 54%;
+  right: 10px;
+}
+
+.right_bottom {
+  top: 33%;
   right: 10px;
 }
