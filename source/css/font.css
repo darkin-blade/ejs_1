@@ -7,6 +7,18 @@
   font-size: 35px;
 }
 
-.guide_text {
+#guide_title {
+  cursor: pointer;
+}
+
+.guide_1 {
+  cursor: pointer;
+}
+
+.guide_2 {
+  cursor: pointer;
+}
+
+.guide_3 {
   cursor: pointer;
 }

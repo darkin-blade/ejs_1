@@ -6,14 +6,13 @@ function my_resize()
 {
   change_width();
   change_height();
-  my_scroll();
 }
 
 function my_load()
 {
   change_width();
   change_height();
-  my_scroll();
+  document.body.setAttribute("onscroll", "my_scroll()");
 }
 
 function my_scroll()

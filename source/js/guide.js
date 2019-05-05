@@ -11,7 +11,12 @@ var my_guide = new Array();
 function create_guide() {
 
   var left_block = document.getElementsByClassName("left_block")[0];
-  dfs(document.body);
+
+  var guide_title = document.createElement("a");// 跳转至标题
+  guide_title.id = "guide_title";
+  guide_title.innerText = document.getElementById("post_name").innerText;
+
+  dfs(document.body);// 搜索所有的1,2,3级标题
     
   var left_guide = document.createElement("div");
   left_guide.setAttribute("class", "left_guide");
@@ -19,12 +24,19 @@ function create_guide() {
   {
     var temp_a = document.createElement("a");
     temp_a.id = "guide_" + i;
-    temp_a.setAttribute("class", "guide_text");
+    temp_a.setAttribute("class", "guide_" + my_guide[i].rank);
     temp_a.innerText = my_guide[i].name;
     temp_a.innerHTML += "<br>";
     left_guide.appendChild(temp_a);
   }
   
+  left_block.appendChild(guide_title);
+  document.querySelector("#guide_title").onclick = function () {
+    document.querySelector("#post_name").scrollIntoView({
+      block: "start",
+      behavior: "smooth"
+    });
+  };
   left_block.appendChild(left_guide);
   for (var i = 0; i < h_index; i ++)
   {
