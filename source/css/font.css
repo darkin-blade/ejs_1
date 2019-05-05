@@ -13,15 +13,18 @@
 }
 
 .guide_1 {
+  transition-duration: 0.5s;
   cursor: pointer;
 }
 
 .guide_2 {
+  transition-duration: 0.5s;
   padding-left: 10px;
   cursor: pointer;
 }
 
 .guide_3 {
+  transition-duration: 0.5s;
   padding-left: 20px;
   cursor: pointer;
 }

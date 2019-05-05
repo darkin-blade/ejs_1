@@ -41,7 +41,8 @@
         // 因为path和name只有前缀不同,所以分别排序之后相对顺序还是一样的
         for (var i = 0; i < tags_name.length; i ++)
         {
-          $("#right_tags").append("<a href='/" + tags_path[i] + "'>" + tags_name[i] + "</a>\n")
+          $("#right_tags").append("<a href='/" + tags_path[i] + "'>" + tags_name[i] + "</a>\n");
+          console.log(tags_name[i]);
         }
     </script>
     <!-- 全部categories -->

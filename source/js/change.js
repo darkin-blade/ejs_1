@@ -12,7 +12,7 @@ function my_load()
 {
   change_width();
   change_height();
-  document.body.setAttribute("onscroll", "my_scroll()");
+  document.body.setAttribute("onscroll", "my_scroll()");// 防止报错
 }
 
 function my_scroll()
@@ -23,9 +23,12 @@ function my_scroll()
 function change_guide()
 {
   var w_top = $(window).scrollTop();
+  var this_1 = null;
+  var this_2 = null;
+  var this_3 = null;
   for (var i = 0; i < h_index; i ++)
   {
-    console.log(i, $("#section_" + i).offset().top - w_top);
+    var temp_offset = $("#section_" + i).offset().top - w_top;
   }
 }
 
