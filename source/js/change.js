@@ -53,9 +53,10 @@ function change_width() // 自动调整元素宽度
         }
     }
 
+    // 文章块
     b_padding = $(".main_block").css("padding-left"); // padding转数字
     b_margin = $(".main_block").css("margin-left"); // margin转数字
-    if (b_padding) // 文章块,不分列
+    if (b_padding) // 不分列
     {
         b_padding = (Number(b_padding.replace("px", "")));
         b_margin = (Number(b_margin.replace("px", "")));
@@ -70,9 +71,10 @@ function change_width() // 自动调整元素宽度
         $(".main_block").css("left", b_left + "px"); // 减去多余的padding
     }
 
+    // tag/category块
     b_padding = $(".center_block").css("padding-left"); // padding转数字
     b_margin = $(".center_block").css("margin-left"); // margin转数字
-    if (b_padding) // 文章块,不分列
+    if (b_padding)
     {
         b_padding = (Number(b_padding.replace("px", "")));
         b_margin = (Number(b_margin.replace("px", "")));
@@ -85,6 +87,24 @@ function change_width() // 自动调整元素宽度
         var b_left = (w_width - b_width) / 2 - b_offset;
         $(".center_block").css("width", b_width + "px");
         $(".center_block").css("left", b_left + "px"); // 减去多余的padding
+    }
+
+    // 搜索块
+    b_padding = $(".top_block").css("padding-left"); // padding转数字
+    b_margin = $(".top_block").css("margin-left"); // margin转数字
+    if (b_padding)
+    {
+        b_padding = (Number(b_padding.replace("px", "")));
+        b_margin = (Number(b_margin.replace("px", "")));
+        var b_offset = b_padding + b_margin;
+        console.log(b_offset);
+
+        rate = main_block_rate(w_width) * 0.9; // 比文章块略小
+
+        var b_width = w_width * rate;
+        var b_left = (w_width - b_width) / 2 - b_offset;
+        $(".top_block").css("width", b_width + "px");
+        $(".top_block").css("left", b_left + "px"); // 减去多余的padding
     }
 }
 

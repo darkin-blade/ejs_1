@@ -61,6 +61,14 @@
   padding-bottom: 500px;
 }
 
+.block_hide_top {
+  top: -70%;
+}
+
+.block_show_top {
+  top: 100px;
+}
+
 .block_hide_right {
   right: -70%;
 }
@@ -117,7 +125,8 @@
   padding-right: 50px;
 }
 
-.top_block {
+.title_block {
+  /* 网页标题块 */
   text-align: center;
   background-color: var(--box_grey);
   margin-bottom: 100px;
@@ -181,4 +190,11 @@
 
 .left_block:hover {
   opacity: 1;
+}
+
+.top_block {
+  /* 搜索框 */
+  position: fixed;
+  z-index: 4;
+  background-color: white;
 }

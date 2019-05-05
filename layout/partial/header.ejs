@@ -2,9 +2,9 @@
 
 <!-- 页面头,标题 -->
 <% if (is_home() && (page.current == 1)) { %>
-  <div class="top_block block_full_mid">
+  <div class="title_block block_full_mid">
 <% } else { %>
-  <div class="top_block block_100_mid">
+  <div class="title_block block_100_mid">
 <% } %>
   <a href="<%- url_for(theme.menu.Home) %>">
     <h1><%= config.title %></h1>

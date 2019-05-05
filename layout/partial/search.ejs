@@ -1,8 +1,26 @@
 <!-- 搜索功能 -->
 
 <% if (theme.local_search.enable) { %>
-  <span class="local-search local-search-google local-search-plugin" style="right: 50px;top: 60px;;position:absolute;z-index:2;">
-    <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls">
-    <div id="local-search-result" class="local-search-result-cls"></div>
-  </span>
+  <div class="right_tool_5 shadow_tool">
+    <p id="left_link">Find</p>
+  </div>
+  <script>
+    $(document).ready(function () {
+      $(".right_tool_5").click(function () {
+        $(".block_hide_top").toggleClass("block_show_top");
+        var right_tool_5 = document.getElementById("left_link");
+      });
+    });
+  </script>
+
+
+
+  <div class="shadow_block block_hide_top top_block">
+
+    <span class="local-search local-search-google local-search-plugin" style="position: relative; z-index: 2;">
+        <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls">
+        <div id="local-search-result" class="local-search-result-cls"></div>
+    </span>
+
+  </div>
 <% } %>
