@@ -97,7 +97,7 @@
 
 .main_block {
   /* 文章内容,不需要考虑并排 */
-  word-break: break-all; 
+  word-break: break-all;
   /* 强制换行 */
 
   float: left;
@@ -152,6 +152,7 @@
 }
 
 .right_block {
+  word-break: break-all;
   position: fixed;
   z-index: 3;
   top: 20%;

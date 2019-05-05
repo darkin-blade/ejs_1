@@ -23,23 +23,30 @@
 
     <% if (theme.debug.enable) { %> 
       <p>tags: <%- site.tags %></p>
-      <script>
-          all_tags = new Array();
-          '<% site.tags.forEach(function (tag) { %>'
-            var temp = '<%- tag.name %>';
-            console.log(temp);
-            all_tags.push(temp);
-          '<% }) %>'
-          console.log(all_tags.sort());
-      </script>
     <% } %>
-    <!-- 全部tags -->
-    <div>
+    <!-- 全部tags排序 -->
+    <div id="right_tags">
       <p>Tags</p>
-      <% site.tags.forEach(function (tag) { %>
-        <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
-      <% }) %>
     </div>
+    <script>
+        tags_name = new Array();
+        tags_path = new Array();
+
+        '<% site.tags.forEach(function (tag) { %>'
+          var temp = '<%- tag.name %>';
+          console.log(temp);
+          tags_name.push(temp);
+          temp = '<%- tag.path %>';
+          tags_path.push(temp);
+        '<% }) %>'
+        // 因为path和name只有前缀不同,所以分别排序之后相对顺序还是一样的
+        console.log(tags_name.sort());
+        console.log(tags_path.sort());
+        for (var i = 0; i < tags_name.length; i ++)
+        {
+          $("#right_tags").append("<a href='/" + tags_path[i] + "'>" + tags_name[i] + "</a>\n")
+        }
+    </script>
     <!-- 全部categories -->
     <div>
       <p>Categories</p>
