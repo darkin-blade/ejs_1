@@ -1,7 +1,13 @@
 <!-- 分页器 -->
 
-<% if (page && page.posts) { %>
-  
+<% if (theme.debug.enable) { %>
+  <div>
+    <p>has page: <%- page != null %></p>
+  </div>
+<% } %>
+
+<% if (page && page.posts && (!is_post())) { %>
+  <!-- 不是文章页 -->
   <% if (page.total > 1) { %>
     <!-- 上一页 -->
       <% if (page.prev != 0) { %>
@@ -27,6 +33,41 @@
       <% } %>
 
   <% } %>
+
+<% } else if (is_post()) { %>
+  <!-- 文章页 -->
+    <% if (theme.debug.enable) { %>
+      <div>
+        <p>has posts: <%- page.posts != null %></p>
+        <p>page.total: <%- page.total %></p>
+        <p>page.current: <%- page.current %></p>
+        <p>page.next: <%- page.next_link %></p>
+        <p>page.prev: <%- page.prev_link %></p>
+        <p>page: <%= page.next.path %></p>
+      </div>
+    <% } %>
+
+    <% if (page.prev) { %>
+      <div class="left_pg shadow_tool">
+          <script>
+              $(".left_pg").click(function () {
+                location = '<%= url_for(page.prev.path) %>';
+              });
+          </script>
+          <p>Prev</p>
+      </div>
+    <% } %>
+    <!-- 下一页 -->
+    <% if (page.next) { %>
+      <div class="right_pg shadow_tool">
+          <script>
+              $(".right_pg").click(function () {
+                location = '<%= url_for(page.next.path) %>';
+              });
+          </script>
+          <p>Next</p>
+      </div>
+    <% } %>
 
 <% } %>
 
