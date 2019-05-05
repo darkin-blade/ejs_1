@@ -3,13 +3,12 @@
 <% if (theme.local_search.enable) { %>
 
   <div class="right_tool_5 shadow_tool">
-    <p id="left_link">Find</p>
+    <p id="right_search">Find</p>
   </div>
   <script>
     $(document).ready(function () {
       $(".right_tool_5").click(function () {
         $(".block_hide_top").toggleClass("block_show_top");
-        var right_tool_5 = document.getElementById("left_link");
         $("#local-search-input").focus();
       });
     });
