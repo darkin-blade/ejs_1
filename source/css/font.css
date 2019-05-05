@@ -6,3 +6,7 @@
   text-align: center;
   font-size: 35px;
 }
+
+.guide_text {
+  cursor: pointer;
+}

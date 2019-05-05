@@ -19,6 +19,7 @@ function create_guide() {
   {
     var temp_a = document.createElement("a");
     temp_a.id = "guide_" + i;
+    temp_a.setAttribute("class", "guide_text");
     temp_a.innerText = my_guide[i].name;
     temp_a.innerHTML += "<br>";
     left_guide.appendChild(temp_a);
