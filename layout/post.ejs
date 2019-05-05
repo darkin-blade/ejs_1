@@ -40,8 +40,13 @@
         <a href="<%- url_for(category.path) %>"><%- category.name %></a>
       <% }) %>
     </div>
+    <!-- 文章的附加导航 -->
+    <div>
+      
+    </div>
 </div>
 
+<!-- 左侧栏的开关 -->
 <div class="left_tool_3 shadow_tool">
   <p id="left_link">Show</p>
 </div>
@@ -62,6 +67,7 @@
     });
   });
 </script>
+
 
 <!-- 分页器,貌似没用 -->
 <%- partial('partial/paginator') %>
