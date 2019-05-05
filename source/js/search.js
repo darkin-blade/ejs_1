@@ -102,7 +102,7 @@ var searchFunc = function(path, search_id, content_id)
 
                             keywords.forEach(function(keyword)
                             {
-                                var regS = new RegExp(keyword, "gi");
+                              var regS = new RegExp(keyword, "gi");
                                 match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
                             });
 
@@ -121,7 +121,7 @@ var searchFunc = function(path, search_id, content_id)
         }
     });
     $(document).on('click', '#local-search-close', function()
-    {
+    {// 关闭
         $('#local-search-input').val('');
         $('#local-search-result').html('');
     });

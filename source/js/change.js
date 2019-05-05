@@ -79,7 +79,6 @@ function change_width() // 自动调整元素宽度
         b_padding = (Number(b_padding.replace("px", "")));
         b_margin = (Number(b_margin.replace("px", "")));
         var b_offset = b_padding + b_margin;
-        console.log(b_offset);
 
         rate = main_block_rate(w_width);
 
@@ -97,7 +96,6 @@ function change_width() // 自动调整元素宽度
         b_padding = (Number(b_padding.replace("px", "")));
         b_margin = (Number(b_margin.replace("px", "")));
         var b_offset = b_padding + b_margin;
-        console.log(b_offset);
 
         rate = main_block_rate(w_width) * 0.9; // 比文章块略小
 
