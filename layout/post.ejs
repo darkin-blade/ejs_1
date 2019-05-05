@@ -3,12 +3,13 @@
 <% if (theme.debug.enable) { %>
 <% } %>
 
-<!-- 主体部分 -->
+<!-- 主体部分,文章内容 -->
 <div class="mid_container">
-<div class="shadow_block main_block block_inf">
+<div class="shadow_block main_block block_inf" id="mid_post">
 
+  <!-- 文章标题 -->
   <div>
-    <h2><%= page.title %></h2>
+    <p id="post_name"><%= page.title %></p>
   </div>
   <div>
     <p><%- date(page.date, "YYYY-MM-DD") %></p>
