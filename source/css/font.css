@@ -9,6 +9,7 @@
 
 #guide_title {
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .guide_1 {
@@ -16,9 +17,23 @@
 }
 
 .guide_2 {
+  padding-left: 10px;
   cursor: pointer;
 }
 
 .guide_3 {
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.guide_active_1 {
+  cursor: pointer;
+}
+
+.guide_active_2 {
+  cursor: pointer;
+}
+
+.guide_active_3 {
   cursor: pointer;
 }

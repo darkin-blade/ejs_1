@@ -13,8 +13,8 @@ function create_guide() {
   var left_block = document.getElementsByClassName("left_block")[0];
 
   var guide_title = document.createElement("a");// 跳转至标题
-  guide_title.id = "guide_title";
   guide_title.innerText = document.getElementById("post_name").innerText;
+  guide_title.innerHTML = "<div id='guide_title'>" + guide_title.innerHTML + "</div>";
 
   dfs(document.body);// 搜索所有的1,2,3级标题
     
@@ -24,7 +24,7 @@ function create_guide() {
   {
     var temp_a = document.createElement("a");
     temp_a.id = "guide_" + i;
-    temp_a.setAttribute("class", "guide_" + my_guide[i].rank);
+    temp_a.setAttribute("class", "guide_" + my_guide[i].rank);// 设置标题级数
     temp_a.innerText = my_guide[i].name;
     temp_a.innerHTML += "<br>";
     left_guide.appendChild(temp_a);
