@@ -56,6 +56,23 @@ function change_width() // 自动调整元素宽度
         $(".main_block").css("width", b_width + "px");
         $(".main_block").css("left", b_left + "px"); // 减去多余的padding
     }
+
+    b_padding = $(".center_block").css("padding-left"); // padding转数字
+    b_margin = $(".center_block").css("margin-left"); // margin转数字
+    if (b_padding) // 文章块,不分列
+    {
+        b_padding = (Number(b_padding.replace("px", "")));
+        b_margin = (Number(b_margin.replace("px", "")));
+        var b_offset = b_padding + b_margin;
+        console.log(b_offset);
+
+        rate = main_block_rate(w_width);
+
+        var b_width = w_width * rate;
+        var b_left = (w_width - b_width) / 2 - b_offset;
+        $(".center_block").css("width", b_width + "px");
+        $(".center_block").css("left", b_left + "px"); // 减去多余的padding
+    }
 }
 
 function main_block_rate (width)

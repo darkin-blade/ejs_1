@@ -7,10 +7,6 @@ menu:
   Tags: /tags
   Categories: /categories
 
-max_num:
-  Archives: 30
-  Index: 20
-
 search:
 	path: search.xml
 	field: post

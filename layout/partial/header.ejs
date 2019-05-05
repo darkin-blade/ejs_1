@@ -15,8 +15,18 @@
 <!-- 每一项逐个生成 -->
 <div class="block_hide_right shadow_block right_block">
     <% for (var name in theme.menu) { %>
-      <a href="<%- url_for(theme.menu[name]) %>"><h2><%= name %></h2></a>
+      <a href="<%- url_for(theme.menu[name]) %>"><p><%= name %></p></a>
     <% } %>
+
+    <% if (theme.debug.enable) { %> 
+      <p>tags: <%- site.tags %></p>
+    <% } %>
+
+    <div>
+      <% site.tags.forEach(function (tag) { %>
+        <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
+      <% }) %>
+    </div>
 </div>
 
 <div class="right_link shadow_tool">

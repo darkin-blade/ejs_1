@@ -10,10 +10,12 @@
 
 <!-- 目录总览 -->
 <% if (!is_category()) { %>
-<div>
-  <% site.categories.forEach(function (category) { %>
-  <a href="<%- url_for(category.path) %>"><%- category.name %></a>
-  <% }) %>
+<div class="mid_container">
+  <div class="shadow_block center_block block_inf">
+    <% site.categories.forEach(function (category) { %>
+    <a href="<%- url_for(category.path) %>"><%- category.name %></a>
+    <% }) %>
+  </div>
 </div>
 <% } %>
 

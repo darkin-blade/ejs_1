@@ -7,7 +7,7 @@
     <% if (!page.prev) { %>
       <!-- 如果是主页 -->
       <% if (is_home()) { %>
-        <% site.posts.each(function(post){ %>
+        <% site.posts.each(function(post) { %>
           <% if (post.top) { %>
             <% if (page.type == undefined || post.type == page.type) { %>
               <h3>TODO</h3>

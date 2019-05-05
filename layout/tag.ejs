@@ -10,10 +10,12 @@
 
 <!-- 标签总览 -->
 <% if (!is_tag()) { %>
-<div>
-  <% site.tags.forEach(function (tag) { %>
-  <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
-  <% }) %>
+<div class="mid_container">
+  <div class="shadow_block center_block block_inf">
+    <% site.tags.forEach(function (tag) { %>
+      <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
+    <% }) %>
+  </div>
 </div>
 <% } %>
 
