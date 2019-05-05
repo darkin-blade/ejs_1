@@ -45,27 +45,35 @@ function change_guide(direct)
     }
   }
 
-  for (var i = h_index - 1; i >= 0; i --)// 从下往上遍历
+  for (var i = 0; i < h_index; i ++)// 从上往下遍历
   {
     var this_section = document.getElementById("section_" + i);
     var temp_offset = $("#section_" + i).offset().top - w_top;
-    if (temp_offset >= 0) break;// 未到达的section
+    console.log(i, temp_offset);
+    if (temp_offset > 0) break;// 未到达的section
     if (this_section.className == "section_1") {
-      this_1 = document.getElementById("guide_" + i);// 注意id寻找和1,2,3无关
-    } else if (this_section.className == "section_1") {
-      this_2 = document.getElementById("guide_" + i);// 注意id寻找和1,2,3无关
-    } else if (this_section.className == "section_1") {
-      this_3 = document.getElementById("guide_" + i);// 注意id寻找和1,2,3无关
+      guide_1 = document.getElementById("guide_" + i);// 注意id寻找和1,2,3无关
+      guide_2 = null;
+      guide_3 = null;
+    } else if (this_section.className == "section_2") {
+      guide_2 = document.getElementById("guide_" + i);// 注意id寻找和1,2,3无关
+      guide_3 = null;
+    } else if (this_section.className == "section_3") {
+      guide_3 = document.getElementById("guide_" + i);// 注意id寻找和1,2,3无关
     }
   }
-  if (this_1) {
-    $(this_1).toggleClass("guide_active");
+
+  if (guide_1) {
+    console.log(1);
+    $(guide_1).toggleClass("guide_active");
   }
-  if (this_2) {
-    $(this_2).toggleClass("guide_active");
+  if (guide_2) {
+    console.log(2);
+    $(guide_2).toggleClass("guide_active");
   }
-  if (this_3) {
-    $(this_3).toggleClass("guide_active");
+  if (guide_3) {
+    console.log(3);
+    $(guide_3).toggleClass("guide_active");
   }
 }
 
