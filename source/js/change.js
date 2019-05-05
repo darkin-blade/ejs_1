@@ -28,7 +28,36 @@ function change_guide()
   var this_3 = null;
   for (var i = 0; i < h_index; i ++)
   {
+    var this_section = document.getElementById("section_" + i);
     var temp_offset = $("#section_" + i).offset().top - w_top;
+    var flag = 0;
+    if (temp_offset <= 0) {
+      if (this_section.className == "section_1") {
+        this_1 = this_section;
+      } else if (this_section.className == "section_2") {
+        this_2 = this_section;
+      } else if (this_section.className == "section_3") {
+        this_3 = this_section;
+      }
+    }
+    
+    var this_guide = document.getElementById("guide");
+    if ((this_guide.className != "guide_1")
+    &&(this_guide.className != "guide_2")
+    &&(this_guide.className != "guide_3"))
+    {
+      $(this_guide).toggleClass("guide_active");// 关闭active属性
+    }
+    
+  }
+  if (this_1) {
+    console.log(1);
+  }
+  if (this_2) {
+    console.log(2);
+  }
+  if (this_3) {
+    console.log(3);
   }
 }
 

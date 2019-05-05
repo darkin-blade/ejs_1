@@ -69,7 +69,7 @@ function dfs(my_node) {
     }
   if (temp != 0)
   {
-    my_node.innerHTML = "<div id='section_" + h_index + "'>" + my_node.innerHTML + "</div>";// 给文章中的section增加id
+    my_node.innerHTML = "<div id='section_" + h_index + "' class='section_" + temp + "'>" + my_node.innerHTML + "</div>";// 给文章中的section增加id
     h_index ++;
     var t_struct = Object.create(h_struct);
     t_struct.rank = temp;

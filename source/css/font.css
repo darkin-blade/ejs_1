@@ -29,14 +29,6 @@
   cursor: pointer;
 }
 
-.guide_active_1 {
-  cursor: pointer;
-}
-
-.guide_active_2 {
-  cursor: pointer;
-}
-
-.guide_active_3 {
-  cursor: pointer;
+.guide_active {
+  color: var(--text_orange);
 }
