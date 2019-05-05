@@ -151,6 +151,8 @@
   width: 30%;
   max-width: 400px;
 
+  padding-top: 20px;
+
   background-color: white;
 
   overflow-y: scroll;
@@ -164,6 +166,8 @@
   height: 60%;
   width: 20%;
   max-width: 300px;
+
+  padding-top: 20px;
 
   background-color: white;
 

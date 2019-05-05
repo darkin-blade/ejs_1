@@ -12,19 +12,30 @@
 </div>
 
 
-<!-- 每一项逐个生成 -->
 <div class="block_hide_right shadow_block right_block">
-    <% for (var name in theme.menu) { %>
-      <a href="<%- url_for(theme.menu[name]) %>"><p><%= name %></p></a>
-    <% } %>
+    <!-- 每一项逐个生成 -->
+    <div>
+      <p>Links</p>
+      <% for (var name in theme.menu) { %>
+        <a href="<%- url_for(theme.menu[name]) %>"><%= name %></a>
+      <% } %>
+    </div>
 
     <% if (theme.debug.enable) { %> 
       <p>tags: <%- site.tags %></p>
     <% } %>
-
+    <!-- 全部tags -->
     <div>
+      <p>Tags</p>
       <% site.tags.forEach(function (tag) { %>
         <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
+      <% }) %>
+    </div>
+    <!-- 全部categories -->
+    <div>
+      <p>Categories</p>
+      <% site.categories.forEach(function (category) { %>
+        <a href="<%- url_for(category.path) %>"><%- category.name %></a>
       <% }) %>
     </div>
 </div>
