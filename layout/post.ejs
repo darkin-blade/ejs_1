@@ -1,5 +1,12 @@
 <!-- post内容 -->
 
+<% if (theme.debug.enable) { %>
+  <script>
+    console.log('<%- page.content %>');
+  </script>
+<% } %>
+
+<!-- 主体部分 -->
 <div class="mid_container">
 <div class="shadow_block main_block block_inf">
 
@@ -16,6 +23,7 @@
 </div>
 </div>
 
+<!-- 显示文章tag和category -->
 <div class="block_hide_left shadow_block left_block">
     <% if (theme.debug.enable) { %>
       <p>has tags: <%- page.tags != null %></p>

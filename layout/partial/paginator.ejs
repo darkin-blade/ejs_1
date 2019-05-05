@@ -11,9 +11,9 @@
   <% if (page.total > 1) { %>
     <!-- 上一页 -->
       <% if (page.prev != 0) { %>
-        <div class="left_pg shadow_tool">
+        <div class="left_tool_2 shadow_tool">
             <script>
-                $(".left_pg").click(function () {
+                $(".left_tool_2").click(function () {
                   location = '<%= url_for(page.prev_link) %>';
                 });
             </script>
@@ -22,9 +22,9 @@
       <% } %>
       <!-- 下一页 -->
       <% if (page.next != 0) { %>
-        <div class="right_pg shadow_tool">
+        <div class="right_tool_2 shadow_tool">
             <script>
-                $(".right_pg").click(function () {
+                $(".right_tool_2").click(function () {
                   location = '<%= url_for(page.next_link) %>';
                 });
             </script>
@@ -48,9 +48,9 @@
     <% } %>
 
     <% if (page.prev) { %>
-      <div class="left_pg shadow_tool">
+      <div class="left_tool_2 shadow_tool">
           <script>
-              $(".left_pg").click(function () {
+              $(".left_tool_2").click(function () {
                 location = '<%= url_for(page.prev.path) %>';
               });
           </script>
@@ -59,9 +59,9 @@
     <% } %>
     <!-- 下一页 -->
     <% if (page.next) { %>
-      <div class="right_pg shadow_tool">
+      <div class="right_tool_2 shadow_tool">
           <script>
-              $(".right_pg").click(function () {
+              $(".right_tool_2").click(function () {
                 location = '<%= url_for(page.next.path) %>';
               });
           </script>
@@ -76,33 +76,33 @@
   <% if (page && page.posts) { %>
     <%= page.current %> / <%= page.total %>
   <% } else { %>
-      
+    - / -
   <% } %>
   </p>
 </div>
 
 <!-- 顶部,底部 -->
 
-<div class="right_top shadow_tool">
-  <p id="right_top_inner">Up</p>
+<div class="right_tool_4 shadow_tool">
+  <p id="right_top">Up</p>
 </div>
 <script>
-  $(".right_top").click(function () {
+  $(".right_tool_4").click(function () {
     $("html, body").animate({
       scrollTop: 0
     }, 300);
   });
 </script>
 
-<div class="right_bottom shadow_tool">
-  <p id="right_bottom_inner">Down</p>
+<div class="right_tool_1 shadow_tool">
+  <p id="right_bottom">Down</p>
 </div>
 
 <script>
     $(document).ready(function () {
-      console.log(document.querySelectorAll(".right_bottom")[0]);
+      console.log(document.querySelectorAll(".right_tool_1")[0]);
       console.log(document.querySelectorAll(".bottom_block")[0]);
-      document.querySelectorAll(".right_bottom")[0].onclick = function () {
+      document.querySelectorAll(".right_tool_1")[0].onclick = function () {
         document.querySelectorAll(".bottom_block")[0].scrollIntoView({
           block: "end",
           behavior: "smooth"

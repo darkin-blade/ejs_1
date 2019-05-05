@@ -40,16 +40,16 @@
     </div>
 </div>
 
-<div class="right_link shadow_tool">
+<div class="right_tool_3 shadow_tool">
   <script>
     $(document).ready(function () {
-      $(".right_link").click(function () {
+      $(".right_tool_3").click(function () {
         $(".block_hide_right").toggleClass("block_show_right");
-        var right_link = document.getElementById("right_link_inner");
-        if (right_link.innerHTML == "Show") right_link.innerHTML = "Hide";
-        else right_link.innerHTML = "Show";
+        var right_tool_3 = document.getElementById("right_link");
+        if (right_tool_3.innerHTML == "Show") right_tool_3.innerHTML = "Hide";
+        else right_tool_3.innerHTML = "Show";
       });
     });
   </script>
-  <p id="right_link_inner">Show</p>
+  <p id="right_link">Show</p>
 </div>

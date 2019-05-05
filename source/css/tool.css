@@ -35,32 +35,18 @@
   z-index: -1;
 }
 
-.left_pg {
-  top: 40%;
+.left_tool_1,
+.left_tool_2,
+.left_tool_3,
+.left_tool_4,
+.left_tool_5 {
   left: 10px;
 }
 
-.right_pg {
-  top: 40%;
-  right: 10px;
-}
-
-.left_link {
-  top: 47%;
-  left: 10px;
-}
-
-.right_link {
-  top: 47%;
-  right: 10px;
-}
-
-.right_top {
-  top: 54%;
-  right: 10px;
-}
-
-.right_bottom {
-  top: 33%;
+.right_tool_1,
+.right_tool_2,
+.right_tool_3,
+.right_tool_4,
+.right_tool_5 {
   right: 10px;
 }

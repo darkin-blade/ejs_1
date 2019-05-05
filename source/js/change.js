@@ -5,11 +5,24 @@
 function my_resize()
 {
   change_width();
+  change_height();
 }
 
 function my_load()
 {
   change_width();
+  change_height();
+}
+
+function change_height()
+{
+  var w_height = document.body.clientHeight;
+  var base_height = w_height * 0.3;
+  for (var i = 1; i <= 5; i ++)
+  {
+    $(".right_tool_" + i).css("top", (base_height + i * 60) + "px");
+    $(".left_tool_" + i).css("top", (base_height + i * 60) + "px");
+  }
 }
 
 function change_width() // 自动调整元素宽度
