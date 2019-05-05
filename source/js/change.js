@@ -13,6 +13,7 @@ function my_load()
   change_width();
   change_height();
   document.body.setAttribute("onscroll", "my_scroll()");// 防止报错
+  my_scroll();
 }
 
 function my_scroll()
@@ -33,13 +34,17 @@ function change_guide(direct)
   var guide_1 = null; // 待修改的索引
   var guide_2 = null;
   var guide_3 = null;
+  var guide_4 = null;
+  var guide_5 = null;
 
   for (var i = 0; i < h_index; i ++)// h_index是section/guide的总数
   {
     var this_guide = document.getElementById("guide_" + i);
     if ((this_guide.className != "guide_1")
     &&(this_guide.className != "guide_2")
-    &&(this_guide.className != "guide_3"))
+    &&(this_guide.className != "guide_3")
+    &&(this_guide.className != "guide_4")
+    &&(this_guide.className != "guide_5"))
     {
       $(this_guide).toggleClass("guide_active");// 关闭active属性
     }
@@ -50,30 +55,44 @@ function change_guide(direct)
     var this_section = document.getElementById("section_" + i);
     var temp_offset = $("#section_" + i).offset().top - w_top;
     console.log(i, temp_offset);
-    if (temp_offset > 0) break;// 未到达的section
+    if (temp_offset > 5) break;// 未到达的section
     if (this_section.className == "section_1") {
-      guide_1 = document.getElementById("guide_" + i);// 注意id寻找和1,2,3无关
+      guide_1 = document.getElementById("guide_" + i);// 注意id寻找
       guide_2 = null;
       guide_3 = null;
+      guide_4 = null;
+      guide_5 = null;
     } else if (this_section.className == "section_2") {
-      guide_2 = document.getElementById("guide_" + i);// 注意id寻找和1,2,3无关
+      guide_2 = document.getElementById("guide_" + i);
       guide_3 = null;
+      guide_4 = null;
+      guide_5 = null;
     } else if (this_section.className == "section_3") {
-      guide_3 = document.getElementById("guide_" + i);// 注意id寻找和1,2,3无关
+      guide_3 = document.getElementById("guide_" + i);
+      guide_4 = null;
+      guide_5 = null;
+    } else if (this_section.className == "section_3") {
+      guide_4 = document.getElementById("guide_" + i);
+      guide_5 = null;
+    } else if (this_section.className == "section_3") {
+      guide_5 = document.getElementById("guide_" + i);
     }
   }
 
   if (guide_1) {
-    console.log(1);
     $(guide_1).toggleClass("guide_active");
   }
   if (guide_2) {
-    console.log(2);
     $(guide_2).toggleClass("guide_active");
   }
   if (guide_3) {
-    console.log(3);
     $(guide_3).toggleClass("guide_active");
+  }
+  if (guide_4) {
+    $(guide_4).toggleClass("guide_active");
+  }
+  if (guide_5) {
+    $(guide_5).toggleClass("guide_active");
   }
 }
 

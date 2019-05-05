@@ -58,15 +58,23 @@ function dfs(my_node) {
   if (my_node.tagName == 'H1')
   {
     temp = 1;
-    }
+  }
   else if (my_node.tagName == 'H2')
   {
     temp = 2;
-    }
+  }
   else if (my_node.tagName == 'H3')
   {
     temp = 3;
-    }
+  }
+  else if (my_node.tagName == 'H4')
+  {
+    temp = 4;
+  }
+  else if (my_node.tagName == 'H5')
+  {
+    temp = 5;
+  }
   if (temp != 0)
   {
     my_node.innerHTML = "<div id='section_" + h_index + "' class='section_" + temp + "'>" + my_node.innerHTML + "</div>";// 给文章中的section增加id
