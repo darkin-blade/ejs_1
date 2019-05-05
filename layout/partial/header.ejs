@@ -23,6 +23,15 @@
 
     <% if (theme.debug.enable) { %> 
       <p>tags: <%- site.tags %></p>
+      <script>
+          all_tags = new Array();
+          '<% site.tags.forEach(function (tag) { %>'
+            var temp = '<%- tag.name %>';
+            console.log(temp);
+            all_tags.push(temp);
+          '<% }) %>'
+          console.log(all_tags.sort());
+      </script>
     <% } %>
     <!-- 全部tags -->
     <div>

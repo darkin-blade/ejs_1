@@ -1,1 +1,1 @@
-alert(0);
+console.log('guide.js')

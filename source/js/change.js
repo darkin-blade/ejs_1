@@ -62,7 +62,6 @@ function change_width() // 自动调整元素宽度
         b_padding = (Number(b_padding.replace("px", "")));
         b_margin = (Number(b_margin.replace("px", "")));
         var b_offset = b_padding + b_margin;
-        console.log(b_offset);
 
         var b_width = w_width * rate;
         var b_left = (w_width - b_width) / 2 - b_offset;
