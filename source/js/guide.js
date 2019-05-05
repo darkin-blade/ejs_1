@@ -1,5 +1,5 @@
 // 全局变量
-var h_index = 0;
+var h_index = 0;// change.js中也有用到
 // 结构体
 var h_struct = {
   rank: 0,// 1 for h1, 2 for h2 ...
@@ -17,7 +17,6 @@ function create_guide() {
   left_guide.setAttribute("class", "left_guide");
   for (var i = 0; i < h_index; i ++)
   {
-    console.log(my_guide[i].rank, my_guide[i].name);
     var temp_a = document.createElement("a");
     temp_a.id = "guide_" + i;
     temp_a.innerText = my_guide[i].name;

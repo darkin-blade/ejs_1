@@ -6,12 +6,28 @@ function my_resize()
 {
   change_width();
   change_height();
+  my_scroll();
 }
 
 function my_load()
 {
   change_width();
   change_height();
+  my_scroll();
+}
+
+function my_scroll()
+{
+  change_guide();
+}
+
+function change_guide()
+{
+  var w_top = $(window).scrollTop();
+  for (var i = 0; i < h_index; i ++)
+  {
+    console.log(i, $("#section_" + i).offset().top - w_top);
+  }
 }
 
 function change_height()

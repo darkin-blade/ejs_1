@@ -16,7 +16,7 @@
   
 </head>
 
-<body onload="my_load()" onresize="my_resize()">
+<body onload="my_load()" onresize="my_resize()" onscroll="my_scroll()">
   
   <% if (theme.debug.enable) { %>
     <p>is home: <%- is_home() %></p>
@@ -26,10 +26,6 @@
     <p>is post: <%- is_post() %></p>
     <p>pagecur: <%- page.current %></p>
   <% } %>
-
-
-  <!-- bootstrap -->
-  <%- js('js/bootstrap') %>
   
   <!-- 链接 -->
   <%- partial('partial/header') %>
