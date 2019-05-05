@@ -30,16 +30,20 @@
     <!-- 文章的tags -->
     <div>
       <p>Tags</p>
-      <% page.tags.forEach(function (tag) { %>
-        <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
-      <% }) %>
+      <% if (page.tags) { %>
+        <% page.tags.forEach(function (tag) { %>
+          <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
+        <% }) %>
+      <% } %>
     </div>
     <!-- 文章的categories -->
     <div>
       <p>Categories</p>
-      <% page.categories.forEach(function (category) { %>
-        <a href="<%- url_for(category.path) %>"><%- category.name %></a>
-      <% }) %>
+      <% if (page.categories) { %>
+        <% page.categories.forEach(function (category) { %>
+          <a href="<%- url_for(category.path) %>"><%- category.name %></a>
+        <% }) %>
+      <% } %>
     </div>
 
     <!-- 文章的附加导航 -->
