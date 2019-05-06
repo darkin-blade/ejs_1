@@ -2,19 +2,20 @@
  * 自动调整宽度
  */
 
+// 窗口发生变化
 function my_resize()
 {
   change_width();
   change_height();
 }
 
+// 网页加载后执行的代码
 function my_load()
 {
   change_width();
   change_height();
   document.body.setAttribute("onscroll", "my_scroll()");// 防止报错
   my_scroll();
-  hljs.initHighlightingOnLoad();
 }
 
 function my_scroll()
@@ -29,6 +30,7 @@ function my_scroll()
   change_guide(direct);
 }
 
+// 附加导航功能
 function change_guide(direct)
 {
   var w_top = $(window).scrollTop();
@@ -100,7 +102,7 @@ function change_guide(direct)
 function change_height()
 {
   var w_height = document.body.clientHeight;
-  var base_height = w_height * 0.3;
+  var base_height = w_height * 0.25;// 第一个按钮距顶部距离
   for (var i = 1; i <= 5; i ++)
   {
     $(".right_tool_" + i).css("top", (base_height + i * 60) + "px");
@@ -228,7 +230,7 @@ function left_block_rate (width)
   }
 }
 
-function getScrollTop() // 计算滚动条
+function getScrollTop() // 计算滚动条,好像没用
 { 
   var scrollTop = 0; 
   if (document.documentElement && document.documentElement.scrollTop)

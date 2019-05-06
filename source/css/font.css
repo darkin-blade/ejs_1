@@ -8,6 +8,7 @@
 }
 
 #guide_title {
+  transition-duration: 0.5s;
   cursor: pointer;
   margin-bottom: 10px;
 }
@@ -42,5 +43,17 @@
 }
 
 .guide_active {
+  border-left: 3px solid var(--text_orange);
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+  background-color: var(--box_orange);
+}
+
+#guide_title:hover,
+.guide_1:hover,
+.guide_2:hover,
+.guide_3:hover,
+.guide_4:hover,
+.guide_5:hover {
   color: var(--text_orange);
 }

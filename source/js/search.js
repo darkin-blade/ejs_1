@@ -102,7 +102,7 @@ var searchFunc = function(path, search_id, content_id)
 
                             keywords.forEach(function(keyword)
                             {
-                              var regS = new RegExp(keyword, "gi");
+                                var regS = new RegExp(keyword, "gi");
                                 match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
                             });
 
@@ -114,7 +114,9 @@ var searchFunc = function(path, search_id, content_id)
                 str += "</ul>";
                 if (str.indexOf('<li>') === -1)
                 {
-                    return $resultContent.innerHTML = BTN + "<ul><span class='local-search-empty'>没有找到内容，更换下搜索词试试吧~<span></ul>";
+                    // return $resultContent.innerHTML = BTN + "<ul><span class='local-search-empty'>没有找到内容，更换下搜索词试试吧~<span></ul>";
+                    // 不想用关闭功能
+                    return $resultContent.innerHTML = "<ul><span class='local-search-empty'>Not found<span></ul>";
                 }
                 // $resultContent.innerHTML = BTN + str;
                 // 不想用关闭功能
@@ -123,7 +125,7 @@ var searchFunc = function(path, search_id, content_id)
         }
     });
     $(document).on('click', '#local-search-close', function()
-    {// 关闭
+    { // 关闭
         $('#local-search-input').val('');
         $('#local-search-result').html('');
     });
