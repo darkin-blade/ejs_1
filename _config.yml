@@ -20,3 +20,7 @@ auto_excerpt: # 自动摘要,不提供关闭的接口
 
 debug:
   enable: false
+
+mathjax: # 只能够通过在md中设置nomathjax != 0来关闭,默认开启
+  enable: true
+  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML

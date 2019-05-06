@@ -31,7 +31,12 @@
       <% page.posts.each(function(post){ %>
   
         <% if (is_home() || is_tag() || is_category()) { %>
-            <!-- post带摘要 -->
+          <!-- post带摘要 -->
+          <style>
+            embed {
+              display: none; /* 防止找不到pdf报错 */
+            }
+          </style>
             <div class="mid_block shadow_block block_300">
               <%- partial('post.ejs', {
                 post: post,

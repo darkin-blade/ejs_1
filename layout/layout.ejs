@@ -17,6 +17,43 @@
 </head>
 
 <body onload="my_load()" onresize="my_resize()">
+  <!-- mathjax -->
+  <% if (theme.mathjax.enable) { %>
+  <%
+    var temp_mathjax = 0;
+    if (page.nomathjax == null) {
+      temp_mathjax = 1;
+    } else if (page.nomathjax == 0) {
+      temp_mathjax = 1;
+    }
+  %>
+  <% if (temp_mathjax) { %>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="<%- theme.mathjax.cdn %>"></script>
+  <% } %>
+
+  <% if (theme.debug) { %>
+    <p>page has nomathjax: <%- page.nomathjax != null %></p>
+  <% } %>
+<% } %>
+
   
   <% if (theme.debug.enable) { %>
     <p>is home: <%- is_home() %></p>
