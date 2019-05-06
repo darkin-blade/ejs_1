@@ -60,6 +60,11 @@ function dfs_c(my_node, found) {
     {
       my_node.className += " code_regexp";
     }
+
+    if ((!found)&&(my_node.tagName == "TABLE"))// 普通表格,防止和code冲突
+    {
+      my_node.className = "normal_table"
+    }
   }
 
   var my_child = my_node.childNodes.length;
