@@ -9,8 +9,11 @@
 
 #guide_title {
   transition-duration: 0.5s;
+  font-weight: 900;
+
   cursor: pointer;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .guide_2 {
