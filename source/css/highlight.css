@@ -61,3 +61,13 @@
   /* 函数参数 */
   color: brown;
 }
+
+.code_selector-tag {
+  /* css属性 */
+  color: brown;
+}
+
+.code_regexp {
+  /* 正则表达式 */
+  color: darkgreen;
+}

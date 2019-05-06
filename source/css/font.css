@@ -74,3 +74,9 @@
   color: var(--text_orange);
   text-decoration: underline;
 }
+
+code {
+  /* 行间代码 */
+  font-size: 15px;
+  background-color: var(--box_grey);
+}

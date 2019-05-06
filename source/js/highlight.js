@@ -52,6 +52,14 @@ function dfs_c(my_node, found) {
     {
       my_node.className += " code_params";
     }
+    if ((found)&&(my_node.className == "selector-tag"))// css属性
+    {
+      my_node.className += " code_selector-tag";
+    }
+    if ((found)&&(my_node.className == "regexp"))// 正则表达式
+    {
+      my_node.className += " code_regexp";
+    }
   }
 
   var my_child = my_node.childNodes.length;
