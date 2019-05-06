@@ -16,7 +16,7 @@ function my_load()
   change_height();
   document.body.setAttribute("onscroll", "my_scroll()");// 防止报错
   my_scroll();
-  post_excerpt();
+  // post_excerpt();
 }
 
 function post_excerpt()// 清除文章摘要的格式
