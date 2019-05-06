@@ -16,6 +16,17 @@ function my_load()
   change_height();
   document.body.setAttribute("onscroll", "my_scroll()");// 防止报错
   my_scroll();
+  post_excerpt();
+}
+
+function post_excerpt()// 清除文章摘要的格式
+{
+  for (var i = 0; 1; i ++)
+  {
+    var temp_post = document.querySelector("#post_" + i);
+    if (temp_post == null) break;// 全部搜索完
+    temp_post.innerHTML = temp_post.innerText;
+  }
 }
 
 function my_scroll()
@@ -33,6 +44,8 @@ function my_scroll()
 // 附加导航功能
 function change_guide(direct)
 {
+  if (h_index = null) return;// 未定义
+
   var w_top = $(window).scrollTop();
   var guide_1 = null; // 待修改的索引
   var guide_2 = null;

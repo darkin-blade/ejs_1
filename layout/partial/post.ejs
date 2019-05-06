@@ -16,11 +16,14 @@
   <p>tags: <%= post.tags.length %></p>
   <p>content: <%- post.content.length %></p>
   <p>excerpt: </p>
+  <p>innerText: <%- post.content.innerText != null %></p>
   <% } %>
 
   <!-- 主题内置自动摘要 -->
   <% if (is_home() || is_tag() || is_category()) { %>
-    <p><%- post.content.substring(0, theme.auto_excerpt.length) %></p>
+    <div id="post_<%- post_num %>">
+      <p><%- post.content.substring(0, theme.auto_excerpt.length) %></p>
+    </div>
   <% } %>
 
 <% } %>
