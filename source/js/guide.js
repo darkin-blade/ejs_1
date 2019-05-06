@@ -21,12 +21,11 @@ function create_guide() {
   var left_guide = document.createElement("div");
   left_guide.setAttribute("class", "left_guide");
   for (var i = 0; i < h_index; i ++)
-  {
-    var temp_a = document.createElement("a");
+  {// 设置序号和级数
+    var temp_a = document.createElement("div");
     temp_a.id = "guide_" + i;
-    temp_a.setAttribute("class", "guide_" + my_guide[i].rank);// 设置标题级数
-    temp_a.innerText = my_guide[i].name;
-    temp_a.innerHTML += "<br>";
+    temp_a.className = "guide_" + my_guide[i].rank;
+    temp_a.innerHTML = "<a>" + my_guide[i].name + "</a>";
     left_guide.appendChild(temp_a);
   }
   

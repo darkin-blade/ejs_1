@@ -13,40 +13,40 @@
   margin-bottom: 10px;
 }
 
-.guide_1 {
-  transition-duration: 0.5s;
-  cursor: pointer;
-}
-
 .guide_2 {
-  transition-duration: 0.5s;
-  padding-left: 10px;
-  cursor: pointer;
+  margin-left: 10px;
 }
 
 .guide_3 {
-  transition-duration: 0.5s;
-  padding-left: 20px;
-  cursor: pointer;
+  margin-left: 20px;
 }
 
 .guide_4 {
-  transition-duration: 0.5s;
-  padding-left: 30px;
-  cursor: pointer;
+  margin-left: 30px;
 }
 
 .guide_5 {
-  transition-duration: 0.5s;
-  padding-left: 40px;
-  cursor: pointer;
+  margin-left: 40px;
 }
 
 .guide_active {
+  border-right: 3px solid var(--box_orange);
   border-left: 3px solid var(--text_orange);
-  border-top-left-radius: 1px;
-  border-top-right-radius: 1px;
+  border-radius: 3px;
   background-color: var(--box_orange);
+}
+
+.guide_1,
+.guide_2,
+.guide_3,
+.guide_4,
+.guide_5 {
+  padding-left: 15px;
+  position: relative;
+  left: -5px;
+
+  cursor: pointer;
+  transition-duration: 0.5s;
 }
 
 #guide_title:hover,
