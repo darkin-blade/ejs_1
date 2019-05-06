@@ -16,7 +16,7 @@ function create_guide() {
   guide_title.innerText = document.getElementById("post_name").innerText;
   guide_title.innerHTML = "<div id='guide_title'>" + guide_title.innerHTML + "</div>";
 
-  dfs(document.body);// 搜索所有的1,2,3级标题
+  dfs_h(document.body);// 搜索所有的1,2,3级标题
     
   var left_guide = document.createElement("div");
   left_guide.setAttribute("class", "left_guide");
@@ -52,7 +52,7 @@ function add_scroll (i)// 注意i的值
 }
 
 // 深度优先搜索
-function dfs(my_node) {
+function dfs_h(my_node) {
   var temp = 0;
   if (my_node.tagName == 'H1')
   {
@@ -87,7 +87,7 @@ function dfs(my_node) {
   var my_child = my_node.childNodes.length;
   for (var i = 0; i < my_child; i ++)
   {
-    dfs(my_node.childNodes[i]);
+    dfs_h(my_node.childNodes[i]);
   }
 }
 

@@ -49,7 +49,7 @@
     <script type="text/javascript" src="<%- theme.mathjax.cdn %>"></script>
   <% } %>
 
-  <% if (theme.debug) { %>
+  <% if (theme.debug.enable) { %>
     <p>page has nomathjax: <%- page.nomathjax != null %></p>
   <% } %>
 <% } %>
@@ -70,6 +70,10 @@
   <!-- 搜索功能 -->
   <%- js('js/load', 'js/search') %>
 
+  <!-- 手写代码高亮 -->
+  <%- js('js/highlight') %>
+
+  <!-- 对应每个网页的layout -->
   <%- body -%>
 
   <%- js('js/change')%>

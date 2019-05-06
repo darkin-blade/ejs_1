@@ -14,6 +14,7 @@ function my_load()
 {
   change_width();
   change_height();
+  my_highlight_start();// 手动代码高亮
   document.body.setAttribute("onscroll", "my_scroll()");// 防止报错
   my_scroll();
   auto_guide();
