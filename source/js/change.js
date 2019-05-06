@@ -16,7 +16,18 @@ function my_load()
   change_height();
   document.body.setAttribute("onscroll", "my_scroll()");// 防止报错
   my_scroll();
+  auto_guide();
   // post_excerpt();
+}
+
+function auto_guide()
+{
+  var w_width = document.body.clientWidth;
+  if (w_width > 1800)// 自动弹出左侧附加引导
+  {
+    var temp_tool = document.querySelector(".left_tool_3");
+    if (temp_tool != null) temp_tool.click();
+  }
 }
 
 function post_excerpt()// 清除文章摘要的格式
