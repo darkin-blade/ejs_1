@@ -25,7 +25,7 @@ function create_guide() {
     var temp_a = document.createElement("div");
     temp_a.id = "guide_" + i;
     temp_a.className = "guide_" + my_guide[i].rank;
-    temp_a.innerHTML = "<a>" + my_guide[i].name + "</a>";
+    temp_a.innerHTML = "<a>" + my_guide[i].name.replace(/</, "<&shy;") + "</a>";
     left_guide.appendChild(temp_a);
   }
   
