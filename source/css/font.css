@@ -60,3 +60,18 @@
 .guide_5:hover {
   color: var(--text_orange);
 }
+
+.bar_section {
+  font-weight: 900;
+}
+
+.bar_item {
+  transition-duration: 0.5s;
+  color: var(--text_grey);
+  text-decoration: none;
+}
+
+.bar_item:hover {
+  color: var(--text_orange);
+  text-decoration: underline;
+}

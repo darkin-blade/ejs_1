@@ -29,19 +29,23 @@
 
     <!-- 文章的tags -->
     <div>
-      <p>Tags</p>
+      <div class="bar_section">
+        <p>Tags</p>
+      </div>
       <% if (page.tags) { %>
         <% page.tags.forEach(function (tag) { %>
-          <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
+            <a class="bar_item" href="<%- url_for(tag.path) %>"><%- tag.name %></a>
         <% }) %>
       <% } %>
     </div>
     <!-- 文章的categories -->
     <div>
-      <p>Categories</p>
+      <div class="bar_section">
+        <p>Categories</p>
+      </div>
       <% if (page.categories) { %>
         <% page.categories.forEach(function (category) { %>
-          <a href="<%- url_for(category.path) %>"><%- category.name %></a>
+            <a class="bar_item" href="<%- url_for(category.path) %>"><%- category.name %></a>
         <% }) %>
       <% } %>
     </div>

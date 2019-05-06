@@ -15,9 +15,11 @@
 <div class="block_hide_right shadow_block right_block">
     <!-- 每一项逐个生成 -->
     <div>
-      <p>Links</p>
+      <div class="bar_section">
+        <p>Links</p>
+      </div>
       <% for (var name in theme.menu) { %>
-        <a href="<%- url_for(theme.menu[name]) %>"><%= name %></a>
+          <a class="bar_item" href="<%- url_for(theme.menu[name]) %>"><%= name %></a>
       <% } %>
     </div>
 
@@ -26,7 +28,9 @@
     <% } %>
     <!-- 全部tags排序 -->
     <div id="right_tags">
-      <p>Tags</p>
+      <div class="bar_section">
+        <p>Tags</p>
+      </div>
     </div>
     <script>
         tags_name = new Array();
@@ -43,14 +47,16 @@
         tags_path.sort();
         for (var i = 0; i < tags_name.length; i ++)
         {
-          $("#right_tags").append("<a href='/" + tags_path[i] + "'>" + tags_name[i] + "</a>\n");
+          $("#right_tags").append("<a class='bar_item' href='/" + tags_path[i] + "'>" + tags_name[i] + "</a>\n");// bar_item
         }
     </script>
     <!-- 全部categories -->
     <div>
-      <p>Categories</p>
+      <div class="bar_section">
+        <p>Categories</p>
+      </div>
       <% site.categories.forEach(function (category) { %>
-        <a href="<%- url_for(category.path) %>"><%- category.name %></a>
+          <a class="bar_item" href="<%- url_for(category.path) %>"><%- category.name %></a>
       <% }) %>
     </div>
 </div>
