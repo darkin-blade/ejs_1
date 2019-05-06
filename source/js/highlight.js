@@ -36,9 +36,21 @@ function dfs_c(my_node, found) {
     {
       my_node.className += " code_built_in";
     }
-    if ((found)&&(my_node.className == "tag"))// html标签
+    if ((found)&&(my_node.className == "name"))// html标签
     {
-      my_node.className += " code_tag";
+      my_node.className += " code_name";
+    }
+    if ((found)&&(my_node.className == "number"))// 数字
+    {
+      my_node.className += " code_number";
+    }
+    if ((found)&&(my_node.className == "title"))// 函数
+    {
+      my_node.className += " code_title";
+    }
+    if ((found)&&(my_node.className == "params"))// 函数参数
+    {
+      my_node.className += " code_params";
     }
   }
 

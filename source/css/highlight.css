@@ -36,10 +36,25 @@
 
 .code_attr {
   /* html属性 */
-  color: orange;
+  color: blue;
 }
 
-.code_tag {
+.code_name {
   /* html标签 */
-  color: mediumturquoise;
+  color: green;
+}
+
+.code_number {
+  /* 数字 */
+  color: blueviolet;
+}
+
+.code_title {
+  /* 函数 */
+  color: blue;
+}
+
+.code_params {
+  /* 函数参数 */
+  color: brown;
 }
