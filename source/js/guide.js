@@ -1,5 +1,5 @@
 // 全局变量
-var h_index = 0;// change.js中也有用到
+document.h_index = 0;// change.js中也有用到
 // 结构体
 var h_struct = {
   rank: 0,// 1 for h1, 2 for h2 ...
@@ -20,7 +20,7 @@ function create_guide() {
     
   var left_guide = document.createElement("div");
   left_guide.setAttribute("class", "left_guide");
-  for (var i = 0; i < h_index; i ++)
+  for (var i = 0; i < document.h_index; i ++)
   {// 设置序号和级数
     var temp_a = document.createElement("div");
     temp_a.id = "guide_" + i;
@@ -37,7 +37,7 @@ function create_guide() {
     });
   };
   left_block.appendChild(left_guide);
-  for (var i = 0; i < h_index; i ++)
+  for (var i = 0; i < document.h_index; i ++)
   {
     document.querySelector("#guide_" + i).setAttribute("onclick", "add_scroll(" + i + ")");
   }
@@ -76,8 +76,8 @@ function dfs(my_node) {
   }
   if (temp != 0)
   {
-    my_node.innerHTML = "<div id='section_" + h_index + "' class='section_" + temp + "'>" + my_node.innerHTML + "</div>";// 给文章中的section增加id
-    h_index ++;
+    my_node.innerHTML = "<div id='section_" + document.h_index + "' class='section_" + temp + "'>" + my_node.innerHTML + "</div>";// 给文章中的section增加id
+    document.h_index ++;
     var t_struct = Object.create(h_struct);
     t_struct.rank = temp;
     t_struct.name = my_node.innerText;

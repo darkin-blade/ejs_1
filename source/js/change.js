@@ -44,8 +44,6 @@ function my_scroll()
 // 附加导航功能
 function change_guide(direct)
 {
-  if (h_index = null) return;// 未定义
-
   var w_top = $(window).scrollTop();
   var guide_1 = null; // 待修改的索引
   var guide_2 = null;
@@ -53,7 +51,7 @@ function change_guide(direct)
   var guide_4 = null;
   var guide_5 = null;
 
-  for (var i = 0; i < h_index; i ++)// h_index是section/guide的总数
+  for (var i = 0; i < document.h_index; i ++)// h_index是section/guide的总数
   {
     var this_guide = document.getElementById("guide_" + i);
     if ((this_guide.className != "guide_1")
@@ -66,7 +64,7 @@ function change_guide(direct)
     }
   }
 
-  for (var i = 0; i < h_index; i ++)// 从上往下遍历
+  for (var i = 0; i < document.h_index; i ++)// 从上往下遍历
   {
     var this_section = document.getElementById("section_" + i);
     var temp_offset = $("#section_" + i).offset().top - w_top;

@@ -25,9 +25,7 @@
     <% } %>
 
     <!-- 每一个页面(index/archive/tag/tag下每个小标签的页面...) -->
-    <% if (theme.debug.enable) { %>
-      <% var post_num = 0 %>
-    <% } %>
+    <% var post_num = 0 %>
 
     <% if (page.posts && page.posts.length > 0) { %>
       <% page.posts.each(function(post){ %>
@@ -54,9 +52,9 @@
 
         <% if (theme.debug.enable) { %>
           <p>post_num: <%- post_num %></p>
-          <% post_num += 1 %>  
         <% } %>
-
+        
+        <% post_num += 1 %>  
       <% }) %>
     <% } %>
   </div>
