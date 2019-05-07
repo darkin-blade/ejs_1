@@ -98,6 +98,10 @@ function dfs_c(my_node, found) {
     {
       my_node.className += " code_variable";
     }
+    if ((found != "")&&(my_node.className == "strong"))// markdown 强调
+    {
+      my_node.className += " code_strong";
+    }
     
 
     if ((found == "")&&(my_node.tagName == "TABLE"))// 普通表格,防止和code冲突

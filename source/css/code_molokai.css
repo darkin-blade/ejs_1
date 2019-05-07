@@ -101,7 +101,7 @@
 
 .code_regexp {
   /* 正则表达式 */
-  color: darkgreen;
+  color: var(--molokai_yellow);
 }
 
 .code_meta-keyword {
@@ -127,6 +127,11 @@
 .code_variable {
   /* makefile变量: $(par) */
   color: var(--molokai_yellow);
+}
+
+.code_strong {
+  /* markdown强调 */
+  font-weight: bold;
 }
 
 .line {
