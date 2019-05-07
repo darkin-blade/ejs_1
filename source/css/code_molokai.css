@@ -1,0 +1,105 @@
+.my_code {
+  /* 代码框 */
+  border: 0px solid var(--shadow_grey);
+  border-radius: 3px;
+  background-color: var(--molokai_black);
+  padding-left: 20px;
+  padding-right: 20px;
+
+  font-size: 15px;
+  overflow-x: scroll;
+  word-wrap: break-word;
+}
+
+:root {
+  --molokai_red: rgb(249, 26, 114);
+  --molokai_yellow: rgb(231, 239, 116);
+  --molokai_blue: rgb(103, 216, 239);
+  --molokai_green: rgb(166, 226, 64);
+  --molokai_white: rgb(248, 248, 242);
+  --molokai_purple: rgb(172, 128, 255);
+  --molokai_black: rgb(40, 41, 35);
+  --molokai_grey: rgb(144, 145, 139);
+}
+
+.code_string {
+  /* 字符串 */
+  color: var(--molokai_yellow);
+}
+
+.code_comment {
+  /* 注释 */
+  font-style: italic;
+  color: var(--text_grey);
+}
+
+.code_keyword {
+  /* 关键词: void, enum */
+  color: var(--molokai_blue);
+  font-style: italic;
+}
+
+.code_keyword1 {
+  /* 关键词1: for, while, case, const */
+  color: var(--molokai_red);
+}
+
+.code_attribute {
+  /* 属性 */
+  color: blue;
+}
+
+.code_built_in {
+  /* 内置函数,printf之类 */
+  color: var(--molokai_blue);
+}
+
+.code_attr {
+  /* html属性 */
+  color: blue;
+}
+
+.code_name {
+  /* html标签 */
+  color: green;
+}
+
+.code_number {
+  /* 数字 */
+  color: var(--molokai_purple);
+}
+
+.code_title {
+  /* 函数名 */
+  color: var(--molokai_green);
+}
+
+.code_params {
+  /* 函数参数(整行) */
+  color: var(--molokai_white);
+}
+
+.code_selector-tag {
+  /* css属性 */
+  color: brown;
+}
+
+.code_regexp {
+  /* 正则表达式 */
+  color: darkgreen;
+}
+
+.code_meta-keyword {
+  /* #include */
+  color: var(--molokai_red);
+}
+
+.code_meta-string {
+  /* include <> */
+  color: var(--molokai_yellow);
+}
+
+.line {
+  /* 所有普通字符 */
+  color: var(--molokai_white);
+}
