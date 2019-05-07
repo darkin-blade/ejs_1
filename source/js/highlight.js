@@ -86,6 +86,18 @@ function dfs_c(my_node, found) {
     {
       my_node.className += " code_selector-id";
     }
+    if ((found != "")&&(my_node.className == "symbol"))// vimscript 按键
+    {
+      my_node.className += " code_symbol";
+    }
+    if ((found != "")&&(my_node.className == "section"))// makefile 命令
+    {
+      my_node.className += " code_section";
+    }
+    if ((found != "")&&(my_node.className == "variable"))// makefile 变量
+    {
+      my_node.className += " code_variable";
+    }
     
 
     if ((found == "")&&(my_node.tagName == "TABLE"))// 普通表格,防止和code冲突

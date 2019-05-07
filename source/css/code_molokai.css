@@ -114,6 +114,21 @@
   color: var(--molokai_yellow);
 }
 
+.code_symbol {
+  /* vimscript按键 */
+  color: var(--molokai_red);
+}
+
+.code_section {
+  /* makefile命令: run gdb... */
+  color: var(--molokai_green);
+}
+
+.code_variable {
+  /* makefile变量: $(par) */
+  color: var(--molokai_yellow);
+}
+
 .line {
   /* 所有普通字符 */
   color: var(--molokai_white);
