@@ -9,7 +9,7 @@
   --molokai_grey: rgb(144, 145, 139);
 }
 
-.my_code {
+.code_figure {
   /* 代码框 */
   border: 1px solid var(--shadow_grey);
   border-radius: 3px;
@@ -20,15 +20,24 @@
   font-size: 15px;
   overflow-x: scroll;
   overflow-y: hidden;
+}
+
+.code_pre {
+  /* 强制换行必须要修改pre */
+  word-break: break-all;
+  white-space:pre-wrap; /* css3.0 */
+  white-space:-moz-pre-wrap; /* Firefox */
+  white-space:-pre-wrap; /* Opera 4-6 */
+  white-space:-o-pre-wrap; /* Opera 7 */
   word-wrap: break-word;
 }  
 
-.my_code::-webkit-scrollbar-thumb {
+.code_figure::-webkit-scrollbar-thumb {
   background-color: var(--molokai_grey);
   border-radius: 3px;
 }
 
-.my_code::-webkit-scrollbar {
+.code_figure::-webkit-scrollbar {
   background-color: rgb(56, 57, 52);
   height: 8px;
 }  

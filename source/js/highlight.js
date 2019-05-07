@@ -20,7 +20,7 @@ function dfs_c(my_node, found) {
     if (my_node.className.match("highlight") != null)
     {
       found =  my_node.className.replace(/highlight /, "");
-      my_highlight(my_node, found);
+      my_node.className += " code_figure";
     } // else
     if ((found != "")&&(my_node.className == "string"))// 字符串
     {
@@ -112,6 +112,10 @@ function dfs_c(my_node, found) {
     {
       my_node.className = "normal_table"
     }
+    if ((found != "")&&(my_node.tagName == "PRE"))// pre 强制单词换行
+    {
+      my_node.className = "code_pre";
+    }
   }
 
   var my_child = my_node.childNodes.length;
@@ -121,10 +125,6 @@ function dfs_c(my_node, found) {
   }
 }
 
-function my_highlight(my_node, type) {
-  my_node.className = my_node.className + " my_code";
-  // console.log(my_node.innerText.replace(/\n/, ""));
-}
 
 function my_highlight_start() {
   dfs_c(document.body, "");
