@@ -3,9 +3,15 @@
  */
 
 var highlight_1 = [
-  "for", "while", "return", "switch", "case", "break", "do", "else",
+  "for", "while", "return", "switch", "case", "break", "do", "else", "if",
   "endif", "endfor", "endwhile",
   "const"
+];
+
+var highlight_2 = [
+  "width", "height", "type", "data", "src", "href", "style", "rel",
+  "onload", "onclick", "onscroll", "onmousemove", "onresize",
+  "id", "class"
 ];
 
 function dfs_c(my_node, found) {
@@ -26,7 +32,7 @@ function dfs_c(my_node, found) {
     }
     if ((found != "")&&(my_node.className == "keyword"))// 关键字,需要特判,包括:for const int void enum等
     {
-      detail_hilight(my_node, found)
+      detail_hilight(my_node, my_node.className, found)
     }
     if ((found != "")&&(my_node.className == "attribute"))// 属性
     {
@@ -34,7 +40,7 @@ function dfs_c(my_node, found) {
     }
     if ((found != "")&&(my_node.className == "attr"))// 属性(html)
     {
-      my_node.className += " code_attr";
+      detail_hilight(my_node, my_node.className, found)
     }
     if ((found != "")&&(my_node.className == "built_in"))// ???
     {
@@ -56,10 +62,6 @@ function dfs_c(my_node, found) {
     {
       my_node.className += " code_params";
     }
-    if ((found != "")&&(my_node.className == "selector-tag"))// css属性
-    {
-      my_node.className += " code_selector-tag";
-    }
     if ((found != "")&&(my_node.className == "regexp"))// 正则表达式
     {
       my_node.className += " code_regexp";
@@ -72,6 +74,19 @@ function dfs_c(my_node, found) {
     {
       my_node.className += " code_meta-string";
     }
+    if ((found != "")&&(my_node.className == "selector-tag"))// css tag
+    {
+      my_node.className += " code_selector-tag";
+    }
+    if ((found != "")&&(my_node.className == "selector-class"))// css class
+    {
+      my_node.className += " code_selector-class";
+    }
+    if ((found != "")&&(my_node.className == "selector-id"))// css id
+    {
+      my_node.className += " code_selector-id";
+    }
+    
 
     if ((found == "")&&(my_node.tagName == "TABLE"))// 普通表格,防止和code冲突
     {
@@ -95,14 +110,27 @@ function my_highlight_start() {
   dfs_c(document.body, "");
 }
 
-function detail_hilight(my_node, type) {// 细化
-  for (var i = 0; i < highlight_1.length; i ++)
-  {
-    if (my_node.innerText == highlight_1[i])
+function detail_hilight(my_node, type, language) {// 细化
+  if (type == "keyword") {
+    for (var i = 0; i < highlight_1.length; i ++)
     {
-      my_node.className += " code_keyword1";
-      return;
+      if (my_node.innerText == highlight_1[i])
+      {
+        my_node.className += " code_keyword1";
+        return;
+      }
     }
+    my_node.className += " code_keyword";
+    return;
+  } else if (type == "attr") {
+    for (var i = 0; i < highlight_2.length; i ++)
+    {
+      if (my_node.innerText == highlight_2[i])
+      {
+        my_node.className += " code_attr1";
+        return;
+      }
+    }
+    my_node.className += " code_attr";
   }
-  my_node.className += " code_keyword";
 }

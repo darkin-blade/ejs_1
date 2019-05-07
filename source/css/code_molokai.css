@@ -45,8 +45,8 @@
 }
 
 .code_attribute {
-  /* 属性 */
-  color: blue;
+  /* css属性? */
+  color: var(--molokai_blue);
 }
 
 .code_built_in {
@@ -55,13 +55,18 @@
 }
 
 .code_attr {
-  /* html属性 */
-  color: blue;
+  /* html属性, json tag */
+  color: var(--molokai_yellow);
+}
+
+.code_attr1 {
+  /* html属性 tag */
+  color: var(--molokai_green);
 }
 
 .code_name {
   /* html标签 */
-  color: green;
+  color: var(--molokai_red);
 }
 
 .code_number {
@@ -80,8 +85,18 @@
 }
 
 .code_selector-tag {
-  /* css属性 */
-  color: brown;
+  /* css tag */
+  color: var(--molokai_red);
+}
+
+.code_selector-class {
+  /* css class */
+  color: var(--molokai_green);
+}
+
+.code_selector-id {
+  /* css id */
+  color: var(--molokai_green);
 }
 
 .code_regexp {
