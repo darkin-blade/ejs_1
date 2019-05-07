@@ -19,6 +19,7 @@
 
   font-size: 15px;
   overflow-x: scroll;
+  overflow-y: hidden;
   word-wrap: break-word;
 }  
 
