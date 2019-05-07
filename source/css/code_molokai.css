@@ -109,6 +109,11 @@
   color: var(--molokai_green);
 }
 
+.code_selector-pseudo {
+  /* css 浏览器内置工具 */
+  color: var(--molokai_green);
+}
+
 .code_regexp {
   /* 正则表达式 */
   color: var(--molokai_yellow);

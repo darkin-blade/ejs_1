@@ -86,6 +86,10 @@ function dfs_c(my_node, found) {
     {
       my_node.className += " code_selector-id";
     }
+    if ((found != "")&&(my_node.className == "selector-pseudo"))// css 浏览器内置工具
+    {
+      my_node.className += " code_selector-pseudo";
+    }
     if ((found != "")&&(my_node.className == "symbol"))// vimscript 按键
     {
       my_node.className += " code_symbol";
