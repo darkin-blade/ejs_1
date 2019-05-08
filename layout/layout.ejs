@@ -17,17 +17,19 @@
 </head>
 
 <body onload="my_load()" onresize="my_resize()">
-  <!-- mathjax -->
-  <% if (theme.mathjax.enable) { %>
+
+  <!-- latex公式加载 -->
   <%
-    var temp_mathjax = 0;
-    if (page.nomathjax == null) {
-      temp_mathjax = 1;
-    } else if (page.nomathjax == 0) {
-      temp_mathjax = 1;
+    var temp_latex = 0;
+    if (page.latex == null) {
+      temp_latex = 1;
+    } else if (page.latex == 2) {
+      temp_latex = 2;
     }
   %>
-  <% if (temp_mathjax) { %>
+
+  <% if (temp_latex == 1) { %>
+  <!-- mathjax -->
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
         tex2jax: {
@@ -46,13 +48,32 @@
         }
       });
     </script>
-    <script type="text/javascript" src="<%- theme.mathjax.cdn %>"></script>
+    <script type="text/javascript" src="<%- theme.latex.mathjax %>"></script>
+  <% } else if (temp_latex == 2) { %>
+
+  <!-- katex -->
+    <link rel="stylesheet" href="<%- theme.latex.katex %>/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="<%- theme.latex.katex %>/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="<%- theme.latex.katex %>/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    
+    <script>
+      $(document).ready(setTimeout(function()
+      {
+        renderMathInElement(document.body,
+        {
+          // ...options...
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false }
+            // { left: "\\[", right: "\\]", display: true }
+          ]
+        });
+      }, 1000));
+    </script>
   <% } %>
 
-  <% if (theme.debug.enable) { %>
-    <p>page has nomathjax: <%- page.nomathjax != null %></p>
-  <% } %>
-<% } %>
 
   
   <% if (theme.debug.enable) { %>

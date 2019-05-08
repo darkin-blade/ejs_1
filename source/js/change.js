@@ -17,7 +17,7 @@ function my_load()
   my_highlight_start();// 手动代码高亮
   document.body.setAttribute("onscroll", "my_scroll()");// 防止报错
   my_scroll();
-  auto_guide();
+  setTimeout("auto_guide()", 500);
   // post_excerpt();
 }
 
@@ -82,25 +82,25 @@ function change_guide(direct)
     var temp_offset = $("#section_" + i).offset().top - w_top;
     // console.log(i, temp_offset);
     if (temp_offset > 5) break;// 未到达的section
-    if (this_section.className == "section_1") {
+    if (this_section.className.match("section_1") != null) { // 有可能会有其他class名,比如使用了mathjax
       guide_1 = document.getElementById("guide_" + i);// 注意id寻找
       guide_2 = null;
       guide_3 = null;
       guide_4 = null;
       guide_5 = null;
-    } else if (this_section.className == "section_2") {
+    } else if (this_section.className.match("section_2") != null) {
       guide_2 = document.getElementById("guide_" + i);
       guide_3 = null;
       guide_4 = null;
       guide_5 = null;
-    } else if (this_section.className == "section_3") {
+    } else if (this_section.className.match("section_3") != null) {
       guide_3 = document.getElementById("guide_" + i);
       guide_4 = null;
       guide_5 = null;
-    } else if (this_section.className == "section_4") {
+    } else if (this_section.className.match("section_4") != null) {
       guide_4 = document.getElementById("guide_" + i);
       guide_5 = null;
-    } else if (this_section.className == "section_5") {
+    } else if (this_section.className.match("section_5") != null) {
       guide_5 = document.getElementById("guide_" + i);
     }
   }
