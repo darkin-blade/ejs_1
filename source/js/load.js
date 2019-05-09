@@ -23,7 +23,9 @@ var isMobile = {
   }
 };
 
-if ($('.local-search').size() && !isMobile.any()) {
+//if ($('.local-search').size() && !isMobile.any()) {
+  // 这个判断感觉没什么用
+if (1) {
   $.getScript('/js/search.js', function () {
     searchFunc("/search.xml", 'local-search-input', 'local-search-result');
   });
