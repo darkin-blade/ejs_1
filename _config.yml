@@ -8,11 +8,6 @@ menu:
   Categories: /categories
 
 search:
-	path: search.xml
-	field: post
-	content: true
-
-local_search:
 	enable: true # 搜索开关
 
 auto_excerpt: # 自动摘要,不提供关闭的接口

@@ -4,7 +4,7 @@
 
 var searchFunc = function(path, search_id, content_id)
 {
-  var BTN = "<i id='local-search-close'>x</i>";
+  // var BTN = "<i id='local-search-close'>x</i>";
   $.ajax(
   {
     url: path,
@@ -25,7 +25,8 @@ var searchFunc = function(path, search_id, content_id)
 
       $input.addEventListener('input', function()
       {
-        var str = '<ul class=\"search-result-list\">';
+        // var str = '<ul class=\"search-result-list\">';
+        var str = '<ul>';
         var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
         $resultContent.innerHTML = "";
         if (this.value.trim().length <= 0)
@@ -76,7 +77,8 @@ var searchFunc = function(path, search_id, content_id)
           }
           if (isMatch)
           {
-            str += "<li><a href='" + unescape(decodeURI(data_url)) + "' class='search-result-title'>" + data_title + "</a>";
+            // str += "<li><a href='" + unescape(decodeURI(data_url)) + "' class='search-result-title'>" + data_title + "</a>";
+            str += "<li><a href='" + unescape(decodeURI(data_url)) + "'>" + data_title + "</a>";
             var content = data.content.trim().replace(/<[^>]+>/g, "");
             if (first_occur >= 0)
             {
@@ -103,7 +105,8 @@ var searchFunc = function(path, search_id, content_id)
               keywords.forEach(function(keyword)
               {
                 var regS = new RegExp(keyword, "gi");
-                match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                // match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                match_content = match_content.replace(regS, "<em>" + keyword + "</em>");
               });
 
               str += "<p class=\"search-result\">" + match_content + "...</p>"
@@ -116,7 +119,7 @@ var searchFunc = function(path, search_id, content_id)
         {
           // return $resultContent.innerHTML = BTN + "<ul><span class='local-search-empty'>没有找到内容，更换下搜索词试试吧~<span></ul>";
           // 不想用关闭功能
-          return $resultContent.innerHTML = "<ul><span class='local-search-empty'>Not found<span></ul>";
+          return $resultContent.innerHTML = "<ul><span>Not found<span></ul>";
         }
         // $resultContent.innerHTML = BTN + str;
         // 不想用关闭功能

@@ -1,6 +1,6 @@
 <!-- 搜索功能 -->
 
-<% if (theme.local_search.enable) { %>
+<% if (theme.search.enable) { %>
 
   <div class="right_tool_5 shadow_tool">
     <p id="right_search">Find</p>
@@ -26,9 +26,10 @@
 
 
   <div class="shadow_block block_hide_top top_block">
-    
-    <span class="local-search local-search-google local-search-plugin" style="position: relative; z-index: 2;">
+    <!-- 隐藏在顶部 -->
+    <span class="local-search-plugin">
         <input type="search" placeholder="Search" id="local-search-input" class="local-search-input-cls">
+        <!-- placeholder:提示信息 -->
         <div id="local-search-result" class="local-search-result-cls"></div>
     </span>
   </div>
