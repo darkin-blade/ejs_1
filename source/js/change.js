@@ -12,6 +12,7 @@ function my_resize()
 // 网页加载后执行的代码
 function my_load()
 {
+  my_filter()
   change_width();
   change_height();
   my_highlight_start();// 手动代码高亮

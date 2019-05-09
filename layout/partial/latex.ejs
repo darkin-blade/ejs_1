@@ -50,6 +50,13 @@ if (page.latex == null) {
 <script defer src="<%- theme.latex.katex %>/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
 
 <script>
+  // 删除<p>内部换行,使katex正确渲染
+  document.querySelectorAll("p br").forEach(function(temp_br){
+    var temp_p = temp_br.parentElement;
+    temp_p.innerText = temp_p.innerText.replace(/\n/g, "");
+    temp_p.innerText = temp_p.innerText.replace(/\$\$\$\$/g, "$$$$\n$$$$");
+    temp_p.innerText = temp_p.innerText.replace(/\$\$\$/g, "$\n$$$$");
+  });
   $(document).ready(setTimeout(function()
   {
     renderMathInElement(document.body,

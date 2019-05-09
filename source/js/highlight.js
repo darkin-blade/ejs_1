@@ -106,28 +106,6 @@ function dfs_c(my_node, found) {
     {
       my_node.className += " code_strong";
     }
-    
-
-    if ((found == "")&&(my_node.tagName == "TABLE"))// 普通表格,防止和code冲突
-    {
-      my_node.className = "normal_table"
-    }
-    if ((found != "")&&(my_node.tagName == "PRE"))// pre 强制单词换行
-    {
-      my_node.className = "code_pre";
-    }
-
-    // 删除<p>内部换行,使katex正确渲染
-    if (document.temp_latex == 2)
-    {
-      if ((found == "")&&(my_node.tagName == "BR")&&(my_node.parentElement.tagName == "P"))
-      {
-        var temp_p = my_node.parentElement;
-        temp_p.innerText = temp_p.innerText.replace(/\n/g, "");
-        temp_p.innerText = temp_p.innerText.replace(/\$\$\$\$/g, "$$$$\n$$$$");
-        temp_p.innerText = temp_p.innerText.replace(/\$\$\$/g, "$\n$$$$");
-      }
-    }
   }
 
   var my_child = my_node.childNodes.length;
@@ -140,9 +118,18 @@ function dfs_c(my_node, found) {
   }
 }
 
+function show_language() {
+  document.querySelectorAll(".highlight").forEach(function(my_node) {
+    var temp_class = my_node.className.replace(/highlight/, "");
+    temp_class = temp_class.replace(/code_figure/, "");
+    console.log(temp_class);
+    my_node.setAttribute("language_type", temp_class);
+  });
+}
 
 function my_highlight_start() {
   dfs_c(document.body, "");
+  show_language();
 }
 
 function detail_hilight(my_node, type, language) {// 细化
