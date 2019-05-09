@@ -12,7 +12,7 @@ if (page.latex == null) {
 %>
 
 <script>
-  document.temp_latex = '<%- temp_latex %>';
+  document.temp_latex = '<%- temp_latex %>';// 全局变量,latex公式渲染方式
 </script>
 
 <% if (temp_latex == 1) { %>
@@ -20,15 +20,18 @@ if (page.latex == null) {
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+      inlineMath: [
+        ['$','$'],
+        ["\\(","\\)"]
+      ],
       processEscapes: true,
       skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
     }
   });
   
-  MathJax.Hub.Queue(function() {
+  MathJax.Hub.Queue(function() { // 重新启动渲染
     var all = MathJax.Hub.getAllJax(), i;
-    for (i=0; i < all.length; i += 1) {
+    for (i = 0; i < all.length; i += 1) {
       all[i].SourceElement().parentNode.className += ' has-jax';
     }
   });
@@ -55,6 +58,6 @@ if (page.latex == null) {
         // { left: "\\[", right: "\\]", display: true }
       ]
     });
-  }, 2000));
+  }, 500));
 </script>
 <% } %>
