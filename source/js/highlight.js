@@ -116,12 +116,27 @@ function dfs_c(my_node, found) {
     {
       my_node.className = "code_pre";
     }
+
+    // 删除<p>内部换行,使katex正确渲染
+    if (document.temp_latex == 2)
+    {
+      if ((found == "")&&(my_node.tagName == "BR")&&(my_node.parentElement.tagName == "P"))
+      {
+        var temp_p = my_node.parentElement;
+        temp_p.innerText = temp_p.innerText.replace(/\n/g, "");
+        temp_p.innerText = temp_p.innerText.replace(/\$\$\$\$/g, "$$$$\n$$$$");
+        temp_p.innerText = temp_p.innerText.replace(/\$\$\$/g, "$\n$$$$");
+      }
+    }
   }
 
   var my_child = my_node.childNodes.length;
   for (var i = 0; i < my_child; i ++)
   {
-    dfs_c(my_node.childNodes[i], found);
+    // 防止未定义
+    if (my_node.childNodes[i] != null) {
+      dfs_c(my_node.childNodes[i], found);
+    }
   }
 }
 

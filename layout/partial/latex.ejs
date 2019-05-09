@@ -6,8 +6,14 @@ if (page.latex == null) {
   temp_latex = 1;
 } else if (page.latex == 2) {
   temp_latex = 2;
+} else {
+  temp_latex = 1;
 }
 %>
+
+<script>
+  document.temp_latex = '<%- temp_latex %>';
+</script>
 
 <% if (temp_latex == 1) { %>
 <!-- mathjax -->
@@ -49,6 +55,6 @@ if (page.latex == null) {
         // { left: "\\[", right: "\\]", display: true }
       ]
     });
-  }, 1000));
+  }, 2000));
 </script>
 <% } %>
