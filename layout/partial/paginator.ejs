@@ -9,7 +9,7 @@
 <% if (page && page.posts && (!is_post())) { %>
   <!-- 不是文章页 -->
   <% if (page.total > 1) { %>
-    <!-- 上一页 -->
+      <!-- 上一页 -->
       <% if (page.prev != 0) { %>
         <div class="left_tool_2 shadow_tool">
             <script>
@@ -46,7 +46,7 @@
         <p>page: <%= page.next.path %></p>
       </div>
     <% } %>
-
+    <!-- 上一页 -->
     <% if (page.prev) { %>
       <div class="left_tool_2 shadow_tool">
           <script>
