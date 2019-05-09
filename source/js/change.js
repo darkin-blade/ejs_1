@@ -135,82 +135,85 @@ function change_height()
 
 function change_width() // 自动调整元素宽度
 {
-    var w_width = document.body.clientWidth;
+  var w_width = document.body.clientWidth;
 
-    // 摘要块宽度,考虑两行并列
-    var b_padding = $(".mid_block").css("padding-left"); // padding转数字
-    var b_margin = $(".mid_block").css("margin-left"); // margin转数字
-    var rate = mid_block_rate(w_width);
-    if (b_padding)
-    {
-        b_padding = (Number(b_padding.replace("px", "")));
-        b_margin = (Number(b_margin.replace("px", "")));
-        var b_offset = b_padding + b_margin;
+  // 摘要块宽度,考虑两行并列
+  var b_padding = $(".mid_block").css("padding-left"); // padding转数字
+  var b_margin = $(".mid_block").css("margin-left"); // margin转数字
+  var rate = mid_block_rate(w_width);
+  if (b_padding)
+  {
+    b_padding = (Number(b_padding.replace("px", "")));
+    b_margin = (Number(b_margin.replace("px", "")));
+    var b_offset = b_padding + b_margin;
 
-        if (w_width < 1200) { // 半页,1列
-          var b_width = w_width * rate;
-          var b_left = (w_width - b_width) / 2 - b_offset; // 减去多余的padding
-          $(".mid_block").css("width", b_width + "px");
-          $(".mid_block").css("left", b_left + "px");
-        } else { // 全页,2列
-          b_offset *= 2;
-          var b_width = w_width * rate;
-          var b_left = (w_width - 2 * b_width) / 2 - b_offset; // 因为并排,所以要减去两个padding
-          $(".mid_block").css("width", b_width + "px");
-          $(".mid_block").css("left", b_left + "px");
-        }
+    if (w_width < 1200)
+    { // 半页,1列
+      var b_width = w_width * rate;
+      var b_left = (w_width - b_width) / 2 - b_offset; // 减去多余的padding
+      $(".mid_block").css("width", b_width + "px");
+      $(".mid_block").css("left", b_left + "px");
     }
-
-    // 文章块宽度
-    b_padding = $(".main_block").css("padding-left"); // padding转数字
-    b_margin = $(".main_block").css("margin-left"); // margin转数字
-    rate = main_block_rate(w_width);
-    if (b_padding) // 不分列
-    {
-        b_padding = (Number(b_padding.replace("px", "")));
-        b_margin = (Number(b_margin.replace("px", "")));
-        var b_offset = b_padding + b_margin;
-
-        var b_width = w_width * rate;
-        var b_left = (w_width - b_width) / 2 - b_offset;
-        $(".main_block").css("width", b_width + "px");
-        $(".main_block").css("left", b_left + "px"); // 减去多余的padding
+    else
+    { // 全页,2列
+      b_offset *= 2;
+      var b_width = w_width * rate;
+      var b_left = (w_width - 2 * b_width) / 2 - b_offset; // 因为并排,所以要减去两个padding
+      $(".mid_block").css("width", b_width + "px");
+      $(".mid_block").css("left", b_left + "px");
     }
+  }
 
-    // tag/category块宽度
-    b_padding = $(".center_block").css("padding-left"); // padding转数字
-    b_margin = $(".center_block").css("margin-left"); // margin转数字
-    if (b_padding)
-    {
-        b_padding = (Number(b_padding.replace("px", "")));
-        b_margin = (Number(b_margin.replace("px", "")));
-        var b_offset = b_padding + b_margin;
+  // 文章块宽度
+  b_padding = $(".main_block").css("padding-left"); // padding转数字
+  b_margin = $(".main_block").css("margin-left"); // margin转数字
+  rate = main_block_rate(w_width);
+  if (b_padding) // 不分列
+  {
+    b_padding = (Number(b_padding.replace("px", "")));
+    b_margin = (Number(b_margin.replace("px", "")));
+    var b_offset = b_padding + b_margin;
 
-        var b_width = w_width * rate;
-        var b_left = (w_width - b_width) / 2 - b_offset;
-        $(".center_block").css("width", b_width + "px");
-        $(".center_block").css("left", b_left + "px"); // 减去多余的padding
-    }
+    var b_width = w_width * rate;
+    var b_left = (w_width - b_width) / 2 - b_offset;
+    $(".main_block").css("width", b_width + "px");
+    $(".main_block").css("left", b_left + "px"); // 减去多余的padding
+  }
 
-    // 搜索块宽度
-    b_padding = $(".top_block").css("padding-left"); // padding转数字
-    b_margin = $(".top_block").css("margin-left"); // margin转数字
-    rate = main_block_rate(w_width) * 0.9; // 比文章块略小
-    if (b_padding)
-    {
-        b_padding = (Number(b_padding.replace("px", "")));
-        b_margin = (Number(b_margin.replace("px", "")));
-        var b_offset = b_padding + b_margin;
+  // tag/category块宽度
+  b_padding = $(".center_block").css("padding-left"); // padding转数字
+  b_margin = $(".center_block").css("margin-left"); // margin转数字
+  if (b_padding)
+  {
+    b_padding = (Number(b_padding.replace("px", "")));
+    b_margin = (Number(b_margin.replace("px", "")));
+    var b_offset = b_padding + b_margin;
 
-        var b_width = w_width * rate;
-        var b_left = (w_width - b_width) / 2 - b_offset;
-        $(".top_block").css("width", b_width + "px");
-        $(".top_block").css("left", b_left + "px"); // 减去多余的padding
-    }
+    var b_width = w_width * rate;
+    var b_left = (w_width - b_width) / 2 - b_offset;
+    $(".center_block").css("width", b_width + "px");
+    $(".center_block").css("left", b_left + "px"); // 减去多余的padding
+  }
 
-    // 文章tag/category块透明度
-    rate = left_block_rate(w_width);
-    $(".left_block").css("opacity", rate);
+  // 搜索块宽度
+  b_padding = $(".top_block").css("padding-left"); // padding转数字
+  b_margin = $(".top_block").css("margin-left"); // margin转数字
+  rate = main_block_rate(w_width) * 0.9; // 比文章块略小
+  if (b_padding)
+  {
+    b_padding = (Number(b_padding.replace("px", "")));
+    b_margin = (Number(b_margin.replace("px", "")));
+    var b_offset = b_padding + b_margin;
+
+    var b_width = w_width * rate;
+    var b_left = (w_width - b_width) / 2 - b_offset;
+    $(".top_block").css("width", b_width + "px");
+    $(".top_block").css("left", b_left + "px"); // 减去多余的padding
+  }
+
+  // 文章tag/category块透明度
+  rate = left_block_rate(w_width);
+  $(".left_block").css("opacity", rate);
 }
 
 function main_block_rate (width)
@@ -251,18 +254,4 @@ function left_block_rate (width)
   {
     return (- 0.46 + width * 0.00076);
   }
-}
-
-function getScrollTop() // 计算滚动条,好像没用
-{ 
-  var scrollTop = 0; 
-  if (document.documentElement && document.documentElement.scrollTop)
-  { 
-    scrollTop = document.documentElement.scrollTop; 
-  }
-  else if (document.body)
-  { 
-    scrollTop = document.body.scrollTop; 
-  } 
-  return scrollTop; 
 }
