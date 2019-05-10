@@ -67,7 +67,6 @@ function show_language() {
   document.querySelectorAll(".highlight").forEach(function(my_node) {
     var temp_class = my_node.className.replace(/highlight/, "");
     temp_class = temp_class.replace(/code_figure/, "");
-    console.log(temp_class);
     my_node.setAttribute("language_type", temp_class);
   });
 }
