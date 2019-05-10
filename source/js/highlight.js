@@ -22,89 +22,34 @@ function dfs_c(my_node, found) {
       found =  my_node.className.replace(/highlight /, "");
       my_node.className += " code_figure";
     } // else
-    if ((found != "")&&(my_node.className == "string"))// 字符串
-    {
-      my_node.className += " code_string";
-    }
-    if ((found != "")&&(my_node.className == "comment"))// 注释
-    {
-      my_node.className += " code_comment";
-    }
-    if ((found != "")&&(my_node.className == "keyword"))// 关键字,需要特判,包括:for const int void enum等
-    {
+    var temp_class = my_node.className;
+    if ((found != "")&&(// 处于代码块内部
+      (temp_class == "string")// 字符串
+      ||(temp_class == "comment")// 注释
+      ||(temp_class == "attribute")// 属性?
+      ||(temp_class == "built_in")// 内置函数
+      ||(temp_class == "name")// html标签
+      ||(temp_class == "number")// 数字
+      ||(temp_class == "title")// 函数声明
+      ||(temp_class == "params")// 函数参数
+      ||(temp_class == "regexp")// 正则表达式
+      ||(temp_class == "meta-keyword")// #include
+      ||(temp_class == "meta-string")// <>
+      ||(temp_class == "selector-tag")// css tag
+      ||(temp_class == "selector-class")// css class
+      ||(temp_class == "selector-id")// css id
+      ||(temp_class == "selector-pseduo")// 浏览器工具
+      ||(temp_class == "symbol")// vimscript 按键
+      ||(temp_class == "section")// makefile 命令
+      ||(temp_class == "variable")// makefile 变量
+      ||(temp_class == "strong")// markdown 强调
+    )) {
+      my_node.className += " code_" + temp_class;
+    } else if ((found != "")&&(// 处于代码块内部
+      (temp_class == "keyword")// 多种关键字,需要特判,包括:for const int void enum等
+      ||(temp_class == "attr")// 多种属性(html)?
+    )) {
       detail_hilight(my_node, my_node.className, found)
-    }
-    if ((found != "")&&(my_node.className == "attribute"))// 属性
-    {
-      my_node.className += " code_attribute";
-    }
-    if ((found != "")&&(my_node.className == "attr"))// 属性(html)
-    {
-      detail_hilight(my_node, my_node.className, found)
-    }
-    if ((found != "")&&(my_node.className == "built_in"))// ???
-    {
-      my_node.className += " code_built_in";
-    }
-    if ((found != "")&&(my_node.className == "name"))// html标签
-    {
-      my_node.className += " code_name";
-    }
-    if ((found != "")&&(my_node.className == "number"))// 数字
-    {
-      my_node.className += " code_number";
-    }
-    if ((found != "")&&(my_node.className == "title"))// 函数
-    {
-      my_node.className += " code_title";
-    }
-    if ((found != "")&&(my_node.className == "params"))// 函数参数
-    {
-      my_node.className += " code_params";
-    }
-    if ((found != "")&&(my_node.className == "regexp"))// 正则表达式
-    {
-      my_node.className += " code_regexp";
-    }
-    if ((found != "")&&(my_node.className == "meta-keyword"))// include
-    {
-      my_node.className += " code_meta-keyword";
-    }
-    if ((found != "")&&(my_node.className == "meta-string"))// <>
-    {
-      my_node.className += " code_meta-string";
-    }
-    if ((found != "")&&(my_node.className == "selector-tag"))// css tag
-    {
-      my_node.className += " code_selector-tag";
-    }
-    if ((found != "")&&(my_node.className == "selector-class"))// css class
-    {
-      my_node.className += " code_selector-class";
-    }
-    if ((found != "")&&(my_node.className == "selector-id"))// css id
-    {
-      my_node.className += " code_selector-id";
-    }
-    if ((found != "")&&(my_node.className == "selector-pseudo"))// css 浏览器内置工具
-    {
-      my_node.className += " code_selector-pseudo";
-    }
-    if ((found != "")&&(my_node.className == "symbol"))// vimscript 按键
-    {
-      my_node.className += " code_symbol";
-    }
-    if ((found != "")&&(my_node.className == "section"))// makefile 命令
-    {
-      my_node.className += " code_section";
-    }
-    if ((found != "")&&(my_node.className == "variable"))// makefile 变量
-    {
-      my_node.className += " code_variable";
-    }
-    if ((found != "")&&(my_node.className == "strong"))// markdown 强调
-    {
-      my_node.className += " code_strong";
     }
   }
 
