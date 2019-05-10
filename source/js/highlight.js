@@ -128,8 +128,8 @@ function show_language() {
 }
 
 function my_highlight_start() {
-  dfs_c(document.body, "");
   show_language();
+  dfs_c(document.body, "");
 }
 
 function detail_hilight(my_node, type, language) {// 细化

@@ -11,7 +11,7 @@ search:
 	enable: true # 搜索开关
 
 auto_excerpt: # 自动摘要,不提供关闭的接口
-  length: 300
+  length: 400
 
 debug:
   enable: false

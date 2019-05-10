@@ -18,6 +18,7 @@ if (page.latex == null) {
 <% if (temp_latex == 1) { %>
 <!-- mathjax -->
 <script type="text/x-mathjax-config">
+  console.log("mathjax rendering");
   MathJax.Hub.Config({
     tex2jax: {
       inlineMath: [
@@ -50,15 +51,28 @@ if (page.latex == null) {
 <script defer src="<%- theme.latex.katex %>/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
 
 <script>
+  console.log("katex rendering");
   // 删除<p>内部换行,使katex正确渲染
-  document.querySelectorAll("p br").forEach(function(temp_br){
-    var temp_p = temp_br.parentElement;
-    temp_p.innerText = temp_p.innerText.replace(/\n/g, "");
-    temp_p.innerText = temp_p.innerText.replace(/\$\$\$\$/g, "$$$$\n$$$$");
-    temp_p.innerText = temp_p.innerText.replace(/\$\$\$/g, "$\n$$$$");
-  });
   $(document).ready(setTimeout(function()
   {
+    document.querySelectorAll("div div div p").forEach(function(temp_p){
+      var my_child = temp_p.childNodes.length;
+
+      for (var i = 0; i < my_child; i ++)
+      {
+        if (temp_p.childNodes[i].tagName == "BR")
+        {
+          temp_p.removeChild(temp_p.childNodes[i]);
+          my_child --;
+          i --;
+        }
+      }
+
+      temp_p.innerText = temp_p.innerText.replace(/\n/g, "");
+      temp_p.innerText = temp_p.innerText.replace(/\$\$\$\$/g, "$$$$\n$$$$");
+      temp_p.innerText = temp_p.innerText.replace(/\$\$\$/g, "$\n$$$$");
+    });
+    /**/
     renderMathInElement(document.body,
     {
       // ...options...
@@ -68,6 +82,6 @@ if (page.latex == null) {
         // { left: "\\[", right: "\\]", display: true }
       ]
     });
-  }, 500));
+  }, 500));// 删除元素不能进行得太早,不然会和highlight的dfs冲突
 </script>
 <% } %>
