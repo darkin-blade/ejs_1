@@ -2,16 +2,6 @@
  * 主体块
  */
 
- #Aatrox {
-  /* background: url(https://cdn.jsdelivr.net/gh/hexo-simple-theme/hexo_bg@1.0.0/Aatrox.jpg); */
-  background-size:100% 100%;
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  float: left;
-  z-index: -1;
-}
-
 .shadow_block {
   /* 阴影样式 */
   transition-duration: 0.5s;
