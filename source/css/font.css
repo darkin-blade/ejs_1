@@ -1,5 +1,17 @@
 #web_name {
   font-size: 50px;
+  font-weight: 2000;
+}
+
+#web_motto {
+  transition-duration: 1s;
+  color: red;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+#web_motto:hover {
+  color: black;
 }
 
 #post_name {

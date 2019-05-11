@@ -7,6 +7,8 @@ function my_resize()
 {
   change_width();
   change_height();
+  change_aatrox();
+  change_live2d();// 隐藏live2d
 }
 
 // 网页加载后执行的代码
@@ -15,6 +17,7 @@ function my_load()
   my_filter()
   change_width();
   change_height();
+  change_aatrox();
   my_highlight_start();// 手动代码高亮
   document.body.setAttribute("onscroll", "my_scroll()");// 防止报错
   my_scroll();
@@ -254,5 +257,40 @@ function left_block_rate (width)
   else
   {
     return (- 0.46 + width * 0.00076);
+  }
+}
+
+function change_aatrox()
+{
+  var w_width = document.body.clientWidth;
+  var w_height = document.body.clientHeight;
+  if (w_width * 1080 > w_height * 1920)
+  {
+    $("#Aatrox").css("width", w_width + "px");
+    $("#Aatrox").css("height", (w_width * 1080 / 1920) + "px");
+  }
+  else
+  {
+    $("#Aatrox").css("height", w_height + "px");
+    $("#Aatrox").css("width", (w_height * 1920 / 1080) + "px");
+  }
+}
+
+function change_live2d()
+{
+  var w_width = document.body.clientWidth;
+  if (w_width < 1600)
+  {
+    document.querySelectorAll(".drag").forEach(function(my_node) {
+      $(my_node).css("opacity", "0");
+      $(my_node).css("z-index", "-1");
+    });
+  }
+  else
+  {
+    document.querySelectorAll(".drag").forEach(function(my_node) {
+      $(my_node).css("opacity", "1");
+      $(my_node).css("z-index", "1");
+    });
   }
 }

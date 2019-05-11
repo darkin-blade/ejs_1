@@ -9,7 +9,6 @@
   <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="https://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
   
-  <!-- 搜索功能 -->
   <%- partial('partial/head.ejs') %>
   
   <%- css('css/style') %>
@@ -46,7 +45,17 @@
   <!-- 对应每个网页的layout -->
   <%- body %>
 
+  <!-- 背景图 -->
+  <div id="Aatrox"></div>
+
+  <!-- 网页自动调整核心代码 -->
   <%- js('js/change')%>
+
+  <!-- live2d -->
+  <% if (theme.live2d.enable) { %>
+    <%- js('new/main') %>
+    <%- css('new/main') %>
+  <% } %>
 </body>
 
 </html>
