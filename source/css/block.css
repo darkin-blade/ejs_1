@@ -59,8 +59,8 @@
 }
 
 .block_full_mid {
-  padding-top: 400px;
-  padding-bottom: 500px;
+  padding-top: 300px;
+  padding-bottom: 400px;
 }
 
 .block_hide_top {
@@ -128,7 +128,7 @@
 .title_block {
   /* 网页标题块 */
   text-align: center;
-  background-color: rgba(255, 206, 189, 0.1);
+  background-color: rgba(100, 100, 100, 0.0);
   margin-bottom: 100px;
 }
 

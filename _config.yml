@@ -24,5 +24,5 @@ latex: # 只能够通过在md中设置latex = 0来关闭,默认开启mathjax,不
   # mathjax: https://cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
   katex: https://cdn.jsdelivr.net/gh/hexo-simple-theme/hexo_latex@1.0.0/katex
 
-livd2d:
-  enable: false
+live2d:
+  enable: true
