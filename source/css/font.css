@@ -75,6 +75,7 @@
 .guide_5 {
   padding-left: 15px;
   position: relative;
+  font-family: 'varela round';
 
   cursor: pointer;
   transition-duration: 0.5s;
@@ -91,11 +92,13 @@
 
 .bar_section {
   font-weight: 900;
+  font-family: 'varela round';
 }
 
 .bar_item {
   transition-duration: 0.5s;
   color: var(--text_grey);
+  font-family: 'varela round';
   text-decoration: none;
 }
 
@@ -109,8 +112,7 @@
 .section_2,
 .section_3,
 .section_4,
-.section_5,
-.section_6 {
+.section_5 {
   font-family: 'varela round';
 }
 
@@ -119,8 +121,7 @@
 .section_2 a,
 .section_3 a,
 .section_4 a,
-.section_5 a,
-.section_6 a {
+.section_5 a {
   transition-duration: 0.5s;
   color: var(--text_blue);
   text-decoration: none;
@@ -130,8 +131,7 @@
 .section_2 a:hover,
 .section_3 a:hover,
 .section_4 a:hover,
-.section_5 a:hover,
-.section_6 a:hover {
+.section_5 a:hover {
   color: var(--text_orange)
 }
 
