@@ -67,8 +67,7 @@ if (page.latex == null) {
           i --;
         }
       }
-
-      temp_p.innerHTML = temp_p.innerHTML.replace(/\n/g, "");
+      // 垃圾katex不能够跨行渲染,所以手动清除换行
       temp_p.innerHTML = temp_p.innerHTML.replace(/\$\$\$\$/g, "$$$$\n$$$$");
       temp_p.innerHTML = temp_p.innerHTML.replace(/\$\$\$/g, "$\n$$$$");
     });
