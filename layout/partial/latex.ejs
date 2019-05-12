@@ -6,7 +6,7 @@ if (page.latex == null) {
   temp_latex = 1;
 } else if (page.latex == 2) {
   temp_latex = 2;
-} else {
+} else if (page.latex == 1) {
   temp_latex = 1;
 }
 %>
@@ -68,9 +68,9 @@ if (page.latex == null) {
         }
       }
 
-      temp_p.innerText = temp_p.innerText.replace(/\n/g, "");
-      temp_p.innerText = temp_p.innerText.replace(/\$\$\$\$/g, "$$$$\n$$$$");
-      temp_p.innerText = temp_p.innerText.replace(/\$\$\$/g, "$\n$$$$");
+      temp_p.innerHTML = temp_p.innerHTML.replace(/\n/g, "");
+      temp_p.innerHTML = temp_p.innerHTML.replace(/\$\$\$\$/g, "$$$$\n$$$$");
+      temp_p.innerHTML = temp_p.innerHTML.replace(/\$\$\$/g, "$\n$$$$");
     });
     /**/
     renderMathInElement(document.body,
