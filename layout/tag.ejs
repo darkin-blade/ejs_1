@@ -13,7 +13,7 @@
 <div class="mid_container">
   <div class="shadow_block center_block block_inf">
     <% site.tags.forEach(function (tag) { %>
-      <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
+      <a href="<%- url_for(tag.path) %>" class="mid_tag"><%- tag.name %></a>
     <% }) %>
   </div>
 </div>

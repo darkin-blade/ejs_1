@@ -2,6 +2,37 @@
  * 站名,标题字体,代码字体,链接字体等
  */
 
+html body {
+  font-family: 'varela round';
+}
+
+.mid_container div div a {
+  transition-duration: 0.5s;
+  color: var(--link_blue);
+  text-decoration: none;
+}
+
+.mid_container div div a:hover {
+  color: var(--hover_blue);
+}
+
+.mid_tag,
+.mid_category {
+  transition-duration: 0.5s;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 5px;
+  line-height: 30px;
+
+  text-decoration: none;
+  color: var(--text_blue);
+}
+
+.mid_tag:hover,
+.mid_category:hover {
+  color: var(--text_orange);
+}
+
 #web_name {
   /* 网站名 */
   transition-duration: 0.5s;
@@ -101,15 +132,20 @@
 }
 
 .bar_item {
-  transition-duration: 0.5s;
+  /* 右侧的tags和categories */
+  transition-duration: 1s;
   color: var(--text_grey);
   font-family: 'varela round';
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+
   text-decoration: none;
+  margin: 2px;
 }
 
 .bar_item:hover {
   color: var(--text_orange);
-  text-decoration: underline;
+  border-bottom: 2px solid var(--box_orange);
+  border-radius: 2px;
 }
 
 /* 标题 */

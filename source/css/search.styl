@@ -24,7 +24,18 @@
   max-height: 90%;
   padding-right: 30px;
   overflow-y: scroll;
-  word-break: break-all; 
+  word-break: break-all;
+
+}
+
+.local-search-result-cls a {
+  transition-duration: 0.5s;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--text_blue);
+  &:hover {
+    color: var(--text_orange);
+  }
 }
 
 .local-search-plugin {
