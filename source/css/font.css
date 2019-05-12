@@ -1,7 +1,10 @@
 #web_name {
+  /* 网站名 */
   transition-duration: 0.5s;
-  font-size: 50px;
+  font-size: 55px;
   font-weight: bold;
+  font-family: 'varela round';
+  
   color: var(--text_blue);
   text-decoration: none;
 }
@@ -14,9 +17,11 @@
   /* 摘要页 */
   transition-duration: 0.5s;
   font-size: 25px;
+  font-weight: bold;
+  font-family: 'varela round';
+  
   color: var(--text_blue);
   text-decoration: none;
-  font-weight: bold;
 }
 
 .post_title:hover {
@@ -26,8 +31,9 @@
 #post_name {
   /* 内容页 */
   text-align: center;
-  font-weight: bold;
   font-size: 35px;
+  font-weight: bold;
+  font-family: 'varela round';
 }
 
 #guide_title {
@@ -98,29 +104,39 @@
   text-decoration: underline;
 }
 
-code {
-  /* 行间代码 */
-  font-size: 15px;
-  background-color: var(--code_grey);
+/* 标题 */
+.section_1,
+.section_2,
+.section_3,
+.section_4,
+.section_5,
+.section_6 {
+  font-family: 'varela round';
 }
 
-/* 链接 */
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
+/* 标题链接 */
+.section_1 a,
+.section_2 a,
+.section_3 a,
+.section_4 a,
+.section_5 a,
+.section_6 a {
   transition-duration: 0.5s;
   color: var(--text_blue);
   text-decoration: none;
 }
 
-h1 a:hover,
-h2 a:hover,
-h3 a:hover,
-h4 a:hover,
-h5 a:hover,
-h6 a:hover {
+.section_1 a:hover,
+.section_2 a:hover,
+.section_3 a:hover,
+.section_4 a:hover,
+.section_5 a:hover,
+.section_6 a:hover {
   color: var(--text_orange)
+}
+
+code {
+  /* 行间代码 */
+  font-size: 15px;
+  background-color: var(--code_grey);
 }
