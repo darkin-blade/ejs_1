@@ -43,6 +43,7 @@
 #guide_title {
   transition-duration: 0.5s;
   font-weight: 900;
+  font-family: 'varela round';
 
   cursor: pointer;
   margin-bottom: 10px;
