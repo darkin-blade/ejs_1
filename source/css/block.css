@@ -96,7 +96,7 @@
   margin-left: 10px;
   margin-right: 10px;
 
-  overflow-y: hidden;
+  overflow-y: hidden;/* 通过修改摘要块来解决溢出 */
 }
 
 .main_block {
@@ -193,4 +193,9 @@
   padding-top: 20px;
   padding-right: 20px;
   overflow-y: scroll;
+}
+
+.post_excerpt {
+  height: 180px;
+  overflow-y: hidden;
 }

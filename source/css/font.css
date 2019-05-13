@@ -55,6 +55,9 @@ html body {
   font-weight: bold;
   font-family: 'varela round';
   
+  margin-top: 20px;
+  display: block;
+
   color: var(--text_blue);
   text-decoration: none;
 }
@@ -105,7 +108,8 @@ html body {
 }
 
 .guide_1,
-.guide_2,
+.guide_2,p
+p
 .guide_3,
 .guide_4,
 .guide_5 {

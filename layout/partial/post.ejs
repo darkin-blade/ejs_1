@@ -1,7 +1,7 @@
 <!-- 单个文章 -->
 
 <a href="<%- url_for(post.path) %>" class="post_title">
-  <p><%- post.title %></p>
+  <%- post.title %>
 </a>
 <p><%= date(post.date, "YYYY-MM-DD") %></p>
 
@@ -21,7 +21,7 @@
 
   <!-- 主题内置自动摘要 -->
   <% if (is_home() || is_tag() || is_category()) { %>
-    <div id="post_<%- post_num %>">
+    <div id="post_<%- post_num %>" class="post_excerpt">
       <p><%- post.content.substring(0, theme.auto_excerpt.length) %></p>
     </div>
   <% } %>
