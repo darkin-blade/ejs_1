@@ -106,7 +106,7 @@ var searchFunc = function(path, search_id, content_id)
               {
                 var regS = new RegExp(keyword, "gi");
                 // match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
-                match_content = match_content.replace(regS, "<em>" + keyword + "</em>");
+                match_content = match_content.replace(regS, "<strong class='search-highlight'>" + keyword + "</strong>");
               });
 
               str += "<p class=\"search-result\">" + match_content + "...</p>"
