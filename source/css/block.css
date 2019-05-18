@@ -129,7 +129,7 @@
   /* 网页标题块 */
   text-align: center;
   background-color: rgba(100, 100, 100, 0.0);
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
 
 .bottom_block {
