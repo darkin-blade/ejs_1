@@ -3,7 +3,7 @@
 */
 
 .normal_table {
-  border-left: 1px solid #ddd;
+  border-left: 1px solid #000;
   border-top-left-radius: 3px;
   background-color: rgb(250, 250, 250);
   border-collapse: collapse;
@@ -13,10 +13,10 @@
 .normal_table th,
 .normal_table td {
   line-height: 1.7;
-  border-bottom: 3px solid #ccc;
-  border-right: 1px solid #ddd;
+  border-bottom: 3px solid #999;
+  border-right: 1px solid #000;
 }
 
 .normal_table th {
-  border-top: 3px solid var(--code_grey);
+  border-top: 3px solid #999;
 }
