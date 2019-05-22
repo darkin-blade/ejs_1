@@ -7,7 +7,6 @@ function my_resize()
 {
   change_width();
   change_height();
-  change_live2d();// 隐藏live2d
 }
 
 // 网页加载后执行的代码
@@ -257,24 +256,5 @@ function left_block_rate (width) // 左侧附加导航的透明度计算
   else
   {
     return (- 0.46 + width * 0.00076);
-  }
-}
-
-function change_live2d()
-{
-  var w_width = document.body.clientWidth;
-  if (w_width < 1600)
-  {
-    document.querySelectorAll(".drag").forEach(function(my_node) {
-      $(my_node).css("opacity", "0");
-      $(my_node).css("z-index", "-1");
-    });
-  }
-  else
-  {
-    document.querySelectorAll(".drag").forEach(function(my_node) {
-      $(my_node).css("opacity", "1");
-      $(my_node).css("z-index", "1");
-    });
   }
 }
