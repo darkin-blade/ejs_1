@@ -224,11 +224,11 @@ function main_block_rate (width) // 文章/category/tag页面的宽度
 {
   if (width < 1000)
   {
-    return 1 - 0.0001 * width;
+    return 1 - 0.00001 * width;
   }
   else
   {
-    return 1.33 - 0.00043 * width;
+    return 1.51 - 0.00052 * width;
   }
 }
 
