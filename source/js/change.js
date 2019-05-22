@@ -7,7 +7,6 @@ function my_resize()
 {
   change_width();
   change_height();
-  change_aatrox();
   change_live2d();// 隐藏live2d
 }
 
@@ -17,7 +16,6 @@ function my_load()
   my_filter()
   change_width();
   change_height();
-  change_aatrox();
   my_highlight_start();// 手动代码高亮
   document.body.setAttribute("onscroll", "my_scroll()");// 防止报错
   my_scroll();
@@ -178,7 +176,7 @@ function change_width() // 自动调整元素宽度
     b_margin = (Number(b_margin.replace("px", "")));
     var b_offset = b_padding + b_margin;
 
-    var b_width = w_width * rate;
+    var b_width = w_width * rate - 2 * b_offset; // 减去多余的padding和margin 
     var b_left = (w_width - b_width) / 2 - b_offset;
     $(".main_block").css("width", b_width + "px");
     $(".main_block").css("left", b_left + "px"); // 减去多余的padding
@@ -193,8 +191,9 @@ function change_width() // 自动调整元素宽度
     b_margin = (Number(b_margin.replace("px", "")));
     var b_offset = b_padding + b_margin;
 
-    var b_width = w_width * rate;
+    var b_width = w_width * rate - 2 * b_offset; // 减去多余的padding和margin 
     var b_left = (w_width - b_width) / 2 - b_offset;
+    console.log(b_left);
     $(".center_block").css("width", b_width + "px");
     $(".center_block").css("left", b_left + "px"); // 减去多余的padding
   }
@@ -220,7 +219,7 @@ function change_width() // 自动调整元素宽度
   $(".left_block").css("opacity", rate);
 }
 
-function main_block_rate (width)
+function main_block_rate (width) // 文章/category/tag页面的宽度
 {
   if (width < 1000)
   {
@@ -232,7 +231,7 @@ function main_block_rate (width)
   }
 }
 
-function mid_block_rate (width)
+function mid_block_rate (width) // 摘要块宽度函数
 {
   if (width < 800)
   {
@@ -248,7 +247,7 @@ function mid_block_rate (width)
   }
 }
 
-function left_block_rate (width)
+function left_block_rate (width) // 左侧附加导航的透明度计算
 {
   if (width < 1000)
   {
@@ -257,22 +256,6 @@ function left_block_rate (width)
   else
   {
     return (- 0.46 + width * 0.00076);
-  }
-}
-
-function change_aatrox()
-{
-  var w_width = document.body.clientWidth;
-  var w_height = document.body.clientHeight;
-  if (w_width * 1080 > w_height * 1920)
-  {
-    $("#Aatrox").css("width", w_width + "px");
-    $("#Aatrox").css("height", (w_width * 1080 / 1920) + "px");
-  }
-  else
-  {
-    $("#Aatrox").css("height", w_height + "px");
-    $("#Aatrox").css("width", (w_height * 1920 / 1080) + "px");
   }
 }
 
