@@ -41,6 +41,9 @@ if (page.latex == null) {
   MathJax.Hub.Queue(["Typeset", MathJax.Hub])
 </script>
 <script type="text/javascript" src="<%- theme.latex.mathjax %>"></script>
+<script>
+  console.log("mathjax rendering");
+</script>
 <% } else if (temp_latex == 2) { %>
 
 <!-- katex -->

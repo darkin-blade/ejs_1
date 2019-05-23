@@ -196,8 +196,6 @@ function change_width() // 自动调整元素宽度
     $(".center_block").css("left", b_left + "px");
   }
 
-  console.log(b_left, w_width, rate);
-
   // 搜索块宽度
   b_padding = $(".top_block").css("padding-left"); // padding转数字
   b_margin = $(".top_block").css("margin-left"); // margin转数字
