@@ -156,6 +156,7 @@
   position: fixed;
   z-index: 3;
   top: 20%;
+  word-break: normal;
   
   height: 60%;
   width: 30%;
