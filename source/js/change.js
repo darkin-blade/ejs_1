@@ -249,7 +249,7 @@ function left_block_rate (width) // 左侧附加导航的透明度计算
 {
   if (width < 1000)
   {
-    return 0.3;
+    return 0.1;
   }
   else
   {
