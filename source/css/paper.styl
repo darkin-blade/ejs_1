@@ -70,25 +70,28 @@ p, ul, h1, h2, h3, h4, h5, h6 {
   margin-left: -5px;
   margin-top: 5px;
   padding-bottom: 5px;
-  // padding-bottom: 10px;
   // 解决latex公式过挤的问题
   &::before {
-    content: "";
-    border: 5px solid var(--hover_blue);
-    border-radius: 100%;
-    
-    margin-right: 10px;
-    margin-top: 7px;
+    content: "\2022";
+    font-size: 24px;
+    left: -5px;
+    bottom: 7px;
+    color: var(--hover_blue);
+    position: relative;
     float: left;
+
+    text-shadow: 0px 0px 3px var(--link_blue);
   }
   li {
     margin-left: -20px;
     &::before {
-      border: 5px solid #ddd;
+      color: #999
+      text-shadow: 0px 0px 3px #bbb;
     }
     li {
       &::before {
-        border: 5px solid #eee;
+        color: #ccc
+        text-shadow: 0px 0px 3px #eee;
       }
     }
   }
