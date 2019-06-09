@@ -6,7 +6,7 @@ html body {
   font-family: 'Varela Round', 'Microsoft Yahei';
 }
 
-p, ul {
+.main_block p, .main_block ul {
   font-family: 'Microsoft Yahei';
 }
 
@@ -71,7 +71,6 @@ p, ul {
     content: "";
     border: 5px solid var(--hover_blue);
     border-radius: 100%;
-    background: var(--text_blue);
     
     margin-right: 10px;
     margin-top: 7px;
@@ -80,8 +79,12 @@ p, ul {
   li {
     margin-left: -20px;
     &::before {
-      border: 5px solid #eee;
-      background: #999;
+      border: 5px solid #ddd;
+    }
+    li {
+      &::before {
+        border: 5px solid #eee;
+      }
     }
   }
 }
