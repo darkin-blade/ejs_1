@@ -6,7 +6,7 @@ html body {
   font-family: 'Varela Round', 'Microsoft Yahei';
 }
 
-.main_block p, .main_block ul {
+.main_block p, .main_block ul, .normal_table {
   font-family: 'Microsoft Yahei';
 }
 
@@ -25,7 +25,9 @@ code {
 
 .normal_table th,
 .normal_table td {
-  line-height: 1.9;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  // 防止latex公式过挤
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
   border-top: 1px solid #ccc;
