@@ -1,0 +1,78 @@
+/**
+* 正文样式,方便其他repository引用
+*/
+
+.normal_table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.normal_table thead tr {
+  background-color: rgb(248, 248, 248);
+}
+
+.normal_table th,
+.normal_table td {
+  line-height: 1.9;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.normal_table tr {
+  transition-duration: 0.5s;
+}
+
+.normal_table tr:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+embed {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height 600px;
+}
+
+blockquote {
+  padding-left: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border-left: 6px solid rgb(175, 175, 175);
+  background-color: rgb(248, 248, 248);
+}
+
+@font-face {
+  font-family: 'varela round';
+  src: url(/font/VarelaRound.ttf);
+}
+
+p, ul {
+  word-break: normal;
+  strong {
+    color: var(--text_orange);
+  }
+}
+
+ul li {
+  list-style: none;
+  margin-left: -5px;
+  &:before {
+    content: "";
+    border: 5px solid var(--hover_blue);
+    border-radius: 100%;
+    background: var(--text_blue);
+    
+    margin-right: 10px;
+    margin-top: 5px;
+    float: left;
+  }
+  li {
+    margin-left: -20px;
+    &:before {
+      border: 5px solid #eee;
+      background: #999;
+    }
+  }
+}
