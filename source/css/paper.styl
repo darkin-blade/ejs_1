@@ -73,27 +73,42 @@ p, ul, h1, h2, h3, h4, h5, h6 {
   padding-bottom: 5px;
   // 解决latex公式过挤的问题
   &::before {
-    content: "\2022";
-    font-size: 24px;
+    content: "●";
     left: -5px;
-    bottom: 7px;
     color: var(--hover_blue);
     position: relative;
     float: left;
 
-    text-shadow: 0px 0px 3px var(--link_blue);
+    text-shadow: 0px 0px 0px var(--link_blue);
   }
   li {
     margin-left: -20px;
     &::before {
-      color: #999
-      text-shadow: 0px 0px 3px #bbb;
+      color: #bbb
+      text-shadow: 0px 0px 0px #aaa;
     }
     li {
       &::before {
-        color: #ccc
-        text-shadow: 0px 0px 3px #eee;
+        color: #eee
+        text-shadow: 0px 0px 0px #ddd;
       }
     }
+  }
+}
+
+.mid_block ol li,
+.main_block ol li {
+  list-style: none;
+  margin-left: -5px;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  // 解决latex公式过挤的问题
+  &::before {
+    content: "❶";
+    left: -5px;
+    // bottom: 7px;
+    color: var(--hover_blue);
+    position: relative;
+    float: left;
   }
 }
