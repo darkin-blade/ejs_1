@@ -4,20 +4,17 @@
 
 @font-face {
   font-family: 'varela';
-  src: url('/font/VarelaRound.ttf');
+  src: url('https://cdn.jsdelivr.net/gh/hexo-simple-theme/hexo_bg@1.0.2/VarelaRound.ttf');
 }
 
-html body, #post_name {
-  font-family: 'varela', 'Microsoft Yahei';
+@font-face {
+  font-family: 'yh';
+  src: url('https://cdn.jsdelivr.net/gh/hexo-simple-theme/hexo_bg@1.0.2/msyh.ttf')
 }
 
-.main_block p, .main_block ul, .normal_table {
-  font-family: 'Microsoft Yahei';
-}
-
-code {
-  font-family: 'DejaVu Sans Mono for Powerline';
-  word-break: break-all;
+@font-face {
+  font-family: 'mono';
+  src: url('https://cdn.jsdelivr.net/gh/hexo-simple-theme/hexo_bg@1.0.2/DejaVu Sans Mono for Powerline.ttf')
 }
 
 .normal_table {
@@ -80,11 +77,10 @@ p, ul, h1, h2, h3, h4, h5, h6 {
   &::before {
     content: "●";
     left: -5px;
+    font-family: serif;
     color: var(--hover_blue);
     position: relative;
     float: left;
-
-    text-shadow: 0px 0px 0px var(--link_blue);
   }
   li {
     margin-left: -20px;
@@ -112,14 +108,11 @@ ol > li{
 }
 ol > li:before {
   position: absolute;
-  // padding-right: 3px;
   left: -24px;
-  // height: 22px;
-    
+  
   color: #464646;
+  font-family: 'varela';
   font-weight: 1000;
-  // line-height: 1.2;
-  // border-right: 3px solid #c5c5c5;
 
   content: counter(ol_cnt) ".";
   counter-increment: ol_cnt;

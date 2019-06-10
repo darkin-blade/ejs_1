@@ -1,11 +1,27 @@
 /**
  * 站名,标题字体,代码字体,链接字体等
  */
+ 
+ a {
+   text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, #post_name, #web_name, .post_title {
+  font-family: 'varela', 'yh';
+}
+
+p, ul, .normal_table {
+  font-family: 'yh';
+}
+
+code {
+  font-family: 'mono';
+  word-break: break-all;
+}
 
 .mid_container div div a {
   transition-duration: 0.5s;
   color: var(--link_blue);
-  text-decoration: none;
 }
 
 .mid_container div div a:hover {
@@ -141,12 +157,13 @@
 }
 
 /* 标题 */
-.section_1,
+/* .section_1,
 .section_2,
 .section_3,
 .section_4,
 .section_5 {
-}
+  ;
+} */
 
 /* 标题链接 */
 .section_1 a,
