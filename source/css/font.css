@@ -10,6 +10,10 @@ h1, h2, h3, h4, h5, h6, #post_name, #web_name, .post_title {
   font-family: 'varela', 'yh';
 }
 
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: 0px 0px 3px #aaa;
+}
+
 p, ul, .normal_table {
   font-family: 'yh';
 }
