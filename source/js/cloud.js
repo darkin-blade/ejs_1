@@ -12,7 +12,7 @@ $(document).ready(function() {
     cloud.style.borderRadius = (80 * cloud_rate) + "px";
     cloud.style.top = (my_random(2, 18) * 5) + "%";
     cloud.style.opacity = my_random(50, 100) / 100;
-    cloud.style.animation = "moveclouds " + my_random(7, 30) + "s linear infinite";
+    cloud.style.animation = "moveclouds " + my_random(10, 40) + "s linear infinite";
     cloud_sky.appendChild(cloud);
   }
   cloud_sky.className = "cloud_sky";
