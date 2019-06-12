@@ -2,12 +2,12 @@
  * 站名,标题字体,代码字体,链接字体等
  */
  
- a {
-   text-decoration: none;
+a {
+  text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6, #post_name, #web_name, .post_title {
-  font-family: 'varela', 'yh';
+  font-family: 'varela', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,11 +15,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, ul, .normal_table {
-  font-family: 'yh';
+  font-family: sans-serif;
 }
 
 code {
-  font-family: 'mono';
+  font-family: monospace;
   word-break: break-all;
 }
 
@@ -55,12 +55,16 @@ code {
   font-size: 55px;
   font-weight: bold;
   
-  color: var(--text_blue);
+  /* color: var(--text_blue); */
+  color: white;
   text-decoration: none;
+  text-shadow: 0px 0px 2px #000;
+  z-index: 1;
 }
 
 #web_name:hover {
-  color: var(--text_orange)
+  /* color: var(--text_orange) */
+  text-shadow: 0px 0px 4px #000;
 }
 
 .post_title {

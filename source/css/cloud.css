@@ -1,0 +1,57 @@
+﻿/* cloud背景用 css */
+
+.cloud_sky {
+  position: fixed;
+}
+
+.clouds {
+  background: #FFF;
+  position: fixed;
+  transition: ease 1s;
+  cursor: pointer;
+}
+
+.clouds:after,
+.clouds:before {
+  content: '';
+  position: absolute;
+  background: #FFF;
+  border-radius: 100%;
+}
+
+.clouds:after {
+  width: 28%;
+  height: 83%;
+  top: -50%;
+  left: 14%;
+}
+
+.clouds:before {
+  width: 51%;
+  height: 150%;
+  top: -90%;
+  right: 14%;
+}
+
+.clouds:hover {
+  transform: scale(1.1, 1.1);
+}
+
+
+@keyframes moveclouds {
+  0% {
+    margin-left: 100%;
+  }
+  100% {
+    margin-left: -350px;
+  }
+}
+
+/*
+@-webkit-keyframes moveclouds {
+}
+@-moz-keyframes moveclouds {
+}
+@-o-keyframes moveclouds {
+}
+*/
