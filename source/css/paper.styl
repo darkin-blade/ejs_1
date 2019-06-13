@@ -64,9 +64,15 @@ p, ul, h1, h2, h3, h4, h5, h6 {
 
 .mid_block ul li,
 .main_block ul li {
-  list-style-image: url("/images/circle.png");
+  list-style-image: url("/images/circle_blue.png");
   margin-left: -5px;
   margin-top: 5px;
   padding-bottom: 5px;
   // 解决latex公式过挤的问题
+  li {
+    list-style-image: url("/images/circle_grey.png");
+    li {
+      list-style-image: url("/images/circle_light.png");
+    }
+  }
 }
