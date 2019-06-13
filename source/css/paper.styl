@@ -64,52 +64,9 @@ p, ul, h1, h2, h3, h4, h5, h6 {
 
 .mid_block ul li,
 .main_block ul li {
-  // list-style: none;
+  list-style-image: url("/images/circle.png");
   margin-left: -5px;
   margin-top: 5px;
   padding-bottom: 5px;
   // 解决latex公式过挤的问题
-  &::before {
-    content: "●🞄";
-    left: -5px;
-    font-family: serif;
-    color: var(--hover_blue);
-    position: relative;
-    float: left;
-  }
-  li {
-    margin-left: -20px;
-    &::before {
-      color: #bbb;
-      text-shadow: 0px 0px 0px #aaa;
-    }
-    li {
-      &::before {
-        color: #eee;
-        text-shadow: 0px 0px 0px #ddd;
-      }
-    }
-  }
-}
-
-ol {
-  list-style: none;
-  counter-reset: ol_cnt;
-}
-ol > li {
-  margin-top: 5px;
-  padding-bottom: 5px;
-  position: relative;
-}
-ol > li:before {
-  position: absolute;
-  left: -24px;
-  
-  color: #464646;
-  font-family: 'varela';
-  font-size: 20px;
-  font-weight: 1000;
-
-  content: counter(ol_cnt) ".";
-  counter-increment: ol_cnt;
 }
