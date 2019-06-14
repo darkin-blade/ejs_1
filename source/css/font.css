@@ -57,12 +57,17 @@ code {
   color: white;
   text-decoration: none;
   text-shadow: 0px 0px 2px #000;
-  z-index: 1;
 }
 
 #web_name:hover {
   /* color: var(--text_orange) */
   text-shadow: 0px 0px 4px #000;
+}
+
+#bottom_block_inner {
+  /* 底部页码 */
+  color: white;
+  font-weight: 800;
 }
 
 .post_title {

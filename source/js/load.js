@@ -18,8 +18,11 @@ var isMobile = {
   Windows: function () {
     return navigator.userAgent.match(/IEMobile/i);
   },
+  Symbian: function () {
+    return navigator.userAgent.match(/Symbian/i);
+  },
   any: function () {
-    return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows() || isMobile.Symbian());
   }
 };
 
