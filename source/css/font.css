@@ -16,9 +16,21 @@ ul,
   font-family: "Arimo for Powerline", serif;
 }
 
+body {
+  font-size: large;
+}
+
 code {
+  /* 行间代码 */
   font-family: monospace;
+  font-size: larger;
   word-break: break-all;
+  background-color: var(--code_grey);
+}
+
+.code_pre {
+  /* 大代码块 */
+  font-size: larger;
 }
 
 .mid_container div div a {
@@ -193,10 +205,4 @@ code {
 .section_4 a:hover,
 .section_5 a:hover {
   color: var(--text_orange)
-}
-
-code {
-  /* 行间代码 */
-  font-size: 15px;
-  background-color: var(--code_grey);
 }
