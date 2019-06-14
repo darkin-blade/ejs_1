@@ -23,7 +23,7 @@ body {
 code {
   /* 行间代码 */
   font-family: monospace;
-  font-size: larger;
+  font-size: large;
   word-break: break-all;
   background-color: var(--code_grey);
 }
