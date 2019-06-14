@@ -145,6 +145,7 @@ code {
 .guide_5 {
   padding-left: 15px;
   position: relative;
+  font-size: medium;
 
   cursor: pointer;
   transition-duration: 0.5s;
