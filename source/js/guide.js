@@ -10,7 +10,7 @@ var my_guide = new Array();
 // 创建对象
 function create_guide() {
 
-  var left_block = document.getElementsByClassName("left_block")[0];
+  var right_block = document.getElementsByClassName("right_block")[0];
 
   var guide_title = document.createElement("a");// 跳转至标题
   guide_title.innerText = document.getElementById("post_name").innerText;
@@ -18,25 +18,25 @@ function create_guide() {
 
   dfs_h(document.body);// 搜索所有的1,2,3级标题
     
-  var left_guide = document.createElement("div");
-  left_guide.setAttribute("class", "left_guide");
+  var right_guide = document.createElement("div");
+  right_guide.setAttribute("class", "right_guide");
   for (var i = 0; i < document.h_index; i ++)
   {// 设置序号和级数
     var temp_a = document.createElement("div");
     temp_a.id = "guide_" + i;
     temp_a.className = "guide_" + my_guide[i].rank;
     temp_a.innerHTML = "<a>" + my_guide[i].name.replace(/</g, "<&shy;") + "</a>";
-    left_guide.appendChild(temp_a);
+    right_guide.appendChild(temp_a);
   }
   
-  left_block.appendChild(guide_title);
+  right_block.appendChild(guide_title);
   document.querySelector("#guide_title").onclick = function () {
     document.querySelector("#post_name").scrollIntoView({
       block: "start",
       behavior: "smooth"
     });
   };
-  left_block.appendChild(left_guide);
+  right_block.appendChild(right_guide);
   for (var i = 0; i < document.h_index; i ++)
   {
     document.querySelector("#guide_" + i).setAttribute("onclick", "add_scroll(" + i + ")");

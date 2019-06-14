@@ -27,7 +27,7 @@ function auto_guide()
   var w_width = document.body.clientWidth;
   if (w_width > 1800)// 自动弹出左侧附加引导
   {
-    var temp_tool = document.querySelector(".left_tool_3");
+    var temp_tool = document.querySelector(".right_tool_3");
     if (temp_tool != null) temp_tool.click();
   }
 }
@@ -214,7 +214,7 @@ function change_width() // 自动调整元素宽度
 
   // 文章tag/category块透明度
   rate = left_block_rate(w_width);
-  $(".left_block").css("opacity", rate);
+  $(".right_block").css("opacity", rate);
 }
 
 function main_block_rate (width) // 文章/category/tag页面的宽度

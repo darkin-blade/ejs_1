@@ -12,7 +12,7 @@
 </div>
 
 
-<div class="block_hide_right shadow_block right_block">
+<div class="block_hide_left shadow_block left_block">
     <!-- 每一项逐个生成 -->
     <div>
       <div class="bar_section">
@@ -27,7 +27,7 @@
       <p>tags: <%- site.tags %></p>
     <% } %>
     <!-- 全部tags排序 -->
-    <div id="right_tags">
+    <div id="left_tags">
       <div class="bar_section">
         <p>Tags</p>
       </div>
@@ -47,7 +47,7 @@
         tags_path.sort();
         for (var i = 0; i < tags_name.length; i ++)
         {
-          $("#right_tags").append("<a class='bar_item' href='/" + tags_path[i] + "'>" + tags_name[i] + "</a>\n");// bar_item
+          $("#left_tags").append("<a class='bar_item' href='/" + tags_path[i] + "'>" + tags_name[i] + "</a>\n");// bar_item
         }
     </script>
     <!-- 全部categories -->
@@ -61,16 +61,17 @@
     </div>
 </div>
 
-<div class="right_tool_3 shadow_tool">
+<!-- 右侧栏开关 -->
+<div class="left_tool_3 shadow_tool">
   <script>
     $(document).ready(function () {
-      $(".right_tool_3").click(function () {
-        $(".block_hide_right").toggleClass("block_show_right");
-        var right_tool_3 = document.getElementById("right_link");
-        if (right_tool_3.innerHTML == "Show") right_tool_3.innerHTML = "Hide";
-        else right_tool_3.innerHTML = "Show";
+      $(".left_tool_3").click(function () {
+        $(".block_hide_left").toggleClass("block_show_left");
+        var left_tool_3 = document.getElementById("left_link");
+        if (left_tool_3.innerHTML == "Show") left_tool_3.innerHTML = "Hide";
+        else left_tool_3.innerHTML = "Show";
       });
     });
   </script>
-  <p id="right_link">Show</p>
+  <p id="left_link">Show</p>
 </div>
