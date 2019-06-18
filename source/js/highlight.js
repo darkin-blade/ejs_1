@@ -5,7 +5,8 @@
 var highlight_1 = [
   "for", "while", "return", "switch", "case", "break", "do", "else", "if",
   "endif", "endfor", "endwhile",
-  "const"
+  "const",
+  "sizeof"
 ];
 
 var highlight_2 = [
