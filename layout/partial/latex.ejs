@@ -58,22 +58,29 @@ if (page.latex == null) {
   // 删除<p>内部换行,使katex正确渲染
   $(document).ready(setTimeout(function()
   {
-    document.querySelectorAll("div div div p").forEach(function(temp_p){
-      var my_child = temp_p.childNodes.length;
-
-      for (var i = 0; i < my_child; i ++)
-      {
-        if (temp_p.childNodes[i].tagName == "BR")
-        {
-          temp_p.removeChild(temp_p.childNodes[i]);
-          my_child --;
-          i --;
-        }
+    for (var i = 0; i < 2; i ++) {
+      if (i == 0) {
+        var all_text = document.querySelectorAll("div div div p");
+      } else {
+        var all_text = document.querySelectorAll("li li");
       }
-      // 垃圾katex不能够跨行渲染,所以手动清除换行
-      temp_p.innerHTML = temp_p.innerHTML.replace(/\$\$\$\$/g, "$$$$\n$$$$");
-      temp_p.innerHTML = temp_p.innerHTML.replace(/\$\$\$/g, "$\n$$$$");
-    });
+      all_text.forEach(function(temp_p){
+        var my_child = temp_p.childNodes.length;
+  
+        for (var i = 0; i < my_child; i ++)
+        {
+          if (temp_p.childNodes[i].tagName == "BR")
+          {
+            temp_p.removeChild(temp_p.childNodes[i]);
+            my_child --;
+            i --;
+          }
+        }
+        // 垃圾katex不能够跨行渲染,所以手动清除换行
+        temp_p.innerHTML = temp_p.innerHTML.replace(/\$\$\$\$/g, "$$$$\n$$$$");
+        temp_p.innerHTML = temp_p.innerHTML.replace(/\$\$\$/g, "$\n$$$$");
+      });
+    }
     /**/
     renderMathInElement(document.body,
     {
