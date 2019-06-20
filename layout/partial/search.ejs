@@ -1,37 +1,33 @@
 <!-- 搜索功能 -->
 
-<% if (theme.search.enable) { %>
-
-  <div class="right_tool_5 shadow_tool">
-    <p id="right_search">Find</p>
-  </div>
-  <script>
-    $(document).ready(function () {
-      $(".right_tool_5").click(function () {
-        $(".block_hide_top").toggleClass("block_show_top");
-        
-        var right_tool_5 = document.getElementById("right_search");
-        if (right_tool_5.innerHTML == "Find") {
-          right_tool_5.innerHTML = "Close";
-          $("#local-search-input").focus(); // 获得焦点
-        } else {
-          right_tool_5.innerHTML = "Find";
-          $("#local-search-input").blur() // 取消焦点
-        }
-        // 用于美观,调整宽度
-        my_resize();
-      });
+<div class="right_tool_5 shadow_tool">
+  <p id="right_search">Find</p>
+</div>
+<script>
+  $(document).ready(function () {
+    $(".right_tool_5").click(function () {
+      $(".block_hide_top").toggleClass("block_show_top");
+      
+      var right_tool_5 = document.getElementById("right_search");
+      if (right_tool_5.innerHTML == "Find") {
+        right_tool_5.innerHTML = "Close";
+        $("#local-search-input").focus(); // 获得焦点
+      } else {
+        right_tool_5.innerHTML = "Find";
+        $("#local-search-input").blur() // 取消焦点
+      }
+      // 用于美观,调整宽度
+      my_resize();
     });
-  </script>
+  });
+</script>
 
 
-  <div class="shadow_block block_hide_top top_block">
-    <!-- 隐藏在顶部 -->
-    <span class="local-search-plugin">
-        <input type="search" placeholder="Search" id="local-search-input" class="local-search-input-cls">
-        <!-- placeholder:提示信息 -->
-        <div id="local-search-result" class="local-search-result-cls"></div>
-    </span>
-  </div>
-  
-<% } %>
+<div class="shadow_block block_hide_top top_block">
+  <!-- 隐藏在顶部 -->
+  <span class="local-search-plugin">
+      <input type="search" placeholder="Search" id="local-search-input" class="local-search-input-cls">
+      <!-- placeholder:提示信息 -->
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+</div>

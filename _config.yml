@@ -7,12 +7,6 @@ menu:
   Tags: /tags
   Categories: /categories
 
-web:
-  motto: Now, hear the silence of ANNIHILATION!!!
-
-search:
-	enable: true # 搜索开关
-
 auto_excerpt: # 自动摘要,不提供关闭的接口
   length: 400
 
@@ -26,3 +20,6 @@ latex: # 只能够通过在md中设置latex = 0来关闭,默认开启mathjax,不
 
 live2d:
   enable: true
+
+background:
+  name: snow

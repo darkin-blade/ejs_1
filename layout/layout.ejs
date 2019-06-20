@@ -48,11 +48,16 @@
   <!-- 网页自动调整核心代码 -->
   <%- js('js/change') %>
 
-  <!-- cloud动态背景 -->
-  <!-- <%- js('js/cloud') %> -->
+  <% if (theme.background.name == "cloud") { %>
+    <!-- cloud动态背景 -->
+    <%- js('js/cloud') %>
+    <%- css('css/cloud') %>
+  <% } else if (theme.background.name == "snow") { %>
+    <!-- snow动态背景 -->
+    <%- js('js/snow') %>
+    <%- css('css/snow') %>
+  <% } %>
 
-  <!-- snow动态背景 -->
-  <%- js('js/snow') %>
 
   <!-- live2d -->
   <% if (theme.live2d.enable) { %>
