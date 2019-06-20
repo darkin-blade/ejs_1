@@ -18,7 +18,7 @@
 
 4. 可切换`mathjax`和`katex`数学公式渲染
 
-5. 无限加载live2d canvas
+5. 无限加载live2d canvas(可以调成无限,默认最多9个,看cpu带不带的动)
 
 ![](https://github.com/hexo-simple-theme/theme_demo/blob/master/live2d.png)
 
