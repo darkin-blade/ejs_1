@@ -2,7 +2,7 @@
 
 使用ejs写的hexo主题,对字体及颜色等css做了更多限定
 
-[最简版(较少css限定的)](https://github.com/hexo-simple-theme/sample_ejs)
+[最简版(较少css限定的)](https://github.com/hexo-simple-theme/ejs_sample)
 
 # 功能
 
@@ -18,7 +18,9 @@
 
 4. 可切换`mathjax`和`katex`数学公式渲染
 
-5. 无限加载live2d canvas(可以调成无限,默认最多9个,看cpu带不带的动)
+5. 无限加载live2d canvas(可以调成无限,默认最多9个)
+
+> 由于模型文件过大,请移步:[文件](https://github.com/hexo-simple-theme/hexo_live2d),[使用即修改说明](https://github.com/darkin-blade/live2d_SDK_WebGL)
 
 ![](https://github.com/hexo-simple-theme/theme_demo/blob/master/live2d.png)
 
