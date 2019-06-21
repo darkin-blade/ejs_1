@@ -20,7 +20,7 @@
 
 5. 无限加载live2d canvas(可以调成无限,默认最多9个)
 
-> 由于模型文件过大,请移步:[文件](https://github.com/hexo-simple-theme/hexo_live2d),[使用即修改说明](https://github.com/darkin-blade/live2d_SDK_WebGL)
+> 由于模型文件过大,请移步:[文件](https://github.com/hexo-simple-theme/hexo_live2d),[使用说明](https://github.com/darkin-blade/live2d_SDK_WebGL)
 
 ![](https://github.com/hexo-simple-theme/theme_demo/blob/master/live2d.png)
 
