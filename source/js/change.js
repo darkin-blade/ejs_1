@@ -64,19 +64,6 @@ function change_guide(direct)
   var guide_4 = null;
   var guide_5 = null;
 
-  for (var i = 0; i < document.h_index; i ++)// h_index是section/guide的总数
-  {
-    var this_guide = document.getElementById("guide_" + i);
-    if ((this_guide.className != "guide_1")
-    &&(this_guide.className != "guide_2")
-    &&(this_guide.className != "guide_3")
-    &&(this_guide.className != "guide_4")
-    &&(this_guide.className != "guide_5"))
-    {
-      $(this_guide).toggleClass("guide_active");// 关闭active属性
-    }
-  }
-
   for (var i = 0; i < document.h_index; i ++)// 从上往下遍历
   {
     var this_section = document.getElementById("section_" + i);
@@ -106,20 +93,26 @@ function change_guide(direct)
     }
   }
 
-  if (guide_1) {
-    $(guide_1).toggleClass("guide_active");
-  }
-  if (guide_2) {
-    $(guide_2).toggleClass("guide_active");
-  }
-  if (guide_3) {
-    $(guide_3).toggleClass("guide_active");
-  }
-  if (guide_4) {
-    $(guide_4).toggleClass("guide_active");
-  }
-  if (guide_5) {
-    $(guide_5).toggleClass("guide_active");
+
+  for (var i = 0; i < document.h_index; i ++)// h_index是section/guide的总数
+  {
+    var this_guide = document.getElementById("guide_" + i);
+    if ((this_guide == guide_1)
+      ||(this_guide == guide_2)
+      ||(this_guide == guide_3)
+      ||(this_guide == guide_4)
+      ||(this_guide == guide_5))
+    {
+      if (this_guide.className.match("active") == null) {// 本应该启动而没有启动
+        $(this_guide).toggleClass("guide_active");// 开启active属性
+      }
+    }
+    else
+    {
+      if (this_guide.className.match("active") != null) {// 本不应该启动而启动了
+        $(this_guide).toggleClass("guide_active");// 关闭active属性
+      }
+    }
   }
 }
 
