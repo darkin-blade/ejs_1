@@ -10,7 +10,9 @@
 
 1. sublime molokai风格代码块渲染
 
-![](https://github.com/hexo-simple-theme/theme_demo/blob/master/molokai.png)
+<div align="center">
+  <img width="500px" src="https://github.com/hexo-simple-theme/theme_demo/blob/master/molokai.png"> 
+</div>
 
 2. 本地搜索(需要`hexo-generator-search`npm包)
 
@@ -22,12 +24,16 @@
 
 > 由于模型文件过大,请移步:[文件](https://github.com/hexo-simple-theme/hexo_live2d),[使用说明](https://github.com/darkin-blade/live2d_SDK_WebGL)
 
-![](https://github.com/hexo-simple-theme/theme_demo/blob/master/live2d.png)
+<div align="center">
+  <img width="700px" src="https://github.com/hexo-simple-theme/theme_demo/blob/master/live2d.png"> 
+</div>
 
 6. 可切换动态背景
 
-![](https://github.com/hexo-simple-theme/theme_demo/blob/master/cloud.png)
-![](https://github.com/hexo-simple-theme/theme_demo/blob/master/snow.png)
+<div align="center">
+  <img width="700px" src="https://github.com/hexo-simple-theme/theme_demo/blob/master/cloud.png"> 
+  <img width="700px" src="https://github.com/hexo-simple-theme/theme_demo/blob/master/snow.png"> 
+</div>
 
 # 文件组织
 
