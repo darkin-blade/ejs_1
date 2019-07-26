@@ -3,27 +3,6 @@
 <% if (site.posts && site.posts.length > 0) { %>
 
   <div class="mid_container">
-    <!-- 文章置顶功能,md文件要有top属性,不想实现 -->
-    <% if (!page.prev) { %>
-      <!-- 如果是主页 -->
-      <% if (is_home()) { %>
-        <% site.posts.each(function(post) { %>
-          <% if (post.top) { %>
-            <% if (page.type == undefined || post.type == page.type) { %>
-              <h3>TODO</h3>
-            <% } %>
-          <% } %>
-        <% }) %>
-      <!-- 如果不是主页 -->
-      <% } else if (page.posts && page.posts.length > 0) { %>
-        <% page.posts.each(function(post){ %>
-          <% if (post.top) { %>
-            <h3>TODO</h3>
-          <% } %>
-        <% }) %>
-      <% } %>
-    <% } %>
-
     <!-- 每一个页面(index/archive/tag/tag下每个小标签的页面...) -->
     <% var post_num = 0 %>
 
