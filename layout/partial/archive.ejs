@@ -2,52 +2,51 @@
 
 <% if (site.posts && site.posts.length > 0) { %>
 
-  <div class="mid_container">
-    <!-- 每一个页面(index/archive/tag/tag下每个小标签的页面...) -->
-    <% var post_num = 0 %>
+    <div class="mid_container">
+        <!-- 每一个页面(index/archive/tag/tag下每个小标签的页面...) -->
+        <% var post_num = 0 %>
 
-    <% if (page.posts && page.posts.length > 0) { %>
-      
+        <% if (page.posts && page.posts.length > 0) { %>
           <% page.posts.each(function(post){ %>
+
+              <% if (is_home() || is_tag() || is_category()) { %>
+                <!-- post带摘要 -->
+                  <div class="mid_block shadow_block block_300">
+                    <%- partial('post.ejs', {
+                      post: post,
+                      page: page,
+                      post_num: post_num
+                    }) %>
+                  </div>
+              <% } else if (is_archive()) { %>
+                  <!-- post只有标题 -->
+                  <div class="mid_block shadow_block block_100">
+                    <%- partial('post.ejs', {
+                      post: post,
+                      page: page,
+                      post_num: post_num
+                    }) %>
+                  </div>
+              <% } %>
+
+              <% if (theme.debug.enable) { %>
+                  <p>post_num: <%- post_num %></p>
+              <% } %>
+              
+              <% post_num += 1 %>  
+            <% }) %>
+
             <% if (is_home() || is_tag() || is_category()) { %>
-              <!-- post带摘要 -->
-                <div class="mid_block shadow_block block_300">
-                  <%- partial('post.ejs', {
-                    post: post,
-                    page: page,
-                    post_num: post_num
-                  }) %>
-                </div>
-            <% } else if (is_archive()) { %>
-                <!-- post只有标题 -->
-                <div class="mid_block shadow_block block_100">
-                  <%- partial('post.ejs', {
-                    post: post,
-                    page: page,
-                    post_num: post_num
-                  }) %>
-                </div>
+                <style>
+                  embed {
+                    display: none; /* 防止找不到pdf报错 */
+                  }
+                </style>
             <% } %>
+        <% } %>
+    </div>
 
-            <% if (theme.debug.enable) { %>
-              <p>post_num: <%- post_num %></p>
-            <% } %>
-            
-            <% post_num += 1 %>  
-          <% }) %>
-
-      <% if (is_home() || is_tag() || is_category()) { %>
-        <style>
-          embed {
-            display: none; /* 防止找不到pdf报错 */
-          }
-        </style>
-      <% } %>
-
-    <% } %>
-  </div>
-
-  <!-- 翻页 -->
-  <%- partial('paginator') %>
+    <!-- 翻页 -->
+    <%- partial('paginator') %>
   
 <% } %>
