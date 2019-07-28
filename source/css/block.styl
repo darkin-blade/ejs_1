@@ -103,7 +103,6 @@
 
 .main_block {
   /* 文章内容,不需要考虑并排 */
-
   float: left;
   position: relative;
 
@@ -112,7 +111,7 @@
 }
 
 .center_block {
-  /* tag/category内容,不需要考虑并排 */
+  /* tag/category表,不需要考虑并排 */
   min-height: 300px;
   text-align: center;
 
@@ -132,7 +131,6 @@
   text-align: center;
   background-color: rgba(100, 100, 100, 0.0);
   z-index: 0;
-  /* margin-bottom: 100px; */
 }
 
 .bottom_block {
@@ -172,8 +170,6 @@
 }
 
 .left_block {
-  transition-duration: 0.5s;
-
   position: fixed;
   z-index: 3;
   top: 20%;
@@ -197,9 +193,4 @@
   padding-top: 20px;
   padding-right: 20px;
   overflow-y: scroll;
-}
-
-.post_excerpt {
-  height: 180px;
-  overflow-y: hidden;
 }
