@@ -7,33 +7,33 @@
         <% var post_num = 0 %>
 
         <% if (page.posts && page.posts.length > 0) { %>
-          <% page.posts.each(function(post){ %>
+            <% page.posts.each(function(post){ %>
 
-              <% if (is_home() || is_tag() || is_category()) { %>
-                <!-- post带摘要 -->
-                  <div class="mid_block shadow_block block_300">
-                    <%- partial('post.ejs', {
-                      post: post,
-                      page: page,
-                      post_num: post_num
-                    }) %>
-                  </div>
-              <% } else if (is_archive()) { %>
-                  <!-- post只有标题 -->
-                  <div class="mid_block shadow_block block_100">
-                    <%- partial('post.ejs', {
-                      post: post,
-                      page: page,
-                      post_num: post_num
-                    }) %>
-                  </div>
-              <% } %>
+                <% if (is_home() || is_tag() || is_category()) { %>
+                    <!-- post带摘要 -->
+                    <div class="mid_block shadow_block block_300">
+                      <%- partial('post.ejs', {
+                        post: post,
+                        page: page,
+                        post_num: post_num
+                      }) %>
+                    </div>
+                <% } else if (is_archive()) { %>
+                    <!-- post只有标题 -->
+                    <div class="mid_block shadow_block block_100">
+                      <%- partial('post.ejs', {
+                        post: post,
+                        page: page,
+                        post_num: post_num
+                      }) %>
+                    </div>
+                <% } %>
 
-              <% if (theme.debug.enable) { %>
-                  <p>post_num: <%- post_num %></p>
-              <% } %>
+                <% if (theme.debug.enable) { %>
+                    <p>post_num: <%- post_num %></p>
+                <% } %>
+                <% post_num += 1 %>  
               
-              <% post_num += 1 %>  
             <% }) %>
 
             <% if (is_home() || is_tag() || is_category()) { %>
