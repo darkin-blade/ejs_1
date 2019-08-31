@@ -119,7 +119,30 @@ function change_guide(direct)
 
 function change_img()
 {
-  ;
+  document.querySelectorAll(".main_block div table").forEach(function(my_img)
+  {
+    for (var temp_father = my_img; 1; ) {
+      if (temp_father == null) {
+        console.log("error");
+        break;
+      }
+      if (temp_father.className.match("block") != null) {
+        if ()
+        var temp_w = temp_father.width;
+        var temp_h = temp_father.height;
+        var ratio_w = temp_w / my_img.width;
+        var ratio_h = temp_h / my_img.height;
+        if (ratio_w > ratio_h) {// 父元素更宽
+          ;
+        } else {
+          ;
+        }
+        break;
+      } else {
+        temp_father = temp_father.parentElement;
+      }
+    }
+  });
 }
 
 function change_height()
