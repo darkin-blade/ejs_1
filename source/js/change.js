@@ -7,6 +7,7 @@ function my_resize()
 {
   change_width();
   change_height();
+  change_img();// 自动调整图片大小
 }
 
 // 网页加载后执行的代码
@@ -114,6 +115,11 @@ function change_guide(direct)
       }
     }
   }
+}
+
+function change_img()
+{
+  ;
 }
 
 function change_height()
