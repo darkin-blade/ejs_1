@@ -119,7 +119,6 @@ function change_guide(direct)
 
 function change_img()
 {
-  return;
   document.querySelectorAll("img").forEach(function(my_img)
   {
     for (var temp_father = my_img; 1; ) {
@@ -148,6 +147,7 @@ function change_img()
           $my_img.css("width", temp_w + "px");
           $my_img.css("height", (temp_w / son_ratio) + "px");
         }
+        console.log(my_img.width, my_img.height);
         break;
       } else {
         temp_father = temp_father.parentElement;
