@@ -119,7 +119,8 @@ function change_guide(direct)
 
 function change_img()
 {
-  document.querySelectorAll(".main_block div table").forEach(function(my_img)
+  return;
+  document.querySelectorAll("img").forEach(function(my_img)
   {
     for (var temp_father = my_img; 1; ) {
       if (temp_father == null) {// 只可能是图片背景
@@ -135,13 +136,17 @@ function change_img()
         var temp_h = temp_father.height;
         var ratio_w = temp_w / my_img.width;
         var ratio_h = temp_h / my_img.height;
+        var son_ratio = my_img.width / my_img.height;// 图片自身的宽高比
+        
         if (ratio_w >= 1 && ratio_h >= 1) {// 不需要调整大小
           break;
         }
         if (ratio_w > ratio_h) {// 父元素更宽
-          ;
-        } else {
-          ;
+          $my_img.css("height", temp_h + "px");
+          $my_img.css("width", (temp_h * son_ratio) + "px");
+        } else {// 父元素更高
+          $my_img.css("width", temp_w + "px");
+          $my_img.css("height", (temp_w / son_ratio) + "px");
         }
         break;
       } else {
