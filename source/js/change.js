@@ -122,16 +122,22 @@ function change_img()
   document.querySelectorAll(".main_block div table").forEach(function(my_img)
   {
     for (var temp_father = my_img; 1; ) {
-      if (temp_father == null) {
+      if (temp_father == null) {// 只可能是图片背景
         console.log("error");
         break;
       }
-      if (temp_father.className.match("block") != null) {
-        if ()
+      if (temp_father.className.match("block") != null) {// 找到最接近的一个父元素block
+        if (temp_father.className.match(/\d+/) == null) {// 父元素高度可伸缩
+          console.log(temp_father.className);
+          break;
+        }
         var temp_w = temp_father.width;
         var temp_h = temp_father.height;
         var ratio_w = temp_w / my_img.width;
         var ratio_h = temp_h / my_img.height;
+        if (ratio_w >= 1 && ratio_h >= 1) {// 不需要调整大小
+          break;
+        }
         if (ratio_w > ratio_h) {// 父元素更宽
           ;
         } else {
