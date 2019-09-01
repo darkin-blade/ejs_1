@@ -134,7 +134,10 @@ function change_img()
           break;
         }
         var temp_w = $(temp_father).width();
-        var temp_h = $(temp_father).height() - 90;
+        if (temp_w < 350) {
+          break;// 不考虑这种情况
+        }
+        var temp_h = $(temp_father).height() - 70;
         var ratio_w = temp_w / my_img.width;
         var ratio_h = temp_h / my_img.height;
         var son_ratio = my_img.width / my_img.height;// 图片自身的宽高比
