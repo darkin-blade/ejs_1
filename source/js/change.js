@@ -132,7 +132,8 @@ function change_img()
           break;
         }
         var temp_w = temp_father.width;
-        var temp_h = temp_father.height - 80;
+        var temp_h = temp_father.height - 100;
+        console.log(temp_w, temp_h);
         var ratio_w = temp_w / my_img.width;
         var ratio_h = temp_h / my_img.height;
         var son_ratio = my_img.width / my_img.height;// 图片自身的宽高比
@@ -140,10 +141,13 @@ function change_img()
         if (ratio_w >= 1 && ratio_h >= 1) {// 不需要调整大小
           break;
         }
+        console.log(ratio_w, ratio_h);
         if (ratio_w > ratio_h) {// 父元素更宽
+          console.log("高相等");
           $(my_img).css("height", temp_h + "px");
           $(my_img).css("width", (temp_h * son_ratio) + "px");
         } else {// 父元素更高
+          console.log("宽相等");
           $(my_img).css("width", temp_w + "px");
           $(my_img).css("height", (temp_w / son_ratio) + "px");
         }
@@ -151,6 +155,7 @@ function change_img()
         break;
       } else {
         temp_father = temp_father.parentElement;
+        console.log(temp_father, $(temp_father).width, $(temp_father).height);
       }
     }
   });
