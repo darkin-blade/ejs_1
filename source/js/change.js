@@ -13,6 +13,7 @@ function my_resize()
 // 网页加载后执行的代码
 function my_load()
 {
+  change_scale();
   my_filter()
   change_width();
   change_height();
@@ -55,6 +56,15 @@ function my_scroll()
       direct = e.detail;
   }
   change_guide(direct);
+}
+
+function change_scale()
+{// 根据不同的设备进行缩放
+  if (navigator.userAgent.match("Android")) {// 放大
+    document.body.style.zoom = 1.6;
+  } else if (navigator.userAgent.match("Windows") || navigator.userAgent.match("Mac")) {// 缩小
+    document.body.style.zoom = 0.7;
+  }
 }
 
 // 附加导航功能
