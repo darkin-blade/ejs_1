@@ -134,9 +134,6 @@ function change_img()
           break;
         }
         var temp_w = $(temp_father).width();
-        if (temp_w < 350) {
-          break;// 不考虑这种情况
-        }
         var temp_h = $(temp_father).height() - 70;
         var ratio_w = temp_w / my_img.width;
         var ratio_h = temp_h / my_img.height;
@@ -149,8 +146,10 @@ function change_img()
           $(my_img).css("width", (temp_h * son_ratio) + "px");
         } else {// 父元素更高
           console.log("宽相等");
-          $(my_img).css("width", temp_w + "px");
-          $(my_img).css("height", (temp_w / son_ratio) + "px");
+          $(my_img).css("height", temp_h + "px");
+          $(my_img).css("width", (temp_h * son_ratio) + "px");
+          // $(my_img).css("width", temp_w + "px");
+          // $(my_img).css("height", (temp_w / son_ratio) + "px");
         }
         console.log(temp_w, temp_h, my_img.width, my_img.height);
         break;
