@@ -27,7 +27,7 @@
       <p>tags: <%- site.tags %></p>
     <% } %>
     <!-- 全部tags排序 -->
-    <div id="left_tags">
+    <div id="tags_list">
       <div class="bar_section">
         <p>Tags</p>
       </div>
@@ -47,7 +47,7 @@
         tags_path.sort();
         for (var i = 0; i < tags_name.length; i ++)
         {
-          $("#left_tags").append("<a class='bar_item' href='/" + tags_path[i] + "'>" + tags_name[i] + "</a>\n");// bar_item
+          $("#tags_list").append("<a class='bar_item' href='/" + tags_path[i] + "'>" + tags_name[i] + "</a>\n");// bar_item
         }
     </script>
     <!-- 全部categories -->
