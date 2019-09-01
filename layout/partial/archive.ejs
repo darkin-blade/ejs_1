@@ -38,8 +38,14 @@
 
             <% if (is_home() || is_tag() || is_category()) { %>
                 <style>
-                  embed {
-                    display: none; /* 防止找不到pdf报错 */
+                  /* embed { */
+                    /* 防止找不到pdf报错 */
+                    /* display: none;  */
+                  /* } */
+
+                  .post_date {
+                    /* 美化日期显示 */
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
                   }
                 </style>
             <% } %>
