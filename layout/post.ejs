@@ -10,6 +10,12 @@
   </div>
   <div>
     <p class="post_date"><%- date(page.date, "YYYY-MM-DD") %></p>
+    <style>
+      .post_date {
+        /* 美化日期显示 */
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    </style>
   </div>
   <div>
     <%- page.content %>
