@@ -16,6 +16,8 @@ function my_load()
   my_filter()
   change_width();
   change_height();
+  change_img();// 自动调整图片大小
+  
   my_highlight_start();// 手动代码高亮
   document.body.setAttribute("onscroll", "my_scroll()");// 防止报错
   my_scroll();
