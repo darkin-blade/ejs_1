@@ -3,7 +3,7 @@
 <a href="<%- url_for(post.path) %>" class="post_title">
   <%- post.title %>
 </a>
-<p><%= date(post.date, "YYYY-MM-DD") %></p>
+<p class="post_date"><%= date(post.date, "YYYY-MM-DD") %></p>
 
 <% if (theme.debug.enable) { %>
   <p>has post type: <%- post.type != null %></p>

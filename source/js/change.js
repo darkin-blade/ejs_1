@@ -132,7 +132,7 @@ function change_img()
           break;
         }
         var temp_w = temp_father.width;
-        var temp_h = temp_father.height;
+        var temp_h = temp_father.height - 80;
         var ratio_w = temp_w / my_img.width;
         var ratio_h = temp_h / my_img.height;
         var son_ratio = my_img.width / my_img.height;// 图片自身的宽高比
