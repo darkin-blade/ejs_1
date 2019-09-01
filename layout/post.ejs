@@ -59,15 +59,15 @@
 
 <!-- 左侧栏的开关 -->
 <div class="right_tool_3 shadow_tool">
-  <p id="right_link">Show</p>
+  <p id="right_link">&#128214;</p>
 </div>
 <script>
   $(document).ready(function () {
     $(".right_tool_3").click(function () {
       $(".block_hide_right").toggleClass("block_show_right");
       var right_tool_3 = document.getElementById("right_link");
-      if (right_tool_3.innerHTML == "Show") right_tool_3.innerHTML = "Hide";
-      else right_tool_3.innerHTML = "Show";
+      if (right_tool_3.innerHTML == "📖") right_tool_3.innerHTML = "▸";
+      else right_tool_3.innerHTML = "📖";
     });
     // 用css覆盖不了js,所以只能用js来写hover
     $(".right_block").mousemove(function () {

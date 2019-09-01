@@ -17,7 +17,7 @@
                   location = '<%= url_for(page.prev_link) %>';
                 });
             </script>
-            <p>Prev</p>
+            <p>&larr;</p>
         </div>
       <% } %>
       <!-- 下一页 -->
@@ -28,7 +28,7 @@
                   location = '<%= url_for(page.next_link) %>';
                 });
             </script>
-            <p>Next</p>
+            <p>&rarr;</p>
         </div>
       <% } %>
 
@@ -54,7 +54,7 @@
                 location = '<%= url_for(page.prev.path) %>';
               });
           </script>
-          <p>Prev</p>
+          <p>&larr;</p>
       </div>
     <% } %>
     <!-- 下一页 -->
@@ -65,7 +65,7 @@
                 location = '<%= url_for(page.next.path) %>';
               });
           </script>
-          <p>Next</p>
+          <p>&rarr;</p>
       </div>
     <% } %>
 
@@ -85,7 +85,7 @@
 <!-- 顶部跳转不可中断 -->
 <!-- 左侧 -->
 <div class="right_tool_4 shadow_tool">
-  <p id="right_top">Up</p>
+  <p id="right_top">&uarr;</p>
 </div>
 <script>
   $(".right_tool_4").click(function () {
@@ -96,7 +96,7 @@
 </script>
 <!-- 底部跳转有兼容性问题,如果能够兼容则可以中断 -->
 <div class="right_tool_1 shadow_tool">
-  <p id="right_bottom">Down</p>
+  <p id="right_bottom">&darr;</p>
 </div>
 <script>
     $(document).ready(function () {
@@ -111,7 +111,7 @@
 
 <!-- 右侧 -->
 <div class="left_tool_4 shadow_tool">
-    <p id="left_top">Up</p>
+    <p id="left_top">&uarr;</p>
 </div>
 <script>
   $(".left_tool_4").click(function () {
@@ -122,7 +122,7 @@
 </script>
 
 <div class="left_tool_1 shadow_tool">
-  <p id="left_bottom">Down</p>
+  <p id="left_bottom">&darr;</p>
 </div>
 <script>
     $(document).ready(function () {
