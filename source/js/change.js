@@ -128,19 +128,15 @@ function change_img()
       }
       if (temp_father.className.match("block") != null) {// 找到最接近的一个父元素block
         if (temp_father.className.match(/\d+/) == null) {// 父元素高度可伸缩
-          console.log(temp_father.className);
+          // console.log(temp_father.className);
           break;
         }
-        var temp_w = temp_father.width;
-        var temp_h = temp_father.height - 100;
-        console.log(temp_w, temp_h);
+        var temp_w = $(temp_father).width();
+        var temp_h = $(temp_father).height() - 100;
         var ratio_w = temp_w / my_img.width;
         var ratio_h = temp_h / my_img.height;
         var son_ratio = my_img.width / my_img.height;// 图片自身的宽高比
         
-        if (ratio_w >= 1 && ratio_h >= 1) {// 不需要调整大小
-          break;
-        }
         console.log(ratio_w, ratio_h);
         if (ratio_w > ratio_h) {// 父元素更宽
           console.log("高相等");
@@ -151,11 +147,10 @@ function change_img()
           $(my_img).css("width", temp_w + "px");
           $(my_img).css("height", (temp_w / son_ratio) + "px");
         }
-        console.log(my_img.width, my_img.height);
+        console.log(temp_w, temp_h, my_img.width, my_img.height);
         break;
       } else {
         temp_father = temp_father.parentElement;
-        console.log(temp_father, $(temp_father).width, $(temp_father).height);
       }
     }
   });
