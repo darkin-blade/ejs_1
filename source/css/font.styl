@@ -167,13 +167,6 @@ code {
   margin-left: 40px;
 }
 
-.guide_active {
-  border-right: 3px solid var(--box_orange);
-  border-left: 3px solid var(--text_orange);
-  border-radius: 3px;
-  background-color: var(--box_orange);
-}
-
 .guide_1,
 .guide_2,
 .guide_3,
@@ -183,8 +176,18 @@ code {
   position: relative;
   font-size: medium;
 
+  border-right: 3px solid rgba(0, 0, 0, 0);
+  border-left: 3px solid rgba(0, 0, 0, 0);
+  border-radius: 3px;
+
   cursor: pointer;
   transition-duration: 0.5s;
+}
+
+.guide_active {
+  border-right: 3px solid var(--box_orange);
+  border-left: 3px solid var(--text_orange);
+  background-color: var(--box_orange);
 }
 
 #guide_title:hover,
@@ -198,6 +201,10 @@ code {
 
 .bar_section {
   font-weight: 900;
+}
+  
+.bar_section  p {
+  font-family: 'varela';  
 }
 
 .bar_item {
