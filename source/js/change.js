@@ -60,10 +60,12 @@ function my_scroll()
 
 function change_scale()
 {// 根据不同的设备进行缩放
-  if (navigator.userAgent.match("Android")) {// 放大
+  if (navigator.userAgent.match("Android")) {// android
     document.body.style.zoom = 1.6;
-  } else if (navigator.userAgent.match("Windows") || navigator.userAgent.match("Mac")) {// 缩小
-    document.body.style.zoom = 0.7;
+  } else if (navigator.userAgent.match("Windows")) {// windows
+    document.body.style.zoom = 0.85;
+  } else if (navigator.userAgent.match("Mac")) {// macOS
+    document.body.style.zoom = 0.8;
   }
 }
 
