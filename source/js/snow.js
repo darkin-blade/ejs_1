@@ -22,7 +22,7 @@ var isMobile = {
   }
 };
 
-$(document).ready(function() {
+(function() {
   var snow_num = 0;
   if (isMobile.any()) {
     snow_num = 20;// 手机端影响性能
@@ -50,7 +50,7 @@ $(document).ready(function() {
   snow_sky.style.position = "fixed";
   document.body.appendChild(snow_sky);
   document.body.style.background = "black";
-});
+}());
 
 function my_random(low, up) {// 含low,含up
   if (up <= low) return -1;

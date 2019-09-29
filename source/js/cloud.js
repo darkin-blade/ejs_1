@@ -29,7 +29,7 @@ if (now < 1 || now >= 23) {
   sky_color = "rgb(53,21,4)";
 }
 
-$(document).ready(function() {
+(function() {
   var cloud_num = 10;
   var cloud_sky = document.createElement("div");
   for (i = 0; i < cloud_num; i ++) {
@@ -48,7 +48,7 @@ $(document).ready(function() {
   cloud_sky.style.position = "fixed";
   document.body.appendChild(cloud_sky);
   document.body.style.background = sky_color;
-});
+}());
 
 function my_random(low, up) {// 含low,含up
   if (up <= low) return -1;

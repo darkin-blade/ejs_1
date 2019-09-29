@@ -4,7 +4,9 @@
 
 (function(){
   console.log("change");
-  my_load();
+  change_scale();
+  change_width();
+  change_height();
 }());
 
 // 窗口发生变化
