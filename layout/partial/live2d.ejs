@@ -1,8 +1,32 @@
-<%- js('new/main') %>
-<%- css('new/main') %>
+<%- js('live2d/new/JsManager') %>
+<%- js('live2d/origin/live2d') %>
+<%- js('live2d/origin/Live2DFramework') %>
+
+<%- js('live2d/origin/LAppDefine') %>
+<%- js('live2d/origin/LAppLive2DManager') %>
+<%- js('live2d/origin/LAppModel') %>
+<%- js('live2d/origin/ModelSettingJson') %>
+<%- js('live2d/origin/PlatformManager') %>
+<%- js('live2d/origin/SampleApp') %>
+
+<%- js('live2d/new/tips') %>
+
+<%- css('live2d/new/live2d') %>
+<%- css('live2d/new/tips') %>
+
+<link rel="stylesheet" type="text/css" href="/live2d/new/live2d.css">
+<link rel="stylesheet" type="text/css" href="/live2d/new/tips.css">
+
+
 <div class="left_tool_5 shadow_tool">
-    <p id="live2d_tool">➕</p>
-    <script>
-      document.querySelector("#live2d_tool").setAttribute("onclick", "addModel()");
-    </script>
+  <p id="live2d_tool">➕</p>
+  <script>
+    var click_num = 0; // 点击的次数
+    document.querySelector("#live2d_tool").setAttribute("onclick", "hexo_live2d()");
+
+    function hexo_live2d() {
+      addModel();
+      click_num ++;
+    }
+  </script>
 </div>
