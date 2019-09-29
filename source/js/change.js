@@ -2,6 +2,11 @@
  * 自动调整宽度
  */
 
+(function(){
+  console.log("change");
+  my_load();
+}());
+
 // 窗口发生变化
 function my_resize()
 {
