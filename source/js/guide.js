@@ -8,7 +8,8 @@ var h_struct = {
 var my_guide = new Array();
 
 // 创建对象
-function create_guide() {
+function create_guide()
+{
 
   var right_block = document.getElementsByClassName("right_block")[0];
 
@@ -54,28 +55,17 @@ function add_scroll (i)// 注意i的值
 // 深度优先搜索
 function dfs_h(my_node) {
   var temp = 0;
-  if (my_node.tagName == 'H1')
-  {
+  if (my_node.tagName == 'H1') {
     temp = 1;
-  }
-  else if (my_node.tagName == 'H2')
-  {
+  } else if (my_node.tagName == 'H2') {
     temp = 2;
-  }
-  else if (my_node.tagName == 'H3')
-  {
+  } else if (my_node.tagName == 'H3') {
     temp = 3;
-  }
-  else if (my_node.tagName == 'H4')
-  {
+  } else if (my_node.tagName == 'H4') {
     temp = 4;
-  }
-  else if (my_node.tagName == 'H5')
-  {
+  } else if (my_node.tagName == 'H5') {
     temp = 5;
-  }
-  if (temp != 0)
-  {
+  } if (temp != 0) {
     my_node.innerHTML = "<div id='section_" + document.h_index + "' class='section_" + temp + "'>" + my_node.innerHTML + "</div>";// 给文章中的section增加id
     document.h_index ++;
     var t_struct = Object.create(h_struct);
