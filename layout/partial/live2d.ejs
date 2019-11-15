@@ -17,7 +17,10 @@
 
 
 <div class="left_tool_5 shadow_tool">
-  <p id="live2d_tool">➕</p>
+  <svg class="solid_tool solid_tool_show">
+    <path d="M10 25 L40 25"></path>
+    <path d="M25 10 L25 40"></path>
+  </svg>
   <script>
     var click_num = 0; // 点击的次数
     document.querySelector("#live2d_tool").setAttribute("onclick", "hexo_live2d()");
