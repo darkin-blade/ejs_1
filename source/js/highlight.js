@@ -16,7 +16,7 @@ var highlight_2 = [
 ];
 
 function dfs_c(my_node, found) {
-  if (my_node.className != null)
+  if (my_node.className != null && my_node.className.match != null)// 2019/11/15新增,对svg元素特盘classname
   {
     if (my_node.className.match("highlight") != null)
     {

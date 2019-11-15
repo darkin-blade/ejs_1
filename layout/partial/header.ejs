@@ -70,10 +70,8 @@
   <script>
     $(document).ready(function () {
       $(".left_tool_3").click(function () {
-        $(".block_hide_left").toggleClass("block_show_left");
-        var left_tool_3 = document.getElementById("left_link");
-        if (left_tool_3.innerHTML == "🔗") left_tool_3.innerHTML = "◂";
-        else left_tool_3.innerHTML = "🔗";
+        var left_link = document.getElementsByClassName("left_tool_3")[0];
+        console.log("left_link: " + left_link.children);
       });
     });
   </script>
@@ -82,5 +80,10 @@
     <path d="M19 19 L31 31"></path>
     <path d="M18 25 L25 18 L16 9 L9 16 Z"></path>
     <path d="M32 25 L25 32 L34 41 L41 34 Z"></path>
+  </svg>
+
+  <svg class="solid_tool solid_tool_hide">
+    <path d="M12 12 L38 38"></path>
+    <path d="M12 38 L38 12"></path>
   </svg>
 </div>
