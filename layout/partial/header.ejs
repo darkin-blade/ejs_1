@@ -67,23 +67,40 @@
 
 <!-- 右侧栏开关 -->
 <div class="left_tool_3 shadow_tool">
-  <script>
-    $(document).ready(function () {
-      $(".left_tool_3").click(function () {
-        var left_link = document.getElementsByClassName("left_tool_3")[0];
-        console.log("left_link: " + left_link.children);
-      });
-    });
-  </script>
+  <div class="solid_tool solid_tool_show">
+    <svg>
+      <path d="M19 19 L31 31"></path>
+      <path d="M18 25 L25 18 L16 9 L9 16 Z"></path>
+      <path d="M32 25 L25 32 L34 41 L41 34 Z"></path>
+    </svg>
+  </div>
 
-  <svg class="solid_tool solid_tool_show">
-    <path d="M19 19 L31 31"></path>
-    <path d="M18 25 L25 18 L16 9 L9 16 Z"></path>
-    <path d="M32 25 L25 32 L34 41 L41 34 Z"></path>
-  </svg>
-
-  <svg class="solid_tool solid_tool_hide">
-    <path d="M12 12 L38 38"></path>
-    <path d="M12 38 L38 12"></path>
-  </svg>
+  <div class="solid_tool solid_tool_hide">
+    <svg>
+      <path d="M12 12 L38 38"></path>
+      <path d="M12 38 L38 12"></path>
+    </svg>
+  </div>
 </div>
+
+<script>
+  $(document).ready(function () {
+    $(".left_tool_3").click(function () {
+      var left_link = document.getElementsByClassName("left_tool_3")[0];
+      var children = left_link.children;
+      for (var i = 0; i < children.length; i ++) {
+        console.log("left tool 3");
+        // 切换按钮状态
+        if (children[i].className.match("solid_tool_show")) {// 当前为显示状态
+          children[i].className = children[i].className.replace("solid_tool_show", "solid_tool_hide");
+        } else {// 当前未显示
+          children[i].className = children[i].className.replace("solid_tool_hide", "solid_tool_show");
+        }
+
+        // 切换左边栏
+      }
+
+      $(".block_hide_left").toggleClass("block_show_left");
+    });
+  });
+</script>
