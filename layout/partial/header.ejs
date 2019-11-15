@@ -89,17 +89,15 @@
       var left_link = document.getElementsByClassName("left_tool_3")[0];
       var children = left_link.children;
       for (var i = 0; i < children.length; i ++) {
-        console.log("left tool 3");
         // 切换按钮状态
         if (children[i].className.match("solid_tool_show")) {// 当前为显示状态
           children[i].className = children[i].className.replace("solid_tool_show", "solid_tool_hide");
         } else {// 当前未显示
           children[i].className = children[i].className.replace("solid_tool_hide", "solid_tool_show");
         }
-
-        // 切换左边栏
       }
-
+      
+      // 切换左边栏
       $(".block_hide_left").toggleClass("block_show_left");
     });
   });
