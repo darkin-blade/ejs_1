@@ -37,7 +37,9 @@
       </div>
       <% if (page.tags) { %>
         <% page.tags.forEach(function (tag) { %>
-            <a class="bar_item" href="<%- url_for(tag.path) %>"><%- tag.name %></a>
+          <div class="tag_box">
+            <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
+          </div>
         <% }) %>
       <% } %>
     </div>
@@ -48,7 +50,9 @@
       </div>
       <% if (page.categories) { %>
         <% page.categories.forEach(function (category) { %>
-            <a class="bar_item" href="<%- url_for(category.path) %>"><%- category.name %></a>
+          <div class="tag_box">
+            <a href="<%- url_for(category.path) %>"><%- category.name %></a>
+          </div>
         <% }) %>
       <% } %>
     </div>

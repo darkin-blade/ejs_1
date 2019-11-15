@@ -19,7 +19,9 @@
         <p>Links</p>
       </div>
       <% for (var name in theme.menu) { %>
-          <a class="bar_item" href="<%- url_for(theme.menu[name]) %>"><%= name %></a>
+        <div class="tag_box">
+          <a href="<%- url_for(theme.menu[name]) %>"><%= name %></a>
+        </div>
       <% } %>
     </div>
 
@@ -47,7 +49,7 @@
         tags_path.sort();
         for (var i = 0; i < tags_name.length; i ++)
         {
-          $("#tags_list").append("<a class='bar_item' href='/" + tags_path[i] + "'>" + tags_name[i] + "</a>\n");// bar_item
+          $("#tags_list").append("<div class='tag_box'><a href='/" + tags_path[i] + "'>" + tags_name[i] + "</a></div>\n");// bar_item
         }
     </script>
     <!-- 全部categories -->
@@ -56,7 +58,9 @@
         <p>Categories</p>
       </div>
       <% site.categories.forEach(function (category) { %>
-          <a class="bar_item" href="<%- url_for(category.path) %>"><%- category.name %></a>
+        <div class="tag_box">
+          <a href="<%- url_for(category.path) %>"><%- category.name %></a>
+        </div>
       <% }) %>
     </div>
 </div>
