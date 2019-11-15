@@ -1,24 +1,42 @@
 <!-- 搜索功能 -->
 
 <div class="right_tool_5 shadow_tool">
-  <svg class="solid_tool solid_tool_show">
-    <circle cx="21" cy="21" r="10" />
-    <path d="M29 29 L39 39 Z"></path>
-  </svg>
+  <div class="solid_tool solid_tool_show">
+    <svg>
+      <circle cx="21" cy="21" r="10" />
+      <path d="M29 29 L39 39 Z"></path>
+    </svg>
+  </div>
+
+  <div class="solid_tool solid_tool_hide">
+    <svg>
+      <path d="M12 12 L38 38"></path>
+      <path d="M12 38 L38 12"></path>
+    </svg>
+  </div>
 </div>
+
 <script>
   $(document).ready(function () {
     $(".right_tool_5").click(function () {
-      $(".block_hide_top").toggleClass("block_show_top");
+      $(".block_hide_top").toggleClass("block_show_top");// 切换搜索栏
       
-      var right_tool_5 = document.getElementById("right_search");
-      if (right_tool_5.innerHTML == "🔎") {
-        right_tool_5.innerHTML = "▴";
-        $("#local-search-input").focus(); // 获得焦点
-      } else {
-        right_tool_5.innerHTML = "🔎";
-        $("#local-search-input").blur() // 取消焦点
+      var right_link = document.getElementsByClassName("right_tool_5")[0];
+      var children = right_link.children;
+      for (var i = 0; i < children.length; i ++) {
+        // 切换按钮状态
+        if (children[i].className.match("solid_tool_show")) { // 当前为显示状态
+          if (i == 0) {
+            $("#local-search-input").focus(); // 获得焦点            
+          } else {
+            $("#local-search-input").blur() // 取消焦点
+          }
+          children[i].className = children[i].className.replace("solid_tool_show", "solid_tool_hide");
+        } else { // 当前未显示
+          children[i].className = children[i].className.replace("solid_tool_hide", "solid_tool_show");
+        }
       }
+      
       // 用于美观,调整宽度
       my_resize();
     });
