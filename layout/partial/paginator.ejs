@@ -17,10 +17,9 @@
                   location = '<%= url_for(page.prev_link) %>';
                 });
             </script>
-            <svg class="solid_tool solid_tool_show">
-              <path d="M10 25 L40 25"></path>
-              <path d="M12 25 L22 17"></path>
-              <path d="M12 25 L22 33"></path>
+            <svg class="solid_tool solid_tool_show" transform="rotate(90)">
+              <path d="M25 12 L25 38"></path>
+              <path d="M17 28 L25 38 L33 28"></path>
             </svg>
         </div>
       <% } %>
@@ -32,10 +31,9 @@
                   location = '<%= url_for(page.next_link) %>';
                 });
             </script>
-            <svg class="solid_tool solid_tool_show">
-              <path d="M10 25 L40 25"></path>
-              <path d="M38 25 L28 17"></path>
-              <path d="M38 25 L28 33"></path>
+            <svg class="solid_tool solid_tool_show" transform="rotate(-90)">
+              <path d="M25 12 L25 38"></path>
+              <path d="M17 28 L25 38 L33 28"></path>
             </svg>
         </div>
       <% } %>
@@ -62,11 +60,10 @@
                 location = '<%= url_for(page.prev.path) %>';
               });
           </script>
-            <svg class="solid_tool solid_tool_show">
-              <path d="M10 25 L40 25"></path>
-              <path d="M12 25 L22 17"></path>
-              <path d="M12 25 L22 33"></path>
-            </svg>
+          <svg class="solid_tool solid_tool_show" transform="rotate(90)">
+            <path d="M25 12 L25 38"></path>
+            <path d="M17 28 L25 38 L33 28"></path>
+          </svg>
       </div>
     <% } %>
     <!-- 下一页 -->
@@ -77,10 +74,9 @@
                 location = '<%= url_for(page.next.path) %>';
               });
           </script>
-          <svg class="solid_tool solid_tool_show">
-            <path d="M10 25 L40 25"></path>
-            <path d="M38 25 L28 17"></path>
-            <path d="M38 25 L28 33"></path>
+          <svg class="solid_tool solid_tool_show" transform="rotate(-90)">
+            <path d="M25 12 L25 38"></path>
+            <path d="M17 28 L25 38 L33 28"></path>
           </svg>
       </div>
     <% } %>
@@ -101,10 +97,9 @@
 <!-- 顶部跳转不可中断 -->
 <!-- 左侧 -->
 <div class="right_tool_4 shadow_tool">
-  <svg class="solid_tool solid_tool_show">
-    <path d="M25 10 L25 40"></path>
-    <path d="M25 12 L17 22"></path>
-    <path d="M25 12 L33 22"></path>
+  <svg class="solid_tool solid_tool_show" transform="rotate(180)">
+    <path d="M25 12 L25 38"></path>
+    <path d="M17 28 L25 38 L33 28"></path>
   </svg>
 </div>
 <script>
@@ -116,10 +111,9 @@
 </script>
 <!-- 底部跳转有兼容性问题,如果能够兼容则可以中断 -->
 <div class="right_tool_1 shadow_tool">
-  <svg class="solid_tool solid_tool_show">
-    <path d="M25 10 L25 40"></path>
-    <path d="M25 38 L17 28"></path>
-    <path d="M25 38 L33 28"></path>
+  <svg class="solid_tool solid_tool_show" transform="rotate(0)">
+    <path d="M25 12 L25 38"></path>
+    <path d="M17 28 L25 38 L33 28"></path>
   </svg>
 </div>
 <script>
@@ -133,12 +127,11 @@
     });
 </script>
 
-<!-- 右侧 -->
+<!-- 左侧 -->
 <div class="left_tool_4 shadow_tool">
-  <svg class="solid_tool solid_tool_show">
-    <path d="M25 10 L25 40"></path>
-    <path d="M25 12 L17 22"></path>
-    <path d="M25 12 L33 22"></path>
+  <svg class="solid_tool solid_tool_show" transform="rotate(180)">
+    <path d="M25 12 L25 38"></path>
+    <path d="M17 28 L25 38 L33 28"></path>
   </svg>
 </div>
 <script>
@@ -150,10 +143,9 @@
 </script>
 
 <div class="left_tool_1 shadow_tool">
-  <svg class="solid_tool solid_tool_show">
-    <path d="M25 10 L25 40"></path>
-    <path d="M25 38 L17 28"></path>
-    <path d="M25 38 L33 28"></path>
+  <svg class="solid_tool solid_tool_show" transform="rotate(0)">
+    <path d="M25 12 L25 38"></path>
+    <path d="M17 28 L25 38 L33 28"></path>
   </svg>
 </div>
 <script>
