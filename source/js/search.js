@@ -11,7 +11,7 @@ var searchFunc = function (path, search_id, content_id)
     dataType: "xml",
     success: function (xmlResponse) {// 获取search.xml(默认),在内部进行查找
       var datas = $("entry", xmlResponse).map(function () {
-        return {
+        return {// 只获取纯文本
           title: $("title", this).text(),
           content: $("content", this).text(),
           url: $("url", this).text()
@@ -22,8 +22,7 @@ var searchFunc = function (path, search_id, content_id)
       var $resultContent = document.getElementById(content_id);
 
       $input.addEventListener('input', function () {
-        // var str = '<ul class=\"search-result-list\">';
-        var str = '<ul>';
+        var str = '';
         var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);// 搜索的关键字(去除头尾空格),用`+`分割
         $resultContent.innerHTML = "";// 清空之前结果
         if (this.value.trim().length <= 0) {// 如果没有输入关键字
@@ -37,7 +36,7 @@ var searchFunc = function (path, search_id, content_id)
           var data_title = data.title.trim().toLowerCase();
           var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();// 文章内容
           if (index_data == 0) {
-            console.log("文章内容: " + data_content);
+            // console.log("文章内容: " + data_content);
           }
           var data_url = data.url;
           var index_title = -1;
@@ -49,6 +48,7 @@ var searchFunc = function (path, search_id, content_id)
               index_content = data_content.indexOf(keyword);
 
               if (index_title < 0 && index_content < 0) {// 关键字没有出现过
+                console.log(data_title + ":[" + index_title + ", " + index_content + "]")
                 isMatch = false;
               } else {
                 if (index_content < 0) {
@@ -64,7 +64,7 @@ var searchFunc = function (path, search_id, content_id)
           }
           if (isMatch) {
             // 显示文章标题
-            str += "<li><a href='" + unescape(decodeURI(data_url)) + "'>" + data_title + "</a>";
+            str += "<a class='search-result-title' href='" + unescape(decodeURI(data_url)) + "'>" + data_title + "</a>";
             var content = data.content.trim().replace(/<[^>]+>/g, "");
             if (first_occur >= 0) {
               var start = first_occur - head_length;
@@ -85,14 +85,15 @@ var searchFunc = function (path, search_id, content_id)
                 match_content = match_content.replace(regS, "<strong class='search-highlight'>" + keyword + "</strong>");
               });
 
-              str += "<p class=\"search-result\">" + match_content + "...</p>"
+              str += "<a class=\"search-result\" href='" + unescape(decodeURI(data_url)) + "'><p>" + match_content + "...</p></a>"
             }
-            str += "</li>";
+            str += "";
           }
         });
-        str += "</ul>";
-        if (str.indexOf('<li>') === -1) {
-          return $resultContent.innerHTML = "<ul><span>Not found<span></ul>";
+        str += "";
+        // console.log("搜所结果总长度" + str.length);
+        if (str.length == 0) {// 判断有没有搜索结果
+          return $resultContent.innerHTML = "<span class='search-result-title'>Not found<span>";
         }
         $resultContent.innerHTML = str;
       });

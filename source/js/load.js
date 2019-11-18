@@ -28,7 +28,7 @@ var isMobile = {
 
 //if ($('.local-search').size() && !isMobile.any()) {
   // 这个判断感觉没什么用
-if (1) {
+if (1) {// TODO
   $.getScript('/js/search.js', function () {
     searchFunc("/search.xml", 'local-search-input', 'local-search-result');// 路径,输入,输出
   });
