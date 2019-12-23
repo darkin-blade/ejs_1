@@ -176,9 +176,14 @@ code {
 }
 
 /* 附加导航 */
+.right_block {
+  display: flex;
+  flex-direction: column;
+}
+
 .right_guide {
   overflow-y: scroll;
-  max-height: 280px;
+  flex: 1 1 auto;
 }
 
 .right_guide::-webkit-scrollbar {
