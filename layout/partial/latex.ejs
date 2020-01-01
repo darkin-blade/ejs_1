@@ -107,7 +107,16 @@ if (page.latex == null) {
     });
 
     // 恢复回车
-    document.body.innerHTML = document.body.innerHTML.replace(/&nbsp;/g, "<br>");
+    for (var i = 0; i < 2; i ++) {
+      if (i == 0) {
+        var all_text = document.querySelectorAll("div div div p");
+      } else {
+        var all_text = document.querySelectorAll("li li");
+      }
+      all_text.forEach(function(temp_p) {
+        temp_p.innerHTML = temp_p.innerHTML.replace(/&nbsp;/g, "<br>");
+      });
+    }
   }, 500));// 删除元素不能进行得太早,不然会和highlight的dfs冲突
 </script>
 <% } %>
