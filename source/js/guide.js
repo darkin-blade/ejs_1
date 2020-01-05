@@ -72,14 +72,14 @@ function find_root() {// 找出所有根guide
     if (this_depth <= max_depth) {// 是根guide
       this_guide.className += " guide_root";
       var tmp = new Object(root_struct);
-      tmp.cur = this_guide;
       console.log(i);
       document.root_guide.push(tmp);
+      document.root_guide[document.root_guide.length - 1].cur = this_guide;
       if (this_depth < max_depth) {
         max_depth = this_depth;
       }
     } else {
-      // document.root_guide[document.root_guide.length - 1].child.push(this_guide);// 添加至尾部
+      document.root_guide[document.root_guide.length - 1].child.push(this_guide);// 添加至尾部
     }
   }
 }
