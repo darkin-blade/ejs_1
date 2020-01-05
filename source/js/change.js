@@ -112,7 +112,7 @@ function change_guide(direct)
     }
   }
 
-
+  // 进行高亮
   for (var i = 0; i < document.h_index; i ++)// h_index是section/guide的总数
   {
     var this_guide = document.getElementById("guide_" + i);
@@ -121,14 +121,29 @@ function change_guide(direct)
       ||(this_guide == guide_3)
       ||(this_guide == guide_4)
       ||(this_guide == guide_5)) {
-      if (this_guide.className.match("active") == null) {// 本应该启动而没有启动
+      if (this_guide.className.match("active") == null) {// 本应该高亮而没有高亮
         $(this_guide).toggleClass("guide_active");// 开启active属性
       }
-    }
-    else {
-      if (this_guide.className.match("active") != null) {// 本不应该启动而启动了
+    } else {
+      if (this_guide.className.match("active") != null) {// 本不应该高亮而高亮了
         $(this_guide).toggleClass("guide_active");// 关闭active属性
       }
+    }
+  }
+
+  // 缩进处理
+  var top_title = -1;// 最高标题级数
+  for (var  i = 1; i <= 5; i ++) {
+    var this_guide = document.getElementsByClassName("guide_" + i);
+    if (this_guide != null) {
+      top_title = i;
+      break;
+    }
+  }
+  for (var i = 0; i < document.h_index; i ++) {
+    var this_guide = document.getElementById("guide_" + i);
+    if (this_guide.className.match("guide_" + top_title) != null) {// 不隐藏最高级标题
+      $(this_guide).css("display", "block");
     }
   }
 }
