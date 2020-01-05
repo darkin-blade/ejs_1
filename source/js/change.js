@@ -132,14 +132,18 @@ function change_guide(direct)
   }
 
   // 缩进修改
-  // var root_guide = document.root_guide;
-  // for (var i = 0; i < root_guide; i ++) {
-  //   if (root_guide[i].cur.className.match("guide_active") != null) {// 被高亮
-  //     for (var j = 0; j < root_guide[i].child.length; j ++) {
-  //       ;
-  //     }
-  //   }
-  // }
+  var root_guide = document.root_guide;
+  for (var i = 0; i < root_guide.length; i ++) {
+    if (root_guide[i].cur.className.match("guide_active") != null) {// 被高亮
+      for (var j = 0; j < root_guide[i].child.length; j ++) {
+        $(root_guide[i].child[j]).css("display", "block");
+      }
+    } else {
+      for (var j = 0; j < root_guide[i].child.length; j ++) {
+        $(root_guide[i].child[j]).css("display", "none");
+      }
+    }
+  }
 }
 
 function change_img()
