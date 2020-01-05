@@ -131,21 +131,15 @@ function change_guide(direct)
     }
   }
 
-  // 缩进处理
-  var top_title = -1;// 最高标题级数
-  for (var  i = 1; i <= 5; i ++) {
-    var this_guide = document.getElementsByClassName("guide_" + i);
-    if (this_guide != null) {
-      top_title = i;
-      break;
-    }
-  }
-  for (var i = 0; i < document.h_index; i ++) {
-    var this_guide = document.getElementById("guide_" + i);
-    if (this_guide.className.match("guide_" + top_title) != null) {// 不隐藏最高级标题
-      $(this_guide).css("display", "block");
-    }
-  }
+  // 缩进修改
+  // var root_guide = document.root_guide;
+  // for (var i = 0; i < root_guide; i ++) {
+  //   if (root_guide[i].cur.className.match("guide_active") != null) {// 被高亮
+  //     for (var j = 0; j < root_guide[i].child.length; j ++) {
+  //       ;
+  //     }
+  //   }
+  // }
 }
 
 function change_img()

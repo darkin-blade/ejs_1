@@ -1,16 +1,21 @@
 // 全局变量
 document.h_index = 0;// change.js中也有用到
+// guide结构体,标记子guide
+var root_struct = {
+  child: new Array(),// 子node
+  cur: null// 当前node
+};
+document.root_guide = new Array(root_struct);// 在dfs中的级数
 // 结构体
 var h_struct = {
   rank: 0,// 1 for h1, 2 for h2 ...
-  name: "" // innerText
+  name: ""// innerText
 };
 var my_guide = new Array();
 
 // 创建对象
 function create_guide()
 {
-
   var right_block = document.getElementsByClassName("right_block")[0];
 
   var guide_title = document.createElement("a");// 跳转至标题
@@ -26,21 +31,56 @@ function create_guide()
     var temp_a = document.createElement("div");
     temp_a.id = "guide_" + i;
     temp_a.className = "guide_" + my_guide[i].rank;
+    if (my_guide[i].is_root == 1) {// 是根标题
+      temp_a.className += " " + "guide_root";
+    }
     temp_a.innerHTML = "<a>" + my_guide[i].name.replace(/</g, "<&shy;") + "</a>";
     right_guide.appendChild(temp_a);
   }
   
   right_block.appendChild(guide_title);
-  document.querySelector("#guide_title").onclick = function () {
+  document.querySelector("#guide_title").onclick = function() {
     document.querySelector("#post_name").scrollIntoView({
       block: "start",
       behavior: "smooth"
     });
   };
   right_block.appendChild(right_guide);
-  for (var i = 0; i < document.h_index; i ++)
-  {
+  for (var i = 0; i < document.h_index; i ++) {
     document.querySelector("#guide_" + i).setAttribute("onclick", "add_scroll(" + i + ")");
+  }
+
+  find_root();
+}
+
+function find_root() {// 找出所有根guide
+  var max_depth = 6;
+  for (var i = 0; i < document.h_index; i ++) {
+    var this_guide = document.getElementById("guide_" + i);
+    var this_depth = 6;
+    if (this_guide.className.match("guide_1") != null) {
+      this_depth = 1;
+    } else if (this_guide.className.match("guide_2") != null) {
+      this_depth = 2;
+    } else if (this_guide.className.match("guide_3") != null) {
+      this_depth = 3;
+    } else if (this_guide.className.match("guide_4") != null) {
+      this_depth = 4;
+    } else if (this_guide.className.match("guide_5") != null) {
+      this_depth = 5;
+    }
+    if (this_depth <= max_depth) {// 是根guide
+      this_guide.className += " guide_root";
+      var tmp = new Object(root_struct);
+      tmp.cur = this_guide;
+      console.log(i);
+      document.root_guide.push(tmp);
+      if (this_depth < max_depth) {
+        max_depth = this_depth;
+      }
+    } else {
+      // document.root_guide[document.root_guide.length - 1].child.push(this_guide);// 添加至尾部
+    }
   }
 }
 
@@ -75,8 +115,7 @@ function dfs_h(my_node) {
   }
 
   var my_child = my_node.childNodes.length;
-  for (var i = 0; i < my_child; i ++)
-  {
+  for (var i = 0; i < my_child; i ++) {
     dfs_h(my_node.childNodes[i]);
   }
 }
