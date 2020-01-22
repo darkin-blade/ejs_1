@@ -26,7 +26,11 @@
   overflow-x: hidden;
   /* 防止溢出 */
   overflow-y: hidden;
-  
+
+  & span {
+    font-family: monospace;
+  }
+
   /* 显示语言类型 */
   &::before {
     background: #21252b;
@@ -44,7 +48,7 @@
     width: 100%;
     /* 会溢出 */
 
-    font-family: 'DejaVu Sans Mono for Powerline';
+    font-family: monospace;
     font-weight: bold;
     padding: 0px 80px;
   }
